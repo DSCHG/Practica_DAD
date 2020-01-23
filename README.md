@@ -8,7 +8,7 @@ La aplicación que se pretende hacer es una tienda online donde nuestros product
 ## Descripción del servicio interno.
 
 ## Equipo de desarrollo.
-Nombre y Apellidos | e-mail universitario | cuenta en GitHub
+Nombre y Apellidos | e-mail | GitHub
 -------------------|----------------------|-----------------
 :man_student: Darwin Chumapi Granda | :e-mail: ds.chumapi.2017@alumnos.urjc.es | https://github.com/DSCHG
 :man_student: Javier Rubio López | :e-mail:  
