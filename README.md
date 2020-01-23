@@ -12,7 +12,7 @@ Nombre y Apellidos | e-mail | GitHub
 -------------------|----------------------|-----------------
 :man_student: Darwin Chumapi Granda | :e-mail: ds.chumapi.2017@alumnos.urjc.es | https://github.com/DSCHG
 :man_student: Javier Rubio López | :e-mail:  
-:man_student: Eva María Hoyo de la Cruz | :e-mail:  
+:man_student: Eva María Hoyo de la Cruz | :e-mail:  em.hoyo@alumnos.urjc.es  |  https://github.com/Eva87
 
 ### Trello
 https://trello.com/b/QmLREBu5/practica-dad
