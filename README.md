@@ -10,6 +10,6 @@ La aplicación que se pretende hacer es una tienda online donde nuestros product
 ## Equipo de desarrollo.
 Nombre y Apellidos | e-mail universitario | cuenta en GitHub
 -------------------|----------------------|-----------------
-:man_student: Darwin Chumapi Granda | :e-mail: ds.chumapi.2017@alumnos.urjc.es 
+:man_student: Darwin Chumapi Granda | :e-mail: ds.chumapi.2017@alumnos.urjc.es | https://github.com/DSCHG
 :man_student: Javier Rubio López | :e-mail:  
 :man_student: Eva María Hoyo de la Cruz | :e-mail:  
