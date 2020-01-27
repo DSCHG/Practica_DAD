@@ -1,9 +1,6 @@
 # Nombre de la aplicacion web.
 TOKO-Ñ
 ## Descripción de la temática.
-La aplicación que se pretende hacer es una tienda online donde nuestros productos se permitiran ver por usuarios no registrados incluso pudiendo ser añadidos al carrito de compra pero si estos productos los quiere comprar 
-el usuario pues debe primero registrarse y asi tambien se le permitira poder acceder a la pasarela de pago.
-
 
 La aplicación que se pretende hacer consiste en una tienda online donde nuestros productos podrán ser vistos por usuarios no registrados pudiendo incluso ser añadidos al carrito de compra, además de saber antes de formalizar
 la compra si hay stock o debera esperar a que la empresa reciba el producto, pero para que el usuario formalice la compra, debe primero registrarse y asi poder conseguir acceso a la pasarela de pago.
