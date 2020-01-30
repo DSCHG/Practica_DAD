@@ -25,7 +25,7 @@ En caso de realizar una compra se encargará de verificar que el usuario esté l
 
 ## UML
 
-![TOKO] (https://github.com/DSCHG/Practica_DAD/blob/master/umldad.PNG)
+![TOKO] (https://github.com/DSCHG/Practica_DAD/blob/master/umldad.PNG "uml")
 
 ## Equipo de desarrollo.
 Nombre y Apellidos | e-mail | GitHub
