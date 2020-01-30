@@ -25,7 +25,7 @@ En caso de realizar una compra se encargará de verificar que el usuario esté l
 
 ## UML
 
-![TOKO_Ñ] (https://ibb.co/RHJg2bg)
+https://github.com/DSCHG/Practica_DAD/edit/master/assets/umldad
 
 ## Equipo de desarrollo.
 Nombre y Apellidos | e-mail | GitHub
