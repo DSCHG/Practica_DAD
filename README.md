@@ -22,8 +22,6 @@ la compra si hay stock o debera esperar a que la empresa reciba el producto, per
 proceso de pago, pedido.
 - Proceso de pago: En el momento de ultimar la compra y el usuario esté logueado, el servicio interno se encargará de actualizar los productos que estén disponibles tras la compra y enviar un correo al usuario, informandole del pedido.
 
-- Actualización de las bases de datos: Actualizaciones como las que se producen al añadir un producto al carrito o al realizar un pedido.
-
 ## Equipo de desarrollo.
 Nombre y Apellidos | e-mail | GitHub
 -------------------|----------------------|-----------------
