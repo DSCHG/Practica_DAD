@@ -23,12 +23,17 @@ Decidir que información mostrar al usuario dependiendo de las acciones que haya
 Realizar el manejo de las estructuras de datos del usuario y la tienda ya sea insertar productos en el carro del usuario o añadir más productos al stock, etc...
 En caso de realizar una compra se encargará de verificar que el usuario esté logueado y manejará el proceso de pago.
 
+## UML
+
+/images/umldad.png
+
 ## Equipo de desarrollo.
 Nombre y Apellidos | e-mail | GitHub
 -------------------|----------------------|-----------------
 :man_student: Darwin Chumapi Granda | :e-mail: ds.chumapi.2017@alumnos.urjc.es | https://github.com/DSCHG
-:man_student: Javier Rubio López |e-mail: j.rubiol.2017.2017@alumnos.urjc.es |https://github.com/JaviRubi
+:man_student: Javier Rubio López | :e-mail: j.rubiol.2017.2017@alumnos.urjc.es |https://github.com/JaviRubi
 :man_student: Eva María Hoyo de la Cruz | :e-mail:  em.hoyo@alumnos.urjc.es  |  https://github.com/Eva87
 
 ### Trello
 https://trello.com/b/QmLREBu5/practica-dad
+
