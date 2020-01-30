@@ -7,11 +7,11 @@ la compra si hay stock o debera esperar a que la empresa reciba el producto, per
 
 ## Enumeración y descripción de entidades principales.
 
-- Usuario(privado): Nombre, lista de productos del carrito, numero de tarjeta, Lista de pedidos
-- Pedido(privado): Lista de productos pagados
-- Carrito(privado): Lista de productos
+- Usuario(privado): Nombre, contraseña, email, lista de productos del carrito, numero de tarjeta, Lista de pedidos
+- Pedido(privado): Lista de productos pagados.
+- Carrito(privado): Lista de productos seleccionados por el usuario.
 - Tienda(público): Productos que se tienen o tendran
-- Stock(público): Productos que actualmente se tienen
+- Stock(público): Productos que actualmente están disponibles
 - Producto(público): Objetos disponibles para su compra
 
 ## Descripción del servicio interno.
