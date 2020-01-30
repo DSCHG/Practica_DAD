@@ -25,7 +25,7 @@ En caso de realizar una compra se encargará de verificar que el usuario esté l
 
 ## UML
 
-https://github.com/DSCHG/Practica_DAD/edit/master/assets/umldad
+https://github.com/DSCHG/Practica_DAD/edit/master/umldad
 
 ## Equipo de desarrollo.
 Nombre y Apellidos | e-mail | GitHub
