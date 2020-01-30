@@ -1,5 +1,5 @@
 # Nombre de la aplicacion web.
-TOKO-Ñ
+TOKO
 ## Descripción de la temática.
 
 La aplicación que se pretende hacer consiste en una tienda online donde nuestros productos podrán ser vistos por usuarios no registrados pudiendo incluso ser añadidos al carrito de compra, además de saber antes de formalizar
@@ -10,9 +10,8 @@ la compra si hay stock o debera esperar a que la empresa reciba el producto, per
 - Usuario(privado): Nombre, contraseña, email, lista de productos del carrito, numero de tarjeta, Lista de pedidos
 - Pedido(privado): Lista de productos pagados.
 - Carrito(privado): Lista de productos seleccionados por el usuario.
-- Tienda(público): Productos que se tienen o tendran
-- Stock(público): Productos que actualmente están disponibles
-- Producto(público): Objetos disponibles para su compra
+- Proveedor(público): Productos que se tienen o tendran de un distribuidor determinado.
+- Producto(público): Objetos disponibles para su compra y el stock de los mismos
 
 ## Esquema E/R.
 
@@ -20,12 +19,10 @@ la compra si hay stock o debera esperar a que la empresa reciba el producto, per
 
 ## Descripción del servicio interno.
 
-Login, proceso de pago, pedido.
+proceso de pago, pedido.
+- Proceso de pago: En el momento de ultimar la compra y el usuario esté logueado, el servicio interno se encargará de actualizar los productos que estén disponibles tras la compra y enviar un correo al usuario, informandole del pedido.
 
-En esta aplicación web tenemos pensado que el servicio interno se encargue de la realización del login, si el usuario quiere realizarlo.
-Decidir que información mostrar al usuario dependiendo de las acciones que haya realizado y tambien dependiendo de si ha realizado el login o no.
-Realizar el manejo de las estructuras de datos del usuario y la tienda ya sea insertar productos en el carro del usuario o añadir más productos al stock, etc...
-En caso de realizar una compra se encargará de verificar que el usuario esté logueado y manejará el proceso de pago.
+- Actualización de las bases de datos: Actualizaciones como las que se producen al añadir un producto al carrito o al realizar un pedido.
 
 ## Equipo de desarrollo.
 Nombre y Apellidos | e-mail | GitHub
