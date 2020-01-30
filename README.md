@@ -23,7 +23,7 @@ Decidir que información mostrar al usuario dependiendo de las acciones que haya
 Realizar el manejo de las estructuras de datos del usuario y la tienda ya sea insertar productos en el carro del usuario o añadir más productos al stock, etc...
 En caso de realizar una compra se encargará de verificar que el usuario esté logueado y manejará el proceso de pago.
 
-![Toko](umldad.PNG "uml")
+![Toko](umldad.PNG "uml") 
 
 ## Equipo de desarrollo.
 Nombre y Apellidos | e-mail | GitHub
