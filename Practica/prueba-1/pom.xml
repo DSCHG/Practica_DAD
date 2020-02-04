@@ -11,7 +11,7 @@
 	<groupId>com.practica</groupId>
 	<artifactId>practica-1</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>prueba-1</name>
+	<name>practica</name>
 	<description>practica de desarrollo de una web</description>
 
 	<properties>
