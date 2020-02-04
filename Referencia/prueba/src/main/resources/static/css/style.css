@@ -1,0 +1,30 @@
+@charset "ISO-8859-1";
+
+.body{
+	margin:0;
+	padding:0;
+}
+#cabecera{
+	background-color:lightgrey;
+}
+#banner{
+	background-color: lightgrey;
+}
+
+#pProductos{
+	background-color:aquamarine;
+
+}
+
+#producto{
+	background-color: beige;
+}
+#pie{
+	background-color:brown;
+	widht:100%;
+	height:100px;
+
+}
+.carousel-indicators li{
+	background-color: #ccc;
+}
