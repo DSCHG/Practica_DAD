@@ -9,7 +9,7 @@ public class ControllerServicio1 {
 	
 	@RequestMapping("/index")
 	public String getVista(Model model) {
-		model.addAttribute("Nombre", "TOKO");
+		model.addAttribute("nombre", "TOKO");
 		return "index";
 	}
 	
