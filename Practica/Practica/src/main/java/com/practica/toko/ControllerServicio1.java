@@ -7,10 +7,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class ControllerServicio1 {
 	
-	@RequestMapping("/index")
+	@RequestMapping("/")
 	public String getVista(Model model) {
 		model.addAttribute("nombre", "TOKO");
 		return "index";
+	}
+	
+	@RequestMapping("/CRUD")
+	public String mostrarFormulario(Model model) {
+		return "crud";
 	}
 	
 
