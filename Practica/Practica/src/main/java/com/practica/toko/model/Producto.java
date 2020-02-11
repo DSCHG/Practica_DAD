@@ -5,6 +5,7 @@ import javax.persistence.*;
 @Entity
 public class Producto {
 	// Atributos
+	
 		@Id
 		@GeneratedValue(strategy = GenerationType.AUTO)
 		int id;
