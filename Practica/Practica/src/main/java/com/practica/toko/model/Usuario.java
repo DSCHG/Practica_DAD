@@ -1,8 +1,6 @@
-package com.practica.Z.entities;
+package com.practica.toko.model;
 
 import javax.persistence.*;
-
-import org.springframework.stereotype.Repository;
 
 @Entity
 public class Usuario {
@@ -22,6 +20,12 @@ public class Usuario {
 		
 		public Usuario(int id,String nombre, String email,String password) {
 			this.id = id;
+			this.nombre = nombre;
+			this.email = email;
+			this.password = password;
+		}
+		
+		public Usuario(String nombre, String email,String password) {
 			this.nombre = nombre;
 			this.email = email;
 			this.password = password;
