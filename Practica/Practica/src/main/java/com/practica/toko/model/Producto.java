@@ -1,4 +1,4 @@
-package com.practica.Z.entities;
+package com.practica.toko.model;
 
 import javax.persistence.*;
 
