@@ -1,4 +1,4 @@
-package com.practica.toko;
+package com.practica.toko.repositorios;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

@@ -8,8 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.practica.toko.UserRepository;
 import com.practica.toko.model.Usuario;
+import com.practica.toko.repositorios.UserRepository;
 
 @Controller
 public class ControllerUsuarios {
