@@ -24,10 +24,15 @@ public class ControllerServicio1 {
 	public String mostrarFormulario(Model model) {
 		return "crud";
 	}
-	
+
 	@RequestMapping("/formproveedor")
 	public String mostrarFormularioproveedores(Model model) {
 		return "crudproveedor";
+	}
+	
+	@RequestMapping("/formproducto")
+	public String mostrarFormularioproductos(Model model) {
+		return "crudproducto";
 	}
 	
 	

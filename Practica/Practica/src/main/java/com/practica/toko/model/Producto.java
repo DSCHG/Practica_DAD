@@ -13,6 +13,15 @@ public class Producto {
 		String nombre;
 		double precio;
 		
+		public Producto () {
+			
+		}
+		
+		public Producto (String nombre, double precio) {
+			this.nombre=nombre;
+			this.precio=precio;
+		}
+		
 		// Getters and Setters
 		
 		public int getId() {
