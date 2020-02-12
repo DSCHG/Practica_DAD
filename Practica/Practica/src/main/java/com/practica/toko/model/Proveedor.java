@@ -16,15 +16,15 @@ public class Proveedor {
 		
 	}
 
-	public Proveedor ( int ident, String nom, String prod) {
-		this.nombre=nom;
-		this.producto=prod;
+	public Proveedor ( int ident, String nombre, String producto) {
+		this.nombre=nombre;
+		this.producto=producto;
 		this.id=ident;
 	}
 	
-	public Proveedor (String nom, String prod) {
-		this.nombre=nom;
-		this.producto=prod;
+	public Proveedor (String nombre, String producto) {
+		this.nombre=nombre;
+		this.producto=producto;
 	}
 
 	public int getId() {

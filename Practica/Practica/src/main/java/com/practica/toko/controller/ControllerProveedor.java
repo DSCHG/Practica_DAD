@@ -17,11 +17,11 @@ public class ControllerProveedor {
 	private ProveedorRepository proveedores;
 	
 	@RequestMapping("/datosform")
-	public String recogerDatosForm(Model model,@RequestParam String name,@RequestParam String prod) {
-		proveedores.save(new Proveedor(name,prod));
+	public String recogerDatosForm(Model model,@RequestParam String name,@RequestParam String producto) {
+		proveedores.save(new Proveedor(name,producto));
 		List<Proveedor> listaproveedores = proveedores.findAll();
 		for (Proveedor u : listaproveedores) {
-			model.addAttribute("users", listaproveedores);
+			model.addAttribute("proveedor", listaproveedores);
 			model.addAttribute("id", u.getId());
 			model.addAttribute("nombre", u.getNombre());
 			model.addAttribute("producto", u.getProducto());
