@@ -16,7 +16,7 @@ public class ControllerProveedor {
 	@Autowired
 	private ProveedorRepository proveedores;
 	
-	@RequestMapping("/form/proveedor")
+	@RequestMapping("/datosform")
 	public String recogerDatosForm(Model model,@RequestParam String name,@RequestParam String prod) {
 		proveedores.save(new Proveedor(name,prod));
 		List<Proveedor> listaproveedores = proveedores.findAll();

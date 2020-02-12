@@ -19,10 +19,15 @@ public class ControllerServicio1 {
 		model.addAttribute("nombre", "TOKO");
 		return "index";
 	}
-	
+
 	@RequestMapping("/CRUD")
 	public String mostrarFormulario(Model model) {
 		return "crud";
+	}
+	
+	@RequestMapping("/formproveedor")
+	public String mostrarFormularioproveedores(Model model) {
+		return "crudproveedor";
 	}
 	
 	
