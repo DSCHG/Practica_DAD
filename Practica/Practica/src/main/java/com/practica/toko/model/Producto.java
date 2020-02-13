@@ -1,5 +1,7 @@
 package com.practica.toko.model;
 
+import java.util.List;
+
 import javax.persistence.*;
 
 @Entity
@@ -13,17 +15,23 @@ public class Producto {
 		private String nombre;
 		private double precio;
 		
+
+		@OneToOne (targetEntity=Proveedor.class)
+		private Proveedor proveedor;
+
 		
 		public Producto () {
 			
 		}
 		
-		public Producto (String nombre, double precio) {
+		public Producto (String nombre, double precio, Proveedor proveedor) {
 			this.nombre=nombre;
 			this.precio=precio;
+			this.proveedor=proveedor;
 		}
 		
 		// Getters and Setters
+
 		
 		public int getId() {
 			return id;
@@ -39,6 +47,14 @@ public class Producto {
 		}
 		public void setPrecio(double precio) {
 			this.precio = precio;
+		}
+
+		public Proveedor getproveedore() {
+			return proveedor;
+		}
+
+		public void setproveedor(Proveedor proveedor) {
+			this.proveedor = proveedor;
 		}
 
 }
