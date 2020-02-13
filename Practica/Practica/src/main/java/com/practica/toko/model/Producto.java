@@ -1,6 +1,5 @@
 package com.practica.toko.model;
 
-import java.util.List;
 
 import javax.persistence.*;
 
