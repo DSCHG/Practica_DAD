@@ -55,5 +55,4 @@ public class Proveedor {
 	public void setListaProductos(List<Producto> listaProductos) {
 		this.listaProductos = listaProductos;
 	}
-	*/
 }
