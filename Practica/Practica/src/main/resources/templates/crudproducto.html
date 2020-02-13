@@ -21,11 +21,6 @@
 					class="form-control" name="precio" id="precio"
 					aria-describedby="preciohelp" placeholder="Introduzca precio">
 			</div>
-			<div class="form-group">
-				<label for="proveedor">Proveedor</label> <input type="text"
-					class="form-control" name="proveedor" id="proveedor"
-					aria-describedby="proveedorhelp" placeholder="Introduzca proveedor">
-			</div>
 			<button type="submit" class="btn btn-primary">Enviar</button>
 		</form>
 	</div>
@@ -37,7 +32,6 @@
 					<th scope="col">#</th>
 					<th scope="col">Nombre</th>
 					<th scope="col">Precio</th>
-					<th scope="col">Proveedor</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -46,7 +40,6 @@
 					<td>{{id}}</td>
 					<td>{{nombre}}</td>
 					<td>{{precio}}</td>
-					<td>{{proveedor}}</td>
 				</tr>
 			{{/producto}}
 			</tbody>

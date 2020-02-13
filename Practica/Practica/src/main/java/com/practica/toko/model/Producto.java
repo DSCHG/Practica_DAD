@@ -23,10 +23,9 @@ public class Producto {
 			
 		}
 		
-		public Producto (String nombre, double precio, Proveedor proveedor) {
+		public Producto (String nombre, double precio) {
 			this.nombre=nombre;
 			this.precio=precio;
-			this.proveedor=proveedor;
 		}
 		
 		// Getters and Setters
