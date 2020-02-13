@@ -1,5 +1,44 @@
 package com.practica.toko.model;
 
-public class Carro {
+import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+
+@Entity
+public class Carro {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+	private float coste;
+	@OneToMany(targetEntity = Producto.class)
+	private List<Producto> carrito;
+	
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public float getCoste() {
+		return coste;
+	}
+	public void setCoste(float coste) {
+		this.coste = coste;
+	}
+	public List<Producto> getCarrito() {
+		return carrito;
+	}
+	public void setCarrito(List<Producto> carrito) {
+		this.carrito = carrito;
+	}
+	
+	
+	
 }
