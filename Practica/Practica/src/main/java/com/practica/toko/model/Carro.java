@@ -21,7 +21,8 @@ public class Carro {
 	@Column
 	private float coste;
 	
-	//private List<Producto> carrito;
+	@OneToMany
+	private List<Producto> carrito;
 	
 	public Carro() {}
 	
@@ -37,12 +38,12 @@ public class Carro {
 	public void setCoste(float coste) {
 		this.coste = coste;
 	}
-	/*public List<Producto> getCarrito() {
+	public List<Producto> getCarrito() {
 		return carrito;
 	}
 	public void setCarrito(List<Producto> carrito) {
 		this.carrito = carrito;
-	}*/
+	}
 	
 	
 	
