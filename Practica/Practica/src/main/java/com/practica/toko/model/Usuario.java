@@ -18,11 +18,13 @@ public class Usuario {
 		@Column
 		String password;
 		
-		@OneToMany(targetEntity = Pedido.class)
-		List<Pedido> listaPedidos;
+		@OneToMany(mappedBy = "id")
+		private List<Pedido> listaPedidos;
 		
-		@OneToOne(targetEntity=Carro.class)
-		Carro carrito;
+		@OneToOne
+		@JoinColumn(name = "carrito")
+		private Carro carrito;
+		
 		
 		//constructor
 		
@@ -60,14 +62,6 @@ public class Usuario {
 		public void setPassword(String password) {
 			this.password = password;
 		}
-
-		public Carro getCarrito() {
-			return carrito;
-		}
-		public void setCarrito(Carro carrito) {
-			this.carrito = carrito;
-		}
-		
 		
 
 }

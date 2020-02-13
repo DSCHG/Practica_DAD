@@ -11,9 +11,13 @@ public class Pedido {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	@OneToMany (targetEntity=Producto.class)
+	
+	@OneToMany
+	@JoinColumn(name = "id_producto")
 	private List<Producto> producto;
-	@OneToOne
+	
+	@ManyToOne
+	@JoinColumn(name = "Usuario_id")
 	private Usuario usuario;
 	
 	// Constructores

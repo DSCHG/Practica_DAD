@@ -15,9 +15,8 @@ public class Proveedor {
 	String nombre;
 
 	
-
-
-	@OneToMany (targetEntity=Producto.class)
+	@OneToMany
+	@JoinColumn(name = "Productos")
 	private List <Producto> listaProductos;
 	
 	public Proveedor () {
@@ -28,7 +27,7 @@ public class Proveedor {
 		this.nombre=nombre;
 		this.listaProductos=listaProductos;
 		this.id=ident;
-		this.listaProductos=listaProductos;
+		//this.listaProductos=listaProductos;
 	}
 	
 	
@@ -56,5 +55,5 @@ public class Proveedor {
 	public void setListaProductos(List<Producto> listaProductos) {
 		this.listaProductos = listaProductos;
 	}
-	
+	*/
 }
