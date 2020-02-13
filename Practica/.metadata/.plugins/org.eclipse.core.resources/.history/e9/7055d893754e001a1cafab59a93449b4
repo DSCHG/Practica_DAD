@@ -23,11 +23,12 @@ public class ControllerProveedor {
 	@RequestMapping("/datosform")
 	public String recogerDatosForm(Model model,@RequestParam String name,@RequestParam String producto) {
 		
-		Proveedor prob=new Proveedor(name);
-		proveedores.save(prob);
 		Producto auxiliar=new Producto(producto,100);
+		Proveedor prob=new Proveedor(name);
 		auxiliar.setProveedor(prob);
-		productos.save(auxiliar);
+		Producto aux2=productos.save(auxiliar);
+		prob.getListaProductos().add(auxiliar);
+		Proveedor aux=proveedores.save(prob);
 		
 		
 		

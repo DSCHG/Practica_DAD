@@ -15,7 +15,7 @@ public class Producto {
 		@Column
 		private double precio;
 		
-		@ManyToOne
+		@OneToOne
 		Proveedor proveedor;
 		
 		

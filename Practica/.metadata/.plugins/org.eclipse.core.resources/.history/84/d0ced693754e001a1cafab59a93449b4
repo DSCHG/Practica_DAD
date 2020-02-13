@@ -15,7 +15,7 @@ public class Proveedor {
 	String nombre;
 
 	
-	@OneToMany(mappedBy = "proveedor")
+	@OneToMany
 	private List <Producto> listaProductos;
 	
 	public Proveedor () {

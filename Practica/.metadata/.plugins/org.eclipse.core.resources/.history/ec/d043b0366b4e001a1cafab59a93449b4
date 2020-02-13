@@ -24,14 +24,7 @@ public class ControllerProducto {
 			model.addAttribute("producto", listaproductos);
 			model.addAttribute("id", u.getId());
 			model.addAttribute("nombre", u.getNombre());
-			if(u.getProveedor()!=null) {
-				model.addAttribute("proveedor", u.getProveedor().getNombre());
-			}else {
-				model.addAttribute("proveedor", "anonimo");
-			}
-			
 			model.addAttribute("precio", u.getPrecio());
-			
 		}
 		return "crudproducto";
 	}
