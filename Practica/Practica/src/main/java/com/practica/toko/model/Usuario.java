@@ -1,5 +1,7 @@
 package com.practica.toko.model;
 
+import java.util.List;
+
 import javax.persistence.*;
 
 @Entity
@@ -13,6 +15,9 @@ public class Usuario {
 		String nombre;
 		String email;
 		String password;
+		
+		@OneToMany(targetEntity = Pedido.class)
+		List<Pedido> listaPedidos;
 		
 		//constructor
 		
