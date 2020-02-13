@@ -8,10 +8,11 @@ public class Producto {
 	
 		@Id
 		@GeneratedValue(strategy = GenerationType.AUTO)
-		int id;
+		private int id;
 		
-		String nombre;
-		double precio;
+		private String nombre;
+		private double precio;
+		
 		
 		public Producto () {
 			

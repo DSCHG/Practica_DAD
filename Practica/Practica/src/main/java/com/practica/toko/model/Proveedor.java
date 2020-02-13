@@ -10,7 +10,7 @@ public class Proveedor {
 	int id;
 	String nombre;
 	String producto;
-	/*id String nombre double precio*/
+	
 
 	public Proveedor () {
 		
