@@ -1,6 +1,5 @@
 package com.practica.toko.model;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
@@ -13,7 +12,8 @@ public class Proveedor {
 	int id;
 	@Column
 	String nombre;
-
+	@Column
+	String producto;
 	
 
 
@@ -21,20 +21,20 @@ public class Proveedor {
 	private List <Producto> listaProductos;
 	
 	public Proveedor () {
-		listaProductos=new ArrayList<Producto>();
+		
 	}
 
 	public Proveedor ( int ident, String nombre, String producto, List<Producto> listaProductos) {
 		this.nombre=nombre;
-		this.listaProductos=listaProductos;
+		this.producto=producto;
 		this.id=ident;
 		this.listaProductos=listaProductos;
 	}
 	
 	
-	public Proveedor (String nombre) {
+	public Proveedor (String nombre, String producto) {
 		this.nombre=nombre;
-		listaProductos=new ArrayList<Producto>();
+		this.producto=producto;
 	}
 
 	public int getId() {
@@ -47,6 +47,14 @@ public class Proveedor {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+
+	public String getProducto() {
+		return producto;
+	}
+
+	public void setProducto(String producto) {
+		this.producto = producto;
 	}
 
 	public List<Producto> getListaProductos() {

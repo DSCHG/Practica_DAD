@@ -11,11 +11,9 @@ public class Usuario {
 		@Id
 		@GeneratedValue(strategy=GenerationType.AUTO)
 		int id;
-		@Column
+		
 		String nombre;
-		@Column
 		String email;
-		@Column
 		String password;
 		
 		@OneToMany(targetEntity = Pedido.class)

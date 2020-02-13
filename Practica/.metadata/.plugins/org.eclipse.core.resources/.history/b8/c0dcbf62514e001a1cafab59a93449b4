@@ -10,11 +10,14 @@ public class Producto {
 		@Id
 		@GeneratedValue(strategy = GenerationType.AUTO)
 		private int id;
-		@Column
+		
 		private String nombre;
-		@Column
 		private double precio;
 		
+
+		@OneToOne (targetEntity=Proveedor.class)
+		private Proveedor proveedor;
+
 		
 		public Producto () {
 			
@@ -44,5 +47,12 @@ public class Producto {
 			this.precio = precio;
 		}
 
-		
+		public Proveedor getproveedore() {
+			return proveedor;
+		}
+
+		public void setproveedor(Proveedor proveedor) {
+			this.proveedor = proveedor;
+		}
+
 }

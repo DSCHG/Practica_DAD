@@ -34,7 +34,6 @@ public class Proveedor {
 	
 	public Proveedor (String nombre) {
 		this.nombre=nombre;
-		listaProductos=new ArrayList<Producto>();
 	}
 
 	public int getId() {

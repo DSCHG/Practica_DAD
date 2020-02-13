@@ -15,6 +15,10 @@ public class Producto {
 		@Column
 		private double precio;
 		
+
+		@OneToOne (targetEntity=Proveedor.class)
+		private Proveedor proveedor;
+
 		
 		public Producto () {
 			
@@ -44,5 +48,12 @@ public class Producto {
 			this.precio = precio;
 		}
 
-		
+		public Proveedor getproveedore() {
+			return proveedor;
+		}
+
+		public void setproveedor(Proveedor proveedor) {
+			this.proveedor = proveedor;
+		}
+
 }
