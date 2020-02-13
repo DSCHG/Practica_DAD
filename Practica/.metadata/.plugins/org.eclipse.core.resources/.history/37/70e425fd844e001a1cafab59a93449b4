@@ -21,16 +21,18 @@ public class ControllerProducto {
 	public String recogerDatosForm(Model model,@RequestParam String name,@RequestParam double precio) {
 		productos.save(new Producto(name,precio));
 		List<Producto> listaproductos = productos.findAll();
-		model.addAttribute("producto", listaproductos);
 		for (Producto u : listaproductos) {
+			model.addAttribute("producto", listaproductos);
 			model.addAttribute("id", u.getId());
 			model.addAttribute("nombre", u.getNombre());
 			Proveedor aux=u.getProveedor();
-			String pepe="Anonimo";
 			if(aux!=null) {
-				pepe=aux.getNombre();
+				System.out.println(aux.getNombre());
+				model.addAttribute("prov", aux.getNombre());
+			}else {
+				System.out.println("anonimo");
+				model.addAttribute("prov","anonimo");
 			}
-				model.addAttribute("prov", pepe);
 			
 			model.addAttribute("precio", u.getPrecio());
 			

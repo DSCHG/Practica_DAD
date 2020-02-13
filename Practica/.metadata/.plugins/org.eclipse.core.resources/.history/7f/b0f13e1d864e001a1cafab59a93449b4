@@ -26,11 +26,15 @@ public class ControllerProducto {
 			model.addAttribute("id", u.getId());
 			model.addAttribute("nombre", u.getNombre());
 			Proveedor aux=u.getProveedor();
-			String pepe="Anonimo";
+			String pepe;
 			if(aux!=null) {
 				pepe=aux.getNombre();
-			}
+				System.out.println(pepe);
 				model.addAttribute("prov", pepe);
+			}else {
+				pepe="Anonimo";
+				model.addAttribute("prov",pepe);
+			}
 			
 			model.addAttribute("precio", u.getPrecio());
 			

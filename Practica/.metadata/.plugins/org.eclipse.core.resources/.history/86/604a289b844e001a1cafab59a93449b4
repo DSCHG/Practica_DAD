@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.practica.toko.model.Producto;
-import com.practica.toko.model.Proveedor;
 import com.practica.toko.repositorios.ProductoRepository;
 
 @Controller
@@ -21,16 +20,17 @@ public class ControllerProducto {
 	public String recogerDatosForm(Model model,@RequestParam String name,@RequestParam double precio) {
 		productos.save(new Producto(name,precio));
 		List<Producto> listaproductos = productos.findAll();
-		model.addAttribute("producto", listaproductos);
 		for (Producto u : listaproductos) {
+			model.addAttribute("producto", listaproductos);
 			model.addAttribute("id", u.getId());
 			model.addAttribute("nombre", u.getNombre());
-			Proveedor aux=u.getProveedor();
-			String pepe="Anonimo";
-			if(aux!=null) {
-				pepe=aux.getNombre();
+			if(u.getProveedor()!=null) {
+				System.out.println(u.getProveedor().getNombre());
+				model.addAttribute("prov", u.getProveedor().getNombre());
+			}else {
+				System.out.println("anonimo");
+				model.addAttribute("prov","anonimo");
 			}
-				model.addAttribute("prov", pepe);
 			
 			model.addAttribute("precio", u.getPrecio());
 			
