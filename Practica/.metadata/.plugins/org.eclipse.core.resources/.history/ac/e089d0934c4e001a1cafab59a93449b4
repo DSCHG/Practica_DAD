@@ -19,7 +19,7 @@ public class Usuario {
 		@OneToMany(targetEntity = Pedido.class)
 		List<Pedido> listaPedidos;
 		
-		@OneToOne(targetEntity=Carro.class)
+		@OneToOne
 		Carro carrito;
 		
 		//constructor

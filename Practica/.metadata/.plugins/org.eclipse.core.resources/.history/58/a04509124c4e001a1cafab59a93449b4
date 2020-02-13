@@ -7,7 +7,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 
 
 @Entity
@@ -17,12 +16,9 @@ public class Carro {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private float coste;
-	
-	
 	@OneToMany(targetEntity = Producto.class)
 	private List<Producto> carrito;
 	
-	public Carro() {}
 	
 	public int getId() {
 		return id;

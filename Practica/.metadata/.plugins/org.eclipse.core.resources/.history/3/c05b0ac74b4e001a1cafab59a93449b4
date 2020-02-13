@@ -19,9 +19,6 @@ public class Usuario {
 		@OneToMany(targetEntity = Pedido.class)
 		List<Pedido> listaPedidos;
 		
-		@OneToOne(targetEntity=Carro.class)
-		Carro carrito;
-		
 		//constructor
 		
 		public Usuario() {}
@@ -58,14 +55,6 @@ public class Usuario {
 		public void setPassword(String password) {
 			this.password = password;
 		}
-
-		public Carro getCarrito() {
-			return carrito;
-		}
-		public void setCarrito(Carro carrito) {
-			this.carrito = carrito;
-		}
-		
 		
 
 }

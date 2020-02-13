@@ -17,7 +17,8 @@ public class Carro {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private float coste;
-	
+	@OneToOne
+	private int id_usuario;
 	
 	@OneToMany(targetEntity = Producto.class)
 	private List<Producto> carrito;
