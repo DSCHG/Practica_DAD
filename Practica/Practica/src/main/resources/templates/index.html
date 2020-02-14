@@ -8,7 +8,7 @@
 <title>Toko Store</title>
 </head>
 <body>
-	<p>Bienvenidos a {{nombre}}</p>
+	<p class="text-success">Bienvenidos a {{nombre}}</p>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4">Pepe</div>
@@ -16,6 +16,34 @@
 			<div class="col-md-4">Pepe3</div>
 		</div>
 	</div>
+	
+
+
+	<div class="container">
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col" class="text-primary">#</th>
+					<th scope="col" class="text-primary">Nombre producto</th>
+					<th scope="col" class="text-primary">Precio</th>
+					<th scope="col" class="text-primary">Opciones</th>
+				</tr>
+			</thead>
+			<tbody>
+			{{#productos}}
+				<tr>
+					<td>{{id}}</td>
+					<td>{{nombre}}</td>
+					<td>{{precio}}</td>
+					<td>{{opciones}}</td>
+				</tr>
+			{{/productos}}
+			</tbody>
+		</table>
+	</div>
+	
+
+	
 	<a class="btn btn-primary" href="/CRUD" role="button">Crear Usuarios</a>
 	<a class="btn btn-primary" href="/formproveedor" role="button">Crear Proveedores</a>
 	<a class="btn btn-primary" href="/formproducto" role="button">Crear Producto</a>
