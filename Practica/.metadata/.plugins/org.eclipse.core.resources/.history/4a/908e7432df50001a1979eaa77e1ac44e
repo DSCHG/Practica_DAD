@@ -24,14 +24,6 @@ public class ControllerServicio1 {
 	@RequestMapping("/")
 	public String getVista(Model model) {
 		model.addAttribute("nombre", "TOKO");
-		List<Producto> prod=productos.findAll();
-		for(Producto p:prod) {
-			model.addAttribute("productos", prod);
-			model.addAttribute("id", p.getId());
-			model.addAttribute("nombre", p.getNombre());
-			model.addAttribute("precio",p.getPrecio());
-			model.addAttribute("opciones", "?");
-		}
 		return "index";
 	}
 

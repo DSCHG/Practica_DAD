@@ -31,7 +31,6 @@ public class ControllerServicio1 {
 			model.addAttribute("nombre", p.getNombre());
 			model.addAttribute("precio",p.getPrecio());
 			model.addAttribute("opciones", "?");
-		}
 		return "index";
 	}
 
