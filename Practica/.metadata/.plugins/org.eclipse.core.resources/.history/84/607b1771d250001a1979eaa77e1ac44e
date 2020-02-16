@@ -40,8 +40,8 @@
 			<tbody>
 			{{#proveedor}}
 				<tr>
-					<td>{{id}}</td>
-					<td>{{nombre}}</td>
+					<td>{{idProv}}</td>
+					<td>{{NombreProv}}</td>
 				</tr>
 			{{/proveedor}}
 			</tbody>

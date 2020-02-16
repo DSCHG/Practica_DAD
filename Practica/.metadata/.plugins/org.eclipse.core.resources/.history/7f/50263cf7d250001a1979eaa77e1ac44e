@@ -42,8 +42,8 @@ public class ControllerServicio1 {
 		List<Proveedor> aux=proveedores.findAll();
 		for(Proveedor x:aux) {
 			model.addAttribute("proveedor", aux);
-			model.addAttribute("id", x.getId());
-			model.addAttribute("nombre", x.getNombre());
+			model.addAttribute("idProv", x.getId());
+			model.addAttribute("NombreProv", x.getNombre());
 		}
 		
 		List<Producto> listaproductos = productos.findAll();

@@ -40,8 +40,8 @@ public class ControllerProducto {
 		List<Proveedor> prov=proveedores.findAll();
 		for(Proveedor x:prov) {
 			model.addAttribute("proveedor", prov);
-			model.addAttribute("id", x.getId());
-			model.addAttribute("nombre", x.getNombre());
+			model.addAttribute("idProv", x.getId());
+			model.addAttribute("NombreProv", x.getNombre());
 		}
 		
 		List<Producto> listaproductos = productos.findAll();
