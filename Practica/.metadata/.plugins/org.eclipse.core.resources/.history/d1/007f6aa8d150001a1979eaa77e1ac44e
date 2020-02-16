@@ -43,7 +43,7 @@ public class ControllerProveedor {
 			model.addAttribute("proveedor", listaproveedores);
 			model.addAttribute("id", u.getId());
 			model.addAttribute("nombre", u.getNombre());
-			model.addAttribute("producto", "a implemetar");
+			model.addAttribute("producto", u.getListaProductos().get(0).getNombre());
 			for(Producto p: u.getListaProductos()) {
 				System.out.println(p.getNombre());
 			}

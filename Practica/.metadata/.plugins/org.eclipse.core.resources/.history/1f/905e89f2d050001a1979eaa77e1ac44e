@@ -24,14 +24,13 @@ public class ControllerProveedor {
 	public String recogerDatosForm(Model model,@RequestParam String name,@RequestParam String producto, @RequestParam String Precio) {
 		
 		Proveedor prob=new Proveedor(name);
-		proveedores.save(prob);
-		if(!(producto.isEmpty() && Precio.isEmpty())){
+		if(producto.isEmpty() && Precio.isEmpty()){
+			proveedores.save(prob);
+		}else if(!(producto.isEmpty() && Precio.isEmpty())){
 			Producto auxiliar=new Producto(producto,Double.valueOf(Precio));
 			auxiliar.setProveedor(prob);
 			productos.save(auxiliar);
 			prob.getListaProductos().add(auxiliar);
-		}else if(producto.isEmpty() && Precio.isEmpty()) {
-			
 		}else {
 			return "crudproveedor";
 		}
@@ -43,7 +42,7 @@ public class ControllerProveedor {
 			model.addAttribute("proveedor", listaproveedores);
 			model.addAttribute("id", u.getId());
 			model.addAttribute("nombre", u.getNombre());
-			model.addAttribute("producto", "a implemetar");
+			model.addAttribute("producto", u.getListaProductos().get(0).getNombre());
 			for(Producto p: u.getListaProductos()) {
 				System.out.println(p.getNombre());
 			}

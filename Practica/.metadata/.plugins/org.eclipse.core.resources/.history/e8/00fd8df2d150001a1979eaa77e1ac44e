@@ -16,7 +16,7 @@ public class Proveedor {
 
 	
 	@OneToMany(mappedBy = "proveedor")
-	private List <Producto> listaProductos=new ArrayList<Producto>();
+	private List <Producto> listaProductos;
 	
 	public Proveedor () {
 		listaProductos=new ArrayList<Producto>();
