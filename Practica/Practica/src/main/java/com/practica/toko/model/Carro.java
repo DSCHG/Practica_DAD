@@ -1,5 +1,6 @@
 package com.practica.toko.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -24,7 +25,9 @@ public class Carro {
 	@OneToMany
 	private List<Producto> carrito;
 	
-	public Carro() {}
+	public Carro() {
+		carrito = new ArrayList<>();
+	}
 	
 	public int getId() {
 		return id;

@@ -41,23 +41,24 @@
 				</tr>
 			</thead>
 			<tbody>
+				{{#productos}}
 				<tr>
-					<td>1</td>
-					<td>agua</td>
+					<td>{{id}}</td>
+					<td>{{nombre}}</td>
 					<td> 
 						<div class="row">
 							<input type="number" class="mx-auto border-0" placeholder="1">
 						</div>
 					</td>
-					<td>1</td>
+					<td>{{precio}}</td>
 					<td>
 						<div class="row">
-							<a class="btn" href="/borrarArticulo?id=1"> <i class="material-icons">delete</i></a>
-							<a class="btn" href="/verProducto?id=1"><i class="material-icons">visibility</i></a>
+							<a class="btn" href="/borrarArticulo?id={{id}}"> <i class="material-icons">delete</i></a>
+							<a class="btn" href="/verProducto?id={{id}}"><i class="material-icons">visibility</i></a>
 						</div>
 					</td>
 				</tr>
-				
+				{{/productos}}
 			</tbody>
 		</table>
 		<div class="row">
