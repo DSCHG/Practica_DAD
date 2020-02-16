@@ -4,22 +4,66 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="/css/style.css" type="text/css">
 <link rel="stylesheet" href="webjars/bootstrap/4.4.1/css/bootstrap.min.css">
-
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet"/>
+	
 <title>Toko Store</title>
 </head>
 <body>
-	<p>Bienvenidos a {{nombre}}</p>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-4">Pepe</div>
-			<div class="col-md-4">Pepe2</div>
-			<div class="col-md-4">Pepe3</div>
-		</div>
-	</div>
-	<a class="btn btn-primary" href="/CRUD" role="button">Crear Usuarios</a>
-	<a class="btn btn-primary" href="/formproveedor" role="button">Crear Proveedores</a>
-	<a class="btn btn-primary" href="/formproducto" role="button">Crear Producto</a>
+
 	
+	<div class="p-3 mb-2 bg-success text-dark">
+	<br>
+	<p class="text-dark; text-center">Bienvenidos a {{nombre}}</p>
+	<br>
+	</div>
+	
+	<div class="container">
+	<img src="/img/logo.jpg" class="img-fluid " alt="Responsive image">
+	</div>
+	<br>
+	<br>
+
+
+	<div class="container">
+	<a class="rounded float-right" href="/CRUD" role="button">
+	<img src="/img/carrocompra.jpg"  alt="Responsive image" style="width: 40px; height: 40px"  >
+	</a>
+	</div>
+	<br>
+	
+
+	<div class="container">
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col" class="text-danger">#</th>
+					<th scope="col" class="text-primary">Nombre producto</th>
+					<th scope="col" class="text-primary">Precio</th>
+					<th scope="col" class="text-info">Opciones</th>
+				</tr>
+			</thead>
+			<tbody>
+			{{#productos}}
+				<tr>
+					<td>{{id}}</td>
+					<td>{{nombre}}</td>
+					<td>{{precio}}</td>
+					<td>{{opciones}}</td>
+				</tr>
+			{{/productos}}
+			</tbody>
+		</table>
+	</div>
+	
+	<br>
+	<br>
+
+    <div class="container">
+	<a class="btn btn-primary" href="/CRUD" role="button">Crear Usuarios</a>
+	<a class="btn btn-success" href="/formproveedor" role="button">Crear Proveedores</a>
+	<a class="btn btn-warning" href="/formproducto" role="button">Crear Producto</a>
+	
+	</div>
 	<script src="webjars/jquery/3.0.0/jquery.js"></script>
 	<script src="webjars/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </body>

@@ -26,22 +26,30 @@ public class ControllerProveedor {
 		Proveedor prob=new Proveedor(name);
 		proveedores.save(prob);
 		Producto auxiliar=new Producto(producto,100);
+		Producto auxiliar2=productos.findById(3).get();
 		auxiliar.setProveedor(prob);
+		auxiliar2.setProveedor(prob);
 		productos.save(auxiliar);
 		
 		
 		
-		
 		prob.getListaProductos().add(auxiliar);
+		prob.getListaProductos().add(auxiliar2);
 		
 		List<Proveedor> listaproveedores = proveedores.findAll();
+		
+		prob=listaproveedores.get(0);
+		productos.findById(3);
 		for (Proveedor u : listaproveedores) {
 			model.addAttribute("proveedor", listaproveedores);
 			model.addAttribute("id", u.getId());
 			model.addAttribute("nombre", u.getNombre());
-			if(!u.getListaProductos().isEmpty()) {
-				model.addAttribute("producto", u.getListaProductos().get(0).getNombre());
+			model.addAttribute("producto", u.getListaProductos().get(0).getNombre());
+			for(Producto p: u.getListaProductos()) {
+				System.out.println(p.getNombre());
 			}
+			System.out.println();
+			
 		}
 		return "crudproveedor";
 	}

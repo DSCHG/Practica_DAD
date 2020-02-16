@@ -11,27 +11,44 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.practica.toko.model.Producto;
 import com.practica.toko.model.Proveedor;
 import com.practica.toko.repositorios.ProductoRepository;
+import com.practica.toko.repositorios.ProveedorRepository;
 
 @Controller
 public class ControllerProducto {
 	@Autowired
 	private ProductoRepository productos;
+	@Autowired
+	private ProveedorRepository proveedores;
 	
 	@RequestMapping("/productform")
-	public String recogerDatosForm(Model model,@RequestParam String name,@RequestParam double precio) {
-		productos.save(new Producto(name,precio));
+	public String recogerDatosForm(Model model,@RequestParam String name,@RequestParam double precio,@RequestParam String id_Proveedor) {
+		Proveedor aux;
+		Producto nuevo;
+		if(id_Proveedor.isEmpty()) {
+			id_Proveedor="-1";
+		}
+		if(proveedores.findById(Integer.valueOf(id_Proveedor)).isPresent()) {
+		aux=proveedores.findById(Integer.valueOf(id_Proveedor)).get();
+		nuevo=new Producto(name,precio);
+		nuevo.setProveedor(aux);
+		productos.save(nuevo);
+		aux.getListaProductos().add(nuevo);
+		}else {
+			productos.save(new Producto(name,precio));
+		}
+		
+		List<Proveedor> prov=proveedores.findAll();
+		for(Proveedor x:prov) {
+			model.addAttribute("proveedor", prov);
+			model.addAttribute("idProv", x.getId());
+			model.addAttribute("NombreProv", x.getNombre());
+		}
+		
 		List<Producto> listaproductos = productos.findAll();
 		model.addAttribute("producto", listaproductos);
 		for (Producto u : listaproductos) {
 			model.addAttribute("id", u.getId());
 			model.addAttribute("nombre", u.getNombre());
-			Proveedor aux=u.getProveedor();
-			String pepe="Anonimo";
-			if(aux!=null) {
-				pepe=aux.getNombre();
-			}
-				model.addAttribute("prov", pepe);
-			
 			model.addAttribute("precio", u.getPrecio());
 			
 		}
