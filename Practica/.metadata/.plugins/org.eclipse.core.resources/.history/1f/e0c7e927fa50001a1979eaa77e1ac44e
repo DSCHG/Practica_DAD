@@ -24,8 +24,9 @@ public class Pedido {
 	public Pedido() {
 	}
 	
-	public Pedido(Usuario u) {
-		this.usuario = u;
+	public Pedido(int id,List<Producto> id_producto) {
+		this.id = id;
+		this.producto = id_producto;
 	}
 	
 	public Pedido(List<Producto> id_producto) {
@@ -56,22 +57,6 @@ public class Pedido {
 
 	public void setId_usuario(Usuario id_usuario) {
 		this.usuario = id_usuario;
-	}
-
-	public List<Producto> getProducto() {
-		return producto;
-	}
-
-	public void setProducto(List<Producto> producto) {
-		this.producto = producto;
-	}
-
-	public Usuario getUsuario() {
-		return usuario;
-	}
-
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
 	}
 
 	

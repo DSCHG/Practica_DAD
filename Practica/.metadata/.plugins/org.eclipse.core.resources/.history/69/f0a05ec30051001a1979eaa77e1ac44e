@@ -24,7 +24,7 @@ public class Carro {
 	@Column
 	private float coste;
 	
-	@OneToMany
+	@OneToMany(cascade=javax.persistence.CascadeType.PERSIST)
 	private List<Producto> carrito=new ArrayList<>();
 	
 	public Carro() {

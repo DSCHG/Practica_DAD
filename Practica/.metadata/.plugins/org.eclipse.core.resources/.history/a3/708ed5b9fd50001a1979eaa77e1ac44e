@@ -25,10 +25,10 @@ public class Usuario {
 		@Column
 		String password;
 		
-		@OneToMany(mappedBy = "usuario")
+		@OneToMany(mappedBy = "id")
 		private List<Pedido> listaPedidos=new ArrayList<>();
 		
-		@OneToOne
+		@OneToOne(cascade = CascadeType.ALL)
 		@JoinColumn(name = "carrito")
 		private Carro carrito=new Carro();
 		

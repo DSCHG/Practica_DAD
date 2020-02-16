@@ -34,7 +34,9 @@ public class ControllerServicio1 {
 		if(session.isNew()) {
 			user=new Usuario();
 			Carro c= new Carro();
+			carritos.save(c);
 			user.setCarrito(c);
+			user=Usuarios.save(user);
 		}
 		model.addAttribute("nombre", "TOKO");
 		List<Producto> prod=productos.findAll();

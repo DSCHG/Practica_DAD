@@ -10,8 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-import org.hibernate.annotations.CascadeType;
-
 
 
 @Entity
@@ -25,7 +23,7 @@ public class Carro {
 	private float coste;
 	
 	@OneToMany
-	private List<Producto> carrito=new ArrayList<>();
+	private List<Producto> carrito;
 	
 	public Carro() {
 		carrito = new ArrayList<>();

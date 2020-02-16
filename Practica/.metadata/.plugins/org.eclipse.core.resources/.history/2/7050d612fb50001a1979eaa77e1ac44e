@@ -41,15 +41,10 @@ public class ControllerCarro {
 	
 	@RequestMapping("/formalizarPedido")
 	public String formalizarPedido() {
-		Pedido p=new Pedido();
-		p.setUsuario(user);
-		carrodao.save(user.getCarrito());
-		Usuarios.save(user);
-		p.getProducto().addAll(user.getCarrito().getCarrito());
+		Pedido p=new Pedido(user);
 		Pedidos.save(p);
+		p.setProducto(user.getCarrito().getCarrito());
 		user.getListaPedidos().add(p);
-		
-		Usuarios.save(user);
 		
 		return "Carrito";
 	}

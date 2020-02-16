@@ -1,17 +1,10 @@
 package com.practica.toko.model;
 
-import java.util.ArrayList;
 import java.util.List;
-import com.practica.toko.repositorios.*;
 
 import javax.persistence.*;
 
-import org.springframework.stereotype.Component;
-import org.springframework.web.context.annotation.SessionScope;
-
 @Entity
-@Component
-@SessionScope
 public class Usuario {
 	// Atributos
 
@@ -25,19 +18,17 @@ public class Usuario {
 		@Column
 		String password;
 		
-		@OneToMany(mappedBy = "usuario")
-		private List<Pedido> listaPedidos=new ArrayList<>();
+		@OneToMany(mappedBy = "id")
+		private List<Pedido> listaPedidos;
 		
 		@OneToOne
 		@JoinColumn(name = "carrito")
-		private Carro carrito=new Carro();
+		private Carro carrito;
 		
 		
 		//constructor
 		
-		public Usuario() {
-			nombre="anonimo";
-		}
+		public Usuario() {}
 		
 		public Usuario(int id,String nombre, String email,String password) {
 			this.id = id;
@@ -70,30 +61,6 @@ public class Usuario {
 		}
 		public void setPassword(String password) {
 			this.password = password;
-		}
-
-		public List<Pedido> getListaPedidos() {
-			return listaPedidos;
-		}
-
-		public void setListaPedidos(List<Pedido> listaPedidos) {
-			this.listaPedidos = listaPedidos;
-		}
-
-		public Carro getCarrito() {
-			return carrito;
-		}
-
-		public void setCarrito(Carro carrito) {
-			this.carrito = carrito;
-		}
-
-		public void setId(int id) {
-			this.id = id;
-		}
-
-		public void setEmail(String email) {
-			this.email = email;
 		}
 		
 

@@ -46,9 +46,7 @@ public class ControllerCarro {
 		carrodao.save(user.getCarrito());
 		Usuarios.save(user);
 		p.getProducto().addAll(user.getCarrito().getCarrito());
-		Pedidos.save(p);
 		user.getListaPedidos().add(p);
-		
 		Usuarios.save(user);
 		
 		return "Carrito";

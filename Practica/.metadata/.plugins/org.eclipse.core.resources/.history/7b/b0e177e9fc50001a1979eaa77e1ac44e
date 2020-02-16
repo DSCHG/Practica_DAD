@@ -25,7 +25,7 @@ public class Usuario {
 		@Column
 		String password;
 		
-		@OneToMany(mappedBy = "usuario")
+		@OneToMany(mappedBy = "id")
 		private List<Pedido> listaPedidos=new ArrayList<>();
 		
 		@OneToOne
