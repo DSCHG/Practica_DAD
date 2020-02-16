@@ -1162,3 +1162,99 @@ java.io.FileNotFoundException: C:\Users\Javier\Desktop\Practica_DAD\Practica\.me
 2020-02-14 17:03:13,489 [Worker-32: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 7 resources
 2020-02-14 17:03:13,494 [Worker-32: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2020-02-14 17:03:13,494 [Worker-32: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Javier\Desktop\Practica_DAD\Practica\Practica\src\test\resources
+2020-02-16 12:44:34,054 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2020-02-16 12:48:47,715 [Worker-8: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-16 12:48:47,720 [Worker-8: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-02-16 12:48:47,741 [Worker-8: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 7 resources
+2020-02-16 12:48:47,760 [Worker-8: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-16 12:48:47,760 [Worker-8: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Javier\Desktop\Practica_DAD\Practica\Practica\src\test\resources
+2020-02-16 13:03:50,498 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-16 13:03:50,502 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-02-16 13:03:50,503 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-02-16 13:03:50,506 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-16 13:03:50,507 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Javier\Desktop\Practica_DAD\Practica\Practica\src\test\resources
+2020-02-16 13:11:26,100 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-16 13:11:26,101 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-02-16 13:11:26,101 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-02-16 13:11:26,108 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-16 13:11:26,108 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Javier\Desktop\Practica_DAD\Practica\Practica\src\test\resources
+2020-02-16 13:11:43,242 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-16 13:11:43,246 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-02-16 13:11:43,250 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 8 resources
+2020-02-16 13:11:43,268 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-16 13:11:43,268 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Javier\Desktop\Practica_DAD\Practica\Practica\src\test\resources
+2020-02-16 13:17:44,726 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-16 13:17:44,727 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-02-16 13:17:44,727 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-02-16 13:17:44,732 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-16 13:17:44,733 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Javier\Desktop\Practica_DAD\Practica\Practica\src\test\resources
+2020-02-16 13:23:22,658 [Worker-16: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-16 13:23:22,660 [Worker-16: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-02-16 13:23:22,663 [Worker-16: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 8 resources
+2020-02-16 13:23:22,666 [Worker-16: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-16 13:23:22,667 [Worker-16: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Javier\Desktop\Practica_DAD\Practica\Practica\src\test\resources
+2020-02-16 13:24:07,696 [Worker-20: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-16 13:24:07,698 [Worker-20: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-02-16 13:24:07,701 [Worker-20: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 8 resources
+2020-02-16 13:24:07,704 [Worker-20: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-16 13:24:07,705 [Worker-20: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Javier\Desktop\Practica_DAD\Practica\Practica\src\test\resources
+2020-02-16 13:25:01,224 [Worker-23: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-16 13:25:01,226 [Worker-23: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-02-16 13:25:01,229 [Worker-23: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 8 resources
+2020-02-16 13:25:01,234 [Worker-23: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-16 13:25:01,234 [Worker-23: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Javier\Desktop\Practica_DAD\Practica\Practica\src\test\resources
+2020-02-16 13:26:06,420 [Worker-22: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-16 13:26:06,422 [Worker-22: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-02-16 13:26:06,425 [Worker-22: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 8 resources
+2020-02-16 13:26:06,428 [Worker-22: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-16 13:26:06,428 [Worker-22: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Javier\Desktop\Practica_DAD\Practica\Practica\src\test\resources
+2020-02-16 13:26:44,586 [Worker-20: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-16 13:26:44,588 [Worker-20: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-02-16 13:26:44,591 [Worker-20: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 8 resources
+2020-02-16 13:26:44,594 [Worker-20: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-16 13:26:44,595 [Worker-20: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Javier\Desktop\Practica_DAD\Practica\Practica\src\test\resources
+2020-02-16 13:31:19,013 [Worker-23: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-16 13:31:19,016 [Worker-23: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-02-16 13:31:19,023 [Worker-23: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 8 resources
+2020-02-16 13:31:19,026 [Worker-23: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-16 13:31:19,027 [Worker-23: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Javier\Desktop\Practica_DAD\Practica\Practica\src\test\resources
+2020-02-16 13:32:09,968 [Worker-7: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-16 13:32:09,970 [Worker-7: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-02-16 13:32:09,973 [Worker-7: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 8 resources
+2020-02-16 13:32:09,977 [Worker-7: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-16 13:32:09,977 [Worker-7: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Javier\Desktop\Practica_DAD\Practica\Practica\src\test\resources
+2020-02-16 13:35:35,102 [Worker-20: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-16 13:35:35,104 [Worker-20: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-02-16 13:35:35,107 [Worker-20: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 8 resources
+2020-02-16 13:35:35,110 [Worker-20: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-16 13:35:35,111 [Worker-20: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Javier\Desktop\Practica_DAD\Practica\Practica\src\test\resources
+2020-02-16 13:37:18,436 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-16 13:37:18,437 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-02-16 13:37:18,437 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-02-16 13:37:18,444 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-16 13:37:18,444 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Javier\Desktop\Practica_DAD\Practica\Practica\src\test\resources
+2020-02-16 13:49:59,156 [Worker-28: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-16 13:49:59,158 [Worker-28: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-02-16 13:49:59,161 [Worker-28: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 8 resources
+2020-02-16 13:49:59,164 [Worker-28: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-16 13:49:59,164 [Worker-28: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Javier\Desktop\Practica_DAD\Practica\Practica\src\test\resources
+2020-02-16 13:54:48,255 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-16 13:54:48,257 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-02-16 13:54:48,260 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 8 resources
+2020-02-16 13:54:48,265 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-16 13:54:48,265 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Javier\Desktop\Practica_DAD\Practica\Practica\src\test\resources
+2020-02-16 13:57:04,106 [Worker-29: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-16 13:57:04,108 [Worker-29: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-02-16 13:57:04,111 [Worker-29: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 8 resources
+2020-02-16 13:57:04,117 [Worker-29: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-16 13:57:04,118 [Worker-29: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Javier\Desktop\Practica_DAD\Practica\Practica\src\test\resources
+2020-02-16 14:00:12,180 [Worker-27: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-16 14:00:12,180 [Worker-27: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-02-16 14:00:12,181 [Worker-27: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-02-16 14:00:12,189 [Worker-27: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-16 14:00:12,190 [Worker-27: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Javier\Desktop\Practica_DAD\Practica\Practica\src\test\resources
+2020-02-16 14:05:04,890 [Worker-29: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-16 14:05:04,894 [Worker-29: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-02-16 14:05:04,897 [Worker-29: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 8 resources
+2020-02-16 14:05:04,903 [Worker-29: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-16 14:05:04,903 [Worker-29: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Javier\Desktop\Practica_DAD\Practica\Practica\src\test\resources

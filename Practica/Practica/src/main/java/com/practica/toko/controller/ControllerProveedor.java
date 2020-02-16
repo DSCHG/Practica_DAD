@@ -26,13 +26,11 @@ public class ControllerProveedor {
 		Proveedor prob=new Proveedor(name);
 		proveedores.save(prob);
 		Producto auxiliar=new Producto(producto,100);
-		Producto auxiliar2=new Producto("pepe",200);
+		Producto auxiliar2=productos.findById(3).get();
 		auxiliar.setProveedor(prob);
 		auxiliar2.setProveedor(prob);
 		productos.save(auxiliar);
-		productos.save(auxiliar2);
 		
-		String s="_1_";
 		
 		
 		prob.getListaProductos().add(auxiliar);

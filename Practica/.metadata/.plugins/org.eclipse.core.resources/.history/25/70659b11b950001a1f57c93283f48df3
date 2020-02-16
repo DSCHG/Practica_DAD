@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="/css/style.css" type="text/css">
+<link rel="stylesheet" href="webjars/bootstrap/4.4.1/css/bootstrap.min.css">
+<title>Creacion de productos</title>
+</head>
+<body>
+    <div class="container">
+		<form action="/productform">
+			<div class="form-group">
+				<label for="nombre">Nombre</label> <input type="text"
+					class="form-control" name="name" id="nombre"
+					aria-describedby="nombreHelp" placeholder="Escriba su nombre">
+			</div>
+			<div class="form-group">
+				<label for="precio">Precio</label> <input type="text"
+					class="form-control" name="precio" id="precio"
+					aria-describedby="preciohelp" placeholder="Introduzca precio">
+			</div>
+			<div class="form-group">
+				<label for="id Proveedor">id_proveedor</label> <input type="text"
+					class="form-control" name="id_Proveedor" id="id_Proveedor"
+					aria-describedby="preciohelp" placeholder="Introduzca precio">
+			</div>
+			<button type="submit" class="btn btn-primary">Enviar</button>
+		</form>
+	</div>
+
+	<div class="container">
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Proveedor</th>
+				</tr>
+			</thead>
+			<tbody>
+			{{#proveedor}}
+				<tr>
+					<td>{{idProv}}</td>
+					<td>{{NombreProv}}</td>
+				</tr>
+			{{/proveedor}}
+			</tbody>
+		</table>
+	</div>
+	
+	<div class="container">
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Nombre</th>
+					<th scope="col">Precio</th>
+				</tr>
+			</thead>
+			<tbody>
+			{{#producto}}
+				<tr>
+					<td>{{id}}</td>
+					<td>{{nombre}}</td>
+					<td>{{precio}}</td>
+				</tr>
+			{{/producto}}
+			</tbody>
+		</table>
+	</div>
+
+	<script src="webjars/jquery/3.0.0/jquery.js"></script>
+	<script src="webjars/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
