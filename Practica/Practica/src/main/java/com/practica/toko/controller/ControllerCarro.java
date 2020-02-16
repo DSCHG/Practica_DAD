@@ -32,7 +32,7 @@ public class ControllerCarro {
 	}
 	
 	@RequestMapping("/verProducto")
-	public String verProducto() {
+	public String verProducto(@RequestParam(name = "id") String id) {
 		return "vistaProducto";
 	}
 }

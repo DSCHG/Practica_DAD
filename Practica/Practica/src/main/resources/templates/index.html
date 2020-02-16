@@ -4,35 +4,33 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="/css/style.css" type="text/css">
 <link rel="stylesheet" href="webjars/bootstrap/4.4.1/css/bootstrap.min.css">
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	
 <title>Toko Store</title>
 </head>
 <body>
+<div class="container-fluid bg-dark fixed-top">
+			<div id="logo">
+				<a href="/"><img src="/img/logo.jpg" class="img-fluid rounded-pill" alt="Responsive image"></a>
+			</div>
+			<form class="form-inline float-right">
+    			<input class="form-control mr-sm-2" type="search" placeholder="Busqueda" aria-label="Search">
+    			<button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="material-icons align-middle">search</i></button>
+  			</form>
+			<div class="row">
+				<ul class="nav navbar-dark bg-dark">
+					<li class="nav-item"><a class="nav-link active" href="#">Inicio</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="#">Contactos</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">Acerca de</a></li>
+					<li class="nav-item"><a class="rounded float-right" href="/carro" role="button">
+						<i class="material-icons">shopping_cart</i>
+					</a></a></li>
+				</ul>
+			</div>
+</div>
 
-	
-	<div class="p-3 mb-2 bg-success text-dark">
-	<br>
-	<p class="text-dark; text-center">Bienvenidos a {{nombre}}</p>
-	<br>
-	</div>
-	
-	<div class="container">
-	<img src="/img/logo.jpg" class="img-fluid " alt="Responsive image">
-	</div>
-	<br>
-	<br>
-
-
-	<div class="container">
-	<a class="rounded float-right" href="/CRUD" role="button">
-	<img src="/img/carrocompra.jpg"  alt="Responsive image" style="width: 40px; height: 40px"  >
-	</a>
-	</div>
-	<br>
-	
-
-	<div class="container">
+	<div class="container" id="content_table">
 		<table class="table">
 			<thead>
 				<tr>
@@ -56,7 +54,6 @@
 	</div>
 	
 	<br>
-	<br>
 
     <div class="container">
 	<a class="btn btn-primary" href="/CRUD" role="button">Crear Usuarios</a>
@@ -64,6 +61,13 @@
 	<a class="btn btn-warning" href="/formproducto" role="button">Crear Producto</a>
 	
 	</div>
+	
+	<div class="container-fluid bg-dark fixed-bottom">
+	<div class="row">
+		<p class="align-middle" id="footer">Creado por el equipo de desarrollo de la URJC</p>
+	</div>
+
+</div>
 	<script src="webjars/jquery/3.0.0/jquery.js"></script>
 	<script src="webjars/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </body>
