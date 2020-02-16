@@ -24,10 +24,7 @@ public class ControllerProducto {
 	public String recogerDatosForm(Model model,@RequestParam String name,@RequestParam double precio,@RequestParam String id_Proveedor) {
 		Proveedor aux;
 		Producto nuevo;
-		if(id_Proveedor.isEmpty()) {
-			id_Proveedor="-1";
-		}
-		if(proveedores.findById(Integer.valueOf(id_Proveedor)).isPresent()) {
+		if(id_Proveedor!=" " && proveedores.findById(Integer.valueOf(id_Proveedor)).isPresent()) {
 		aux=proveedores.findById(Integer.valueOf(id_Proveedor)).get();
 		nuevo=new Producto(name,precio);
 		nuevo.setProveedor(aux);

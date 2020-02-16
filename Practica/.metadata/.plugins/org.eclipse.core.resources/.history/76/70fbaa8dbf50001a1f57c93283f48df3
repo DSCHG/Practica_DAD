@@ -22,7 +22,7 @@
 			</div>
 			<div class="form-group">
 				<label for="id Proveedor">id_proveedor</label> <input type="text"
-					class="form-control" name="id_Proveedor" id="id_Proveedor"
+					class="form-control" name="id_Proveedor" value=-1 id="id_Proveedor"
 					aria-describedby="proveedorhelp" placeholder="Introduzca Id Proveedor">
 			</div>
 			<button type="submit" class="btn btn-primary">Enviar</button>

@@ -21,14 +21,11 @@ public class ControllerProducto {
 	private ProveedorRepository proveedores;
 	
 	@RequestMapping("/productform")
-	public String recogerDatosForm(Model model,@RequestParam String name,@RequestParam double precio,@RequestParam String id_Proveedor) {
+	public String recogerDatosForm(Model model,@RequestParam String name,@RequestParam double precio,@RequestParam int id_Proveedor) {
 		Proveedor aux;
 		Producto nuevo;
-		if(id_Proveedor.isEmpty()) {
-			id_Proveedor="-1";
-		}
-		if(proveedores.findById(Integer.valueOf(id_Proveedor)).isPresent()) {
-		aux=proveedores.findById(Integer.valueOf(id_Proveedor)).get();
+		if(proveedores.findById(id_Proveedor).isPresent()) {
+		aux=proveedores.findById(id_Proveedor).get();
 		nuevo=new Producto(name,precio);
 		nuevo.setProveedor(aux);
 		productos.save(nuevo);
