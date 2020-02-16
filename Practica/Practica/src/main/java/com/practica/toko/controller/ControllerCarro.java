@@ -34,7 +34,6 @@ public class ControllerCarro {
 		if(carrito != null) {
 			carrodao.save(carrito);
 		}
-		Pedid
 		return "Carrito";
 	}
 	@RequestMapping("/borrarArticulo")
