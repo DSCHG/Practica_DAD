@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.practica.toko.model.Producto;
 import com.practica.toko.model.Proveedor;
@@ -82,6 +83,26 @@ public class ControllerServicio1 {
 		return "crudproducto";
 	}
 	
-	
+	@RequestMapping("/formbusqueda")
+	public String mostrarbusquedas(Model model, String search) {
+		
+		List<Producto> listaproductos = productos.findAll();
+		model.addAttribute("producto", listaproductos);
+		for (Producto u : listaproductos) {
+			System.out.println(search);
+			
+			if(search==null) {
+				model.addAttribute("id", u.getId());
+				model.addAttribute("nombre", u.getNombre());
+				model.addAttribute("precio", u.getPrecio());
+			}
+			else if(search.equals(u.getNombre())) {
+				model.addAttribute("id", u.getId());
+				model.addAttribute("nombre", u.getNombre());
+				model.addAttribute("precio", u.getPrecio());
+			}
+		}
+		return "crudbusqueda";
+	}
 
 }
