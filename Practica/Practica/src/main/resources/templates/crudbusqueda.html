@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="/css/style.css" type="text/css">
 <link rel="stylesheet" href="webjars/bootstrap/4.4.1/css/bootstrap.min.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<title>Busqueda de productos seleccionado</title>
+<title>Busqueda de productos </title>
 </head>
 <body>
 <div class="container-fluid bg-dark fixed-top">
@@ -13,16 +13,18 @@
 				<a href="/"><img src="/img/logo.jpg" class="img-fluid rounded-pill" alt="Responsive image"></a>
 			</div>
 			<form class="form-inline float-right">
-    			<input class="form-control mr-sm-2" type="search" placeholder="Busqueda" aria-label="Search">
-    			<button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="material-icons align-middle">search</i></button>
-  			</form>
+    			<input class="form-control mr-sm-2" type="search" placeholder="search" aria-label="search"
+    			 name="search" id="search" >
+    			<button class="btn btn-outline-success my-2 my-sm-0" href="/formbusqueda" type="submit"><i class="material-icons align-middle">search</i></button>
+  			
+    			</form>
 			<div class="row">
 				<ul class="nav navbar-dark bg-dark">
 					<li class="nav-item"><a class="nav-link active" href="/">Inicio</a>
 					</li>
 					<li class="nav-item"><a class="nav-link" href="/contacto">Contactos</a></li>
 					<li class="nav-item"><a class="nav-link" href="/CRUD">Crear usuarios</a></li>
-					<li class="nav-item"><a class="nav-link" href="/formproveedor">Crear poveedor</a></li>
+					<li class="nav-item"><a class="nav-link" href="/formproveedor">Crear proveedor</a></li>
 					<li class="nav-item"><a class="nav-link" href="/formproducto">Crea producto</a></li>
 					<li class="nav-item"><a class="rounded float-right" href="/carro" role="button">
 						<i class="material-icons">shopping_cart</i>
@@ -33,14 +35,11 @@
 <br>
 <br>
 <br>
-<br>
-<br>
-<br>
 
 
 	
-	<div class="container">
-		<form action="/formbusqueda">
+	<div class="container" id="content_table">
+		<form action="/formbuscador">
 		<table class="table">
 			<thead>
 				<tr>

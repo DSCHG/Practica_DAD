@@ -84,24 +84,15 @@ public class ControllerServicio1 {
 	}
 	
 	@RequestMapping("/formbusqueda")
-	public String mostrarbusquedas(Model model, String search) {
-		
-		List<Producto> listaproductos = productos.findAll();
-		model.addAttribute("producto", listaproductos);
-		for (Producto u : listaproductos) {
-			System.out.println(search);
-			
-			if(search==null) {
+	public String mostrarbusquedas(Model model,@RequestParam (value= "search") String search) {
+
+			List<Producto> listaproductos = productos.findByNombre(search);
+			model.addAttribute("producto", listaproductos);
+			for (Producto u : listaproductos) {
 				model.addAttribute("id", u.getId());
 				model.addAttribute("nombre", u.getNombre());
 				model.addAttribute("precio", u.getPrecio());
 			}
-			else if(search.equals(u.getNombre())) {
-				model.addAttribute("id", u.getId());
-				model.addAttribute("nombre", u.getNombre());
-				model.addAttribute("precio", u.getPrecio());
-			}
-		}
 		return "crudbusqueda";
 	}
 
