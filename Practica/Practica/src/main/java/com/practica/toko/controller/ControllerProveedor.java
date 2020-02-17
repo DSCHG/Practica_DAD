@@ -52,4 +52,18 @@ public class ControllerProveedor {
 		}
 		return "crudproveedor";
 	}
+	
+	@RequestMapping("/formbusquedaproveedor")
+	public String mostrarbusquedas(Model model,@RequestParam (value= "search") String search) {
+
+			List<Producto> listaproductos = productos.findByNombre(search);
+			model.addAttribute("producto", listaproductos);
+			for (Producto u : listaproductos) {
+				model.addAttribute("id", u.getId());
+				model.addAttribute("nombre", u.getNombre());
+				model.addAttribute("precio", u.getPrecio());
+			}
+		return "crudbusqueda";
+	}
+	
 }

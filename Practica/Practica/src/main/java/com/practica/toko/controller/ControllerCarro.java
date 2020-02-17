@@ -1,5 +1,6 @@
 package com.practica.toko.controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,8 @@ public class ControllerCarro {
 	private UserRepository Usuarios;
 	@Autowired
 	private PedidoRepository Pedidos;
+	@Autowired
+	private ProductoRepository productos;
 	
 	private Carro carrito;
 	private Producto producto;
@@ -80,4 +83,19 @@ public class ControllerCarro {
 		
 		return "Carrito";
 	}
+	
+	@RequestMapping("/formbusquedacarro")
+	public String mostrarbusquedas(Model model,@RequestParam (value= "search") String search) {
+
+			List<Producto> listaproductos = productos.findByNombre(search);
+			model.addAttribute("producto", listaproductos);
+			for (Producto u : listaproductos) {
+				model.addAttribute("id", u.getId());
+				model.addAttribute("nombre", u.getNombre());
+				model.addAttribute("precio", u.getPrecio());
+			}
+		return "crudbusqueda";
+	}
+	
+	
 }

@@ -8,7 +8,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.practica.toko.model.Producto;
 import com.practica.toko.model.Usuario;
+import com.practica.toko.repositorios.ProductoRepository;
 import com.practica.toko.repositorios.UserRepository;
 
 @Controller
@@ -16,6 +18,9 @@ public class ControllerUsuarios {
 
 	@Autowired
 	private UserRepository usuarios;
+
+	@Autowired
+	private ProductoRepository productos;
 	
 	@RequestMapping("/form")
 	public String recogerDatosForm(Model model,@RequestParam String name,@RequestParam String email,@RequestParam String pass) {
@@ -29,5 +34,19 @@ public class ControllerUsuarios {
 			model.addAttribute("password", u.getPassword());
 		}
 		return "crud";
+	}
+	
+	
+	@RequestMapping("/formbusquedausuario")
+	public String mostrarbusquedas(Model model,@RequestParam (value= "search") String search) {
+
+			List<Producto> listaproductos = productos.findByNombre(search);
+			model.addAttribute("producto", listaproductos);
+			for (Producto u : listaproductos) {
+				model.addAttribute("id", u.getId());
+				model.addAttribute("nombre", u.getNombre());
+				model.addAttribute("precio", u.getPrecio());
+			}
+		return "crudbusqueda";
 	}
 }
