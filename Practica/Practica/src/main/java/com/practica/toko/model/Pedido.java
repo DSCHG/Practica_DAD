@@ -22,6 +22,7 @@ public class Pedido {
 	
 	// Constructores
 	public Pedido() {
+		
 	}
 	
 	public Pedido(Usuario u) {

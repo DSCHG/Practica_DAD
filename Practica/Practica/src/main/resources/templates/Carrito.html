@@ -30,7 +30,7 @@
 		</div>
 
 <div class="container" id="content_table">
-	
+	{{#haydatos}}
 	<table class="table table-hover">
 			<thead>
 				<tr>
@@ -65,7 +65,12 @@
 		<div class="row">
 		<a class="btn btn-primary mx-auto" href="/formalizarPedido">Formalizar Pedido</a>
 		</div>
-		
+		{{/haydatos}}
+		{{^haydatos}}
+			<div class="alert alert-info" role="alert">
+  				El carrito esta vacio
+			</div>
+		{{/haydatos}}
 		
 </div>
 
