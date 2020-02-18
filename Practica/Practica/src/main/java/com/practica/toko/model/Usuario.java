@@ -2,7 +2,6 @@ package com.practica.toko.model;
 
 import java.util.ArrayList;
 import java.util.List;
-import com.practica.toko.repositorios.*;
 
 import javax.persistence.*;
 
