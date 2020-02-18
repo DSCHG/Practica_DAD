@@ -37,8 +37,6 @@ public class Usuario {
 		
 		public Usuario() {
 			nombre="anonimo";
-			email="anonimo@toko.com";
-			password="";
 		}
 		
 		public Usuario(int id,String nombre, String email,String password) {

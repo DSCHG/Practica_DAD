@@ -28,7 +28,7 @@ public class Usuario {
 		@OneToMany(mappedBy = "id")
 		private List<Pedido> listaPedidos=new ArrayList<>();
 		
-		@OneToOne(cascade = CascadeType.ALL)
+		@OneToOne
 		@JoinColumn(name = "carrito")
 		private Carro carrito=new Carro();
 		
@@ -37,8 +37,6 @@ public class Usuario {
 		
 		public Usuario() {
 			nombre="anonimo";
-			email="anonimo@toko.com";
-			password="";
 		}
 		
 		public Usuario(int id,String nombre, String email,String password) {
