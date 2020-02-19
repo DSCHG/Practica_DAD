@@ -56,13 +56,22 @@ public class ControllerCarro {
 	}
 	
 	@RequestMapping("/formalizarPedido")
-	public String formalizarPedido() {
+	public String formalizarPedido(Model model) {
 		Pedido p=new Pedido();
 		p.setUsuario(user);
-		p.setProducto(user.getCarrito().getCarrito());
+		p.getProducto().addAll(user.getCarrito().getCarrito());
 		user.getListaPedidos().add(p);
-		Usuarios.save(user);
-		Pedidos.save(p);		
+		user.getCarrito().getCarrito().clear();
+		model.addAttribute("haydatos",user.getCarrito().getCarrito().size());
+		model.addAttribute("productos", user.getCarrito().getCarrito());
+		for(Producto pr : user.getCarrito().getCarrito()) {
+			model.addAttribute("id", pr.getId());
+			model.addAttribute("nombre", pr.getNombre());
+			model.addAttribute("precio", pr.getPrecio());
+			
+		}
+		//Usuarios.save(user);
+		//Pedidos.save(p);		
 		return "Carrito";
 	}
 	@RequestMapping("/borrarArticulo")
