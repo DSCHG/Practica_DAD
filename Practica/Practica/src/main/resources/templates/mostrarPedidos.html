@@ -28,61 +28,47 @@
 				</ul>
 			</div>
 		</div>
-
+		
 <div class="container" id="content_table">
 	{{#haydatos}}
 	<table class="table table-hover">
 			<thead>
 				<tr>
 					<th scope="col">#</th>
-					<th scope="col">Producto</th>
-					<th scope="col">Cantidad</th>
-					<th scope="col">Precio</th>
+					<th scope="col">precio total</th>
 					<th scope="col">Accion</th>
 				</tr>
 			</thead>
 			<tbody>
-				{{#productos}}
+				{{#pedidos}}
 				
 				<tr onclick="/">
 					<td>{{id}}</td>
-					<td>{{nombre}}</td>
-					<td> 
-						<div class="row">
-							<input type="number" class="mx-auto border-0" placeholder="1">
-						</div>
-					</td>
 					<td>{{precio}}</td>
 					<td>
 						<div class="row">
-							<a class="btn" href="/borrarArticulo?id={{id}}"> <i class="material-icons">delete</i></a>
 							<a class="btn" href="/verProducto?id={{id}}"><i class="material-icons">visibility</i></a>
 						</div>
 					</td>
 				</tr>
-				{{/productos}}
+				{{/pedidos}}
 			</tbody>
 		</table>
-		<div class="row">
-		<a class="btn btn-primary mx-auto" href="/formalizarPedido">Formalizar Pedido</a>
-		</div>
 		{{/haydatos}}
 		{{^haydatos}}
 			<div class="alert alert-info" role="alert">
-  				El carrito esta vacio
+			Todavia no tienes pedidos.
 			</div>
 		{{/haydatos}}
 		
 </div>
-
-	<div class="container-fluid bg-dark">
+		
+		
+<div class="container-fluid bg-dark">
 	<div class="row">
 		<p class="align-middle" id="footer">Creado por el equipo de desarrollo de la URJC  Formado por Darwin, Javi y Eva</p>
 	</div>
 	
 </div>
-
-	<script src="webjars/jquery/3.0.0/jquery.js"></script>
-	<script src="webjars/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </body>
 </html>
