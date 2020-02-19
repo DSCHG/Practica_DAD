@@ -74,7 +74,7 @@ public class ControllerCarro {
 			}
 		}	
 		user.getCarrito().getCarrito().remove(borrar);
-		model.addAttribute("haydatos",user.getCarrito().getCarrito().size());
+		model.addAttribute("haydatos",user.getCarrito().getCarrito().isEmpty());
 		model.addAttribute("productos", user.getCarrito().getCarrito());
 		for(Producto p : user.getCarrito().getCarrito()) {
 			model.addAttribute("id", p.getId());
