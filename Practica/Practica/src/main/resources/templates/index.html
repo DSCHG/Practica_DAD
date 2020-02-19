@@ -27,6 +27,7 @@
 					<li class="nav-item"><a class="nav-link" href="/CRUD">Crear usuarios</a></li>
 					<li class="nav-item"><a class="nav-link" href="/formproveedor">Crear proveedor</a></li>
 					<li class="nav-item"><a class="nav-link" href="/formproducto">Crea producto</a></li>
+					<li class="nav-item"><a class="nav-link" href="/verMisPedidos">Ver Pedidos</a></li>
 					<li class="nav-item"><a class="rounded float-right" href="/carro" role="button">
 						<i class="material-icons">shopping_cart</i>
 					</a></li>
@@ -53,7 +54,7 @@
 					<td>{{precio}}</td>
 						<td class="row">
 							<a class="btn" href="/addCarro?id={{id}}"> <i class="material-icons">shopping_cart</i></a>
-							<a class="btn" href="/verProducto?id=1"><i class="material-icons">visibility</i></a>
+							<a class="btn" href="/verProducto?id={{id}}"><i class="material-icons">visibility</i></a>
 						</td>
 				</tr>
 			{{/productos}}

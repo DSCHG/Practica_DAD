@@ -16,7 +16,7 @@ public class Usuario {
 
 		@Id
 		@GeneratedValue(strategy=GenerationType.AUTO)
-		int id;
+		String id;
 		@Column
 		String nombre;
 		@Column
@@ -40,7 +40,7 @@ public class Usuario {
 			password="";
 		}
 		
-		public Usuario(int id,String nombre, String email,String password) {
+		public Usuario(String id,String nombre, String email,String password) {
 			this.id = id;
 			this.nombre = nombre;
 			this.email = email;
@@ -54,7 +54,7 @@ public class Usuario {
 		}
 		
 		// Getter and Setter
-		public int getId() {
+		public String getId() {
 			return id;
 		}
 		public String getNombre() {
@@ -89,7 +89,7 @@ public class Usuario {
 			this.carrito = carrito;
 		}
 
-		public void setId(int id) {
+		public void setId(String id) {
 			this.id = id;
 		}
 

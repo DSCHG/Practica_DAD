@@ -34,6 +34,7 @@ public class ControllerServicio1 {
 	public String getVista(Model model,HttpSession session) {
 		if(session.isNew()) {
 			user=new Usuario();
+			user.setId(session.getId());
 			Carro c= new Carro();
 			user.setCarrito(c);
 		}

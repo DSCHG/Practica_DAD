@@ -97,7 +97,15 @@ public class ControllerCarro {
 	}
 	
 	@RequestMapping("/verProducto")
-	public String verProducto(@RequestParam(name = "id") String id) {
+	public String verProducto(Model model,@RequestParam(name = "id") String id) {
+		Optional<Producto> p=productos.findById(Integer.valueOf(id));
+		Producto pr;
+		if(p.isPresent()) {
+		pr=p.get();
+		model.addAttribute("id", pr.getId());
+		model.addAttribute("nombre", pr.getNombre());
+		model.addAttribute("precio", pr.getPrecio());
+		}
 		return "vistaProducto";
 	}
 	
