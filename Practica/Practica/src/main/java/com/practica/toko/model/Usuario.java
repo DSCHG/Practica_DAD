@@ -16,7 +16,7 @@ public class Usuario {
 
 		@Id
 		@GeneratedValue(strategy=GenerationType.AUTO)
-		String id;
+		int id;
 		@Column
 		String nombre;
 		@Column
@@ -24,11 +24,10 @@ public class Usuario {
 		@Column
 		String password;
 		
-		@OneToMany(mappedBy = "id")
+		@OneToMany(mappedBy = "usu",cascade = CascadeType.ALL)
 		private List<Pedido> listaPedidos=new ArrayList<>();
 		
-		@OneToOne(cascade = CascadeType.ALL)
-		@JoinColumn(name = "carrito")
+		@OneToOne
 		private Carro carrito=new Carro();
 		
 		
@@ -40,7 +39,7 @@ public class Usuario {
 			password="";
 		}
 		
-		public Usuario(String id,String nombre, String email,String password) {
+		public Usuario(int id,String nombre, String email,String password) {
 			this.id = id;
 			this.nombre = nombre;
 			this.email = email;
@@ -54,7 +53,7 @@ public class Usuario {
 		}
 		
 		// Getter and Setter
-		public String getId() {
+		public int getId() {
 			return id;
 		}
 		public String getNombre() {
@@ -89,7 +88,7 @@ public class Usuario {
 			this.carrito = carrito;
 		}
 
-		public void setId(String id) {
+		public void setId(int id) {
 			this.id = id;
 		}
 

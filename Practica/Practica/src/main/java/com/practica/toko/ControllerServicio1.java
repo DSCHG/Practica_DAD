@@ -2,8 +2,10 @@ package com.practica.toko;
 
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,8 +13,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.practica.toko.model.Producto;
-import com.practica.toko.model.Proveedor;
 import com.practica.toko.model.*;
 import com.practica.toko.repositorios.*;
 
@@ -29,12 +29,13 @@ public class ControllerServicio1 {
 	private CarroRepository carritos;
 	@Autowired
 	private UserRepository Usuarios;
+	@Autowired
+	private PedidoRepository Pedidos;
 	
 	@RequestMapping("/")
 	public String getVista(Model model,HttpSession session) {
 		if(session.isNew()) {
 			user=new Usuario();
-			user.setId(session.getId());
 			Carro c= new Carro();
 			user.setCarrito(c);
 		}
@@ -106,5 +107,25 @@ public class ControllerServicio1 {
 			}
 		return "crudbusqueda";
 	}
-
+	
+	@RequestMapping("/end")
+	public String guardar(HttpSession session) {
+		Usuario urss=new Usuario();
+		Carro c=user.getCarrito();
+		carritos.save(c);
+		urss.setCarrito(c);
+		Usuarios.save(urss);
+		while(!user.getListaPedidos().isEmpty()) {
+			Pedido aux=user.getListaPedidos().get(0);
+			user.getListaPedidos().remove(0);
+			aux.setUsuario(urss);
+			Pedidos.save(aux);
+			urss.getListaPedidos().add(aux);
+		}
+		Optional<Usuario> us=Usuarios.findById(urss.getId());
+		System.out.print(us.get().getListaPedidos().get(0));
+		
+		
+		return "index";
+	}
 }

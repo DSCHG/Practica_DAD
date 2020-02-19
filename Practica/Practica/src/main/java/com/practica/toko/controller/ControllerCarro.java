@@ -61,6 +61,7 @@ public class ControllerCarro {
 		p.setUsuario(user);
 		p.getProducto().addAll(user.getCarrito().getCarrito());
 		user.getListaPedidos().add(p);
+		//Pedidos.save(p);
 		user.getCarrito().getCarrito().clear();
 		model.addAttribute("haydatos",user.getCarrito().getCarrito().size());
 		model.addAttribute("productos", user.getCarrito().getCarrito());

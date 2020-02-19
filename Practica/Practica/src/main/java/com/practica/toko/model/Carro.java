@@ -8,7 +8,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import org.hibernate.annotations.CascadeType;
 
@@ -24,7 +26,7 @@ public class Carro {
 	@Column
 	private float coste;
 	
-	@OneToMany
+	@OneToMany(targetEntity = Producto.class,cascade = javax.persistence.CascadeType.PERSIST)
 	private List<Producto> carrito=new ArrayList<>();
 	
 	public Carro() {
@@ -49,7 +51,4 @@ public class Carro {
 	public void setCarrito(List<Producto> carrito) {
 		this.carrito = carrito;
 	}
-	
-	
-	
 }

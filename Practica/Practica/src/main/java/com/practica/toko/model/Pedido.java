@@ -13,13 +13,11 @@ public class Pedido {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	
-	@OneToMany
-	@JoinColumn(name = "id_producto")
+	@OneToMany(cascade = CascadeType.PERSIST)
 	private List<Producto> producto;
 	
 	@ManyToOne
-	@JoinColumn(name = "Usuario_id")
-	private Usuario usuario;
+	private Usuario usu;
 	
 	// Constructores
 	public Pedido() {
@@ -27,7 +25,7 @@ public class Pedido {
 	}
 	
 	public Pedido(Usuario u) {
-		this.usuario = u;
+		this.usu = u;
 	}
 	
 	public Pedido(List<Producto> id_producto) {
@@ -53,11 +51,11 @@ public class Pedido {
 	}
 
 	public Usuario getId_usuario() {
-		return usuario;
+		return usu;
 	}
 
 	public void setId_usuario(Usuario id_usuario) {
-		this.usuario = id_usuario;
+		this.usu= id_usuario;
 	}
 
 	public List<Producto> getProducto() {
@@ -69,11 +67,11 @@ public class Pedido {
 	}
 
 	public Usuario getUsuario() {
-		return usuario;
+		return usu;
 	}
 
 	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
+		this.usu= usuario;
 	}
 
 	
