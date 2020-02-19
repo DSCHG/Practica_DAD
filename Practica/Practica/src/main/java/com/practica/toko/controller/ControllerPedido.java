@@ -25,7 +25,7 @@ public class ControllerPedido {
 			}
 			model.addAttribute("precio", preciototal);
 		}
-		return "index";
+		return "mostrarPedidos";
 	}
 
 }
