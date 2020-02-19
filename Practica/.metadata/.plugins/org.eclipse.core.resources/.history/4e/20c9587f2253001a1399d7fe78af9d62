@@ -67,22 +67,25 @@ public class ControllerCarro {
 	}
 	@RequestMapping("/borrarArticulo")
 	public String borrarItem(Model model,@RequestParam(name = "id") String id) {
-		Producto borrar=new Producto();
 		for(Producto p : user.getCarrito().getCarrito()) {
 			if(p.getId() == Integer.parseInt(id)) {
-				borrar=p;
+				user.getCarrito().getCarrito().remove(p);
 			}
 		}	
-		user.getCarrito().getCarrito().remove(borrar);
-		model.addAttribute("haydatos",user.getCarrito().getCarrito().size());
-		model.addAttribute("productos", user.getCarrito().getCarrito());
-		for(Producto p : user.getCarrito().getCarrito()) {
-			model.addAttribute("id", p.getId());
-			model.addAttribute("nombre", p.getNombre());
-			model.addAttribute("precio", p.getPrecio());
-			
+		int x=0;
+		if(user.getCarrito().getCarrito().isEmpty()){
+			x=0;
+		}else {
+			x=1;
 		}
-			
+			model.addAttribute("haydatos",x);
+			model.addAttribute("productos", user.getCarrito().getCarrito());
+			for(Producto p : user.getCarrito().getCarrito()) {
+				model.addAttribute("id", p.getId());
+				model.addAttribute("nombre", p.getNombre());
+				model.addAttribute("precio", p.getPrecio());
+				
+			}
 		
 		return "Carrito";
 	}
@@ -115,14 +118,6 @@ public class ControllerCarro {
 		return "Carrito";
 	}
 	
-	public void cargarDatos(Model model) {
-		model.addAttribute("haydatos",user.getListaPedidos().size());
-		model.addAttribute("productos", user.getCarrito().getCarrito());
-		for(Producto p : user.getCarrito().getCarrito()) {
-			model.addAttribute("id", p.getId());
-			model.addAttribute("nombre", p.getNombre());
-			model.addAttribute("precio", p.getPrecio());	
-		}
-	}
+	
 		
 }
