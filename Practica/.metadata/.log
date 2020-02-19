@@ -4841,3 +4841,57 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-16 16:24:53.064
 !MESSAGE executing callback sts4.classpath.aVwNmgqN SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-19 14:58:17.666
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-19 14:58:17.667
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@48f38bb5[org.springframework.tooling.boot.ls:1.15.0.202001210741(id=631)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-19 14:58:17.668
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-19 14:58:20.361
+!MESSAGE Boot LS startup time from start to initialized: 2692ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-19 14:58:20.404
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.wZJWsfKJisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-19 14:58:20.405
+!MESSAGE subscribing to classpath changes: sts4.classpath.wZJWsfKJ isBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-19 14:58:20.406
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-19 14:58:20.406
+!MESSAGE subsribers = {sts4.classpath.wZJWsfKJ=Send Classpath Notifications(248)}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-19 14:58:20.407
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-19 14:58:20.407
+!MESSAGE project Practica ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-19 14:58:20.408
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-19 14:58:20.408
+!MESSAGE Preparing classpath changed notification Practica
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-19 14:58:20.408
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.wZJWsfKJ => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-19 14:58:20.409
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-19 14:58:20.416
+!MESSAGE classpath=124 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-19 14:58:20.422
+!MESSAGE buffering callback sts4.classpath.wZJWsfKJ Practica false 124
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-19 14:58:20.423
+!MESSAGE executing callback sts4.classpath.wZJWsfKJ 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-19 14:58:20.495
+!MESSAGE executing callback sts4.classpath.wZJWsfKJ SUCCESS [done]

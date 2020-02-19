@@ -37,21 +37,8 @@ public class ControllerCarro {
 	private Producto producto;
 
 	@RequestMapping("/carro")
-	public String mostrarCarro(Model model) {
-		int producto=0;
-		if(user.getCarrito().getCarrito().isEmpty()){
-			producto=0;
-		}else {
-			producto=1;
-		}
-		model.addAttribute("haydatos",producto );
-		model.addAttribute("productos", user.getCarrito().getCarrito());
-		for(Producto p : user.getCarrito().getCarrito()) {
-			model.addAttribute("id", p.getId());
-			model.addAttribute("nombre", p.getNombre());
-			model.addAttribute("precio", p.getPrecio());
-			
-		}
+	public String mostrarCarro(Model model) {	
+		System.out.println(user.getNombre());
 		return "Carrito";
 	}
 	

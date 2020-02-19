@@ -61,7 +61,7 @@
 		</form>
 	</div>
 
-	<div class="container-fluid bg-dark">
+	<div class="container-fluid bg-dark fixed-bottom">
 	<div class="row">
 		<p class="align-middle" id="footer">Creado por el equipo de desarrollo de la URJC  Formado por Darwin, Javi y Eva</p>
 	</div>

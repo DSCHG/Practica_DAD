@@ -5,10 +5,9 @@
 <link rel="stylesheet" href="/css/style.css" type="text/css">
 <link rel="stylesheet" href="webjars/bootstrap/4.4.1/css/bootstrap.min.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<title>Creacion de usuarios</title>
+<title>Creacion de proveedores</title>
 </head>
 <body>
-
 <div class="container-fluid bg-dark fixed-top">
 			<div id="logo">
 				<a href="/"><img src="/img/logo.jpg" class="img-fluid rounded-pill" alt="Responsive image"></a>
@@ -33,22 +32,24 @@
 			</div>
 </div>
 	<div class="container" id="content_table">
-		<form action="/form">
+		<form action="/datosform">
 			<div class="form-group">
 				<label for="nombre">Nombre</label> <input type="text"
 					class="form-control" name="name" id="nombre"
 					aria-describedby="nombreHelp" placeholder="Escriba su nombre">
 			</div>
 			<div class="form-group">
-				<label for="email">Email address</label> <input type="email"
-					class="form-control" name="email" id="email"
-					aria-describedby="emailHelp" placeholder="Introduzca su email">
+				<label for="producto">Producto</label> <input type="text"
+					class="form-control" name="producto" id="producto"
+					aria-describedby="productohelp" placeholder="Introduzca producto">
 			</div>
 			<div class="form-group">
-				<label for="pass">Contraseña</label> <input type="password"
-					class="form-control" name="pass" id="pass" placeholder="Contraseña">
+				<label for="producto">Precio</label> <input type="text"
+					class="form-control" name="Precio" id="Precio"
+					aria-describedby="preciohelp" placeholder="Introduzca Precio">
 			</div>
 			<button type="submit" class="btn btn-primary">Enviar</button>
+			
 		</form>
 	</div>
 
@@ -58,24 +59,22 @@
 				<tr>
 					<th scope="col">#</th>
 					<th scope="col">Nombre</th>
-					<th scope="col">Email</th>
-					<th scope="col">Password</th>
+					<th scope="col">Producto</th>
 				</tr>
 			</thead>
 			<tbody>
-			{{#users}}
+			{{#proveedor}}
 				<tr>
 					<td>{{id}}</td>
 					<td>{{nombre}}</td>
-					<td>{{email}}</td>
-					<td>{{password}}</td>
+					<td>{{producto}}</td>
 				</tr>
-			{{/users}}
+			{{/proveedor}}
 			</tbody>
 		</table>
 	</div>
 
-	<div class="container-fluid bg-dark">
+	<div class="container-fluid bg-dark fixed-bottom">
 	<div class="row">
 		<p class="align-middle" id="footer">Creado por el equipo de desarrollo de la URJC  Formado por Darwin, Javi y Eva</p>
 	</div>
