@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import org.hibernate.annotations.CascadeType;
 
@@ -24,11 +25,15 @@ public class Carro {
 	@Column
 	private float coste;
 	
+	// relacion uno a uno con usuario bidireccional
+	@OneToOne(mappedBy = "carrito")
+	private Usuario usuario;
+	
 	@OneToMany
-	private List<Producto> carrito=new ArrayList<>();
+	private List<Producto> listaProductos;
 	
 	public Carro() {
-		carrito = new ArrayList<>();
+		listaProductos = new ArrayList<>();
 	}
 	
 	public int getId() {
@@ -43,12 +48,23 @@ public class Carro {
 	public void setCoste(float coste) {
 		this.coste = coste;
 	}
-	public List<Producto> getCarrito() {
-		return carrito;
+
+	public Usuario getUsuario() {
+		return usuario;
 	}
-	public void setCarrito(List<Producto> carrito) {
-		this.carrito = carrito;
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
+
+	public List<Producto> getListaProductos() {
+		return listaProductos;
+	}
+
+	public void setListaProductos(List<Producto> listaProductos) {
+		this.listaProductos = listaProductos;
+	}
+	
 	
 	
 	

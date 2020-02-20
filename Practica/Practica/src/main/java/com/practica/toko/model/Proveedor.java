@@ -14,9 +14,9 @@ public class Proveedor {
 	@Column
 	String nombre;
 
-	
+	// realacion uno a muchos con proveedor bidireccional
 	@OneToMany(mappedBy = "proveedor")
-	private List <Producto> listaProductos=new ArrayList<Producto>();
+	private List <Producto> listaProductos;
 	
 	public Proveedor () {
 		listaProductos=new ArrayList<Producto>();

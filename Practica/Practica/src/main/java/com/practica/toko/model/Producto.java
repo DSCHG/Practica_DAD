@@ -16,8 +16,10 @@ public class Producto {
 		private double precio;
 		
 		@ManyToOne
-		Proveedor proveedor;
+		private Proveedor proveedor;
 		
+		@ManyToOne
+		private Pedido pedido;
 		
 		public Producto () {
 			

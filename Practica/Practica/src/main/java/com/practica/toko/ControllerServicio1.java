@@ -3,6 +3,7 @@ package com.practica.toko;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +12,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.practica.toko.model.Producto;
-import com.practica.toko.model.Proveedor;
 import com.practica.toko.model.*;
 import com.practica.toko.repositorios.*;
 
@@ -20,25 +19,34 @@ import com.practica.toko.repositorios.*;
 public class ControllerServicio1 {
 	
 	@Autowired
-	private Usuario user;
-	@Autowired
 	private ProductoRepository productos;
 	@Autowired
 	private ProveedorRepository proveedores;
 	@Autowired
-	private CarroRepository carritos;
-	@Autowired
 	private UserRepository Usuarios;
+	
+	private Usuario user;
+	private Carro carrito;
+	private Pedido pedido;
 	
 	@RequestMapping("/")
 	public String getVista(Model model,HttpSession session) {
-		if(session.isNew()) {
-			user=new Usuario();
-			user.setId(session.getId());
-			Carro c= new Carro();
-			user.setCarrito(c);
+	
+		user = (Usuario) session.getAttribute("usuario");
+		if(user == null) {
+			user = new Usuario();
+			carrito = new Carro();
+			pedido = new Pedido();
+			
+			user.setCarrito(carrito);
+			user.getListaPedidos().add(pedido);
+			
+			Usuarios.save(user);
+			
+			session.setAttribute("usuario", user);			
+			
 		}
-		model.addAttribute("nombre", "TOKO");
+		
 		List<Producto> prod=productos.findAll();
 		for(Producto p:prod) {
 			model.addAttribute("productos", prod);
@@ -47,6 +55,7 @@ public class ControllerServicio1 {
 			model.addAttribute("precio",p.getPrecio());
 			model.addAttribute("opciones", "?");
 		}
+		
 		return "index";
 	}
 
