@@ -52,7 +52,7 @@ public class ControllerPedido {
 			model.addAttribute("precio",pro.getPrecio());
 			preciototal += pro.getPrecio();
 		}
-		model.addAttribute("precioTotal", preciototal);
+		
 	
 		return "InfoPedido";
 	}
