@@ -29,6 +29,10 @@ public class Usuario {
 		@OneToMany(cascade = CascadeType.ALL)
 		private List<Pedido> listaPedidos;
 		
+		// relacion uno a uno con los carrito bidireccional
+		@OneToOne(cascade = CascadeType.ALL)
+		private Carro carrito;
+		
 		
 		//constructor
 		
@@ -77,6 +81,13 @@ public class Usuario {
 			this.listaPedidos = listaPedidos;
 		}
 
+		public Carro getCarrito() {
+			return carrito;
+		}
+
+		public void setCarrito(Carro carrito) {
+			this.carrito = carrito;
+		}
 
 		public void setId(int id) {
 			this.id = id;

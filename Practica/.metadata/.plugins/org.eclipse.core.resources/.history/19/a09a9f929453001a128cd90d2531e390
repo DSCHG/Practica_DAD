@@ -123,9 +123,11 @@ public class ControllerServicio1 {
 		if(user != null) {			
 			Usuarios.delete(user);
 			user=Usuarios.save(user);
-			
 			session.setAttribute("usuario", user);	
 		
+		Optional<Usuario> us=Usuarios.findById(user.getId());
+		System.out.print(us.get().getListaPedidos().get(0));
+		}
 		
 		return "index";
 	}

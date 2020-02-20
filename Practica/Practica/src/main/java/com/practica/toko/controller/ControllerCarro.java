@@ -37,22 +37,20 @@ public class ControllerCarro {
 	
 	private Producto producto;
 	private Usuario user;
-	private Carro carrito;
 
 	@RequestMapping("/carro")
 	public String mostrarCarro(Model model,HttpSession session) {
 		user = (Usuario) session.getAttribute("usuario");
-		carrito = (Carro) session.getAttribute("carrito");
-		if(user != null && carrito != null) {
+		if(user != null) {
 			int producto=0;
-			if(carrito.getListaProductos().isEmpty()){
+			if(user.getCarrito().getListaProductos().isEmpty()){
 				producto=0;
 			}else {
 				producto=1;
 			}
 			model.addAttribute("haydatos",producto );
-			model.addAttribute("productos", carrito.getListaProductos());
-			for(Producto p : carrito.getListaProductos()) {
+			model.addAttribute("productos", user.getCarrito().getListaProductos());
+			for(Producto p : user.getCarrito().getListaProductos()) {
 				model.addAttribute("id", p.getId());
 				model.addAttribute("nombre", p.getNombre());
 				model.addAttribute("precio", p.getPrecio());
@@ -92,18 +90,17 @@ public class ControllerCarro {
 	@RequestMapping("/borrarArticulo")
 	public String borrarItem(Model model,@RequestParam(name = "id") String id,HttpSession session) {
 		user = (Usuario) session.getAttribute("usuario");
-		carrito = (Carro) session.getAttribute("carrito");
-		if(user != null && carrito != null) {
+		if(user != null) {
 			Producto borrar=new Producto();
-			for(Producto p : carrito.getListaProductos()) {
+			for(Producto p : user.getCarrito().getListaProductos()) {
 				if(p.getId() == Integer.parseInt(id)) {
 					borrar=p;
 				}
 			}	
-			carrito.getListaProductos().remove(borrar);
-			model.addAttribute("haydatos",carrito.getListaProductos().size());
-			model.addAttribute("productos", carrito.getListaProductos());
-			for(Producto p : carrito.getListaProductos()) {
+			user.getCarrito().getListaProductos().remove(borrar);
+			model.addAttribute("haydatos",user.getCarrito().getListaProductos().size());
+			model.addAttribute("productos", user.getCarrito().getListaProductos());
+			for(Producto p : user.getCarrito().getListaProductos()) {
 				model.addAttribute("id", p.getId());
 				model.addAttribute("nombre", p.getNombre());
 				model.addAttribute("precio", p.getPrecio());
@@ -135,12 +132,11 @@ public class ControllerCarro {
 	@RequestMapping("/addCarro")
 	public String addProducto(Model model,@RequestParam(name = "id") String id,HttpSession session) {	
 		user = (Usuario) session.getAttribute("usuario");
-		carrito = (Carro) session.getAttribute("carrito");
-		if(user != null && carrito != null) {
+		if(user != null) {
 			producto = productodao.findById(Integer.parseInt(id)).get();
-			carrito.getListaProductos().add(producto);
+			user.getCarrito().getListaProductos().add(producto);
 			int x=0;
-			if(carrito.getListaProductos().isEmpty()){
+			if(user.getCarrito().getListaProductos().isEmpty()){
 				x=0;
 			}else {
 				x=1;
@@ -148,8 +144,8 @@ public class ControllerCarro {
 			
 			//Usuarios.save(user);
 			model.addAttribute("haydatos",x );
-			model.addAttribute("productos", carrito.getListaProductos());
-			for(Producto p : carrito.getListaProductos()) {
+			model.addAttribute("productos", user.getCarrito().getListaProductos());
+			for(Producto p : user.getCarrito().getListaProductos()) {
 				model.addAttribute("id", p.getId());
 				model.addAttribute("nombre", p.getNombre());
 				model.addAttribute("precio", p.getPrecio());

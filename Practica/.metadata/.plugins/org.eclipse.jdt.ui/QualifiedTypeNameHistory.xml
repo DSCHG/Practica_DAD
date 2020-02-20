@@ -8,4 +8,5 @@
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
 <fullyQualifiedTypeName name="org.hibernate.annotations.CascadeType"/>
 <fullyQualifiedTypeName name="javax.persistence.CascadeType"/>
+<fullyQualifiedTypeName name="com.practica.toko.model.Carro"/>
 </qualifiedTypeNameHistroy>

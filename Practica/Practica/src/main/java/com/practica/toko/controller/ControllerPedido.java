@@ -28,8 +28,8 @@ public class ControllerPedido {
 			for(Producto pro : p.getProducto()) {
 				preciototal += pro.getPrecio();
 			}
-			p.setPrecioTotal(preciototal);
-			model.addAttribute("precio", p.getPrecioTotal());
+			p.setPrecio(preciototal);
+			model.addAttribute("precio", p.getPrecio());
 		}
 		session.setAttribute("usuario", user);	
 		return "mostrarPedidos";
@@ -52,7 +52,7 @@ public class ControllerPedido {
 			model.addAttribute("precio",pro.getPrecio());
 			preciototal += pro.getPrecio();
 		}
-		
+		model.addAttribute("precioTotal", preciototal);
 	
 		return "InfoPedido";
 	}
