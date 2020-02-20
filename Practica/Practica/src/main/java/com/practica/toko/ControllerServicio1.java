@@ -2,9 +2,11 @@ package com.practica.toko;
 
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,6 +26,8 @@ public class ControllerServicio1 {
 	private ProveedorRepository proveedores;
 	@Autowired
 	private UserRepository Usuarios;
+	@Autowired
+	private PedidoRepository Pedidos;
 	
 	private Usuario user;
 	private Carro carrito;
@@ -115,5 +119,25 @@ public class ControllerServicio1 {
 			}
 		return "crudbusqueda";
 	}
-
+	
+	@RequestMapping("/end")
+	public String guardar(HttpSession session) {
+		Usuario urss=new Usuario();
+		Carro c=user.getCarrito();
+		carritos.save(c);
+		urss.setCarrito(c);
+		Usuarios.save(urss);
+		while(!user.getListaPedidos().isEmpty()) {
+			Pedido aux=user.getListaPedidos().get(0);
+			user.getListaPedidos().remove(0);
+			aux.setUsuario(urss);
+			Pedidos.save(aux);
+			urss.getListaPedidos().add(aux);
+		}
+		Optional<Usuario> us=Usuarios.findById(urss.getId());
+		System.out.print(us.get().getListaPedidos().get(0));
+		
+		
+		return "index";
+	}
 }
