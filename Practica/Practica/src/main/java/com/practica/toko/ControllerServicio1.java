@@ -28,6 +28,8 @@ public class ControllerServicio1 {
 	private UserRepository Usuarios;
 	@Autowired
 	private PedidoRepository Pedidos;
+	@Autowired
+	private CarroRepository carro;
 	
 	private Usuario user;
 	private Carro carrito;
@@ -37,7 +39,8 @@ public class ControllerServicio1 {
 	public String getVista(Model model,HttpSession session) {
 	
 		user = (Usuario) session.getAttribute("usuario");
-		if(user == null) {
+		carrito = (Carro) session.getAttribute("carrito");
+		if(user == null && carrito == null) {
 			user = new Usuario();
 			carrito = new Carro();
 			user.setCarrito(carrito);
@@ -117,7 +120,7 @@ public class ControllerServicio1 {
 		return "crudbusqueda";
 	}
 	
-	@RequestMapping("/end")
+	/*@RequestMapping("/end")
 	public String guardar(HttpSession session) {
 		user = (Usuario) session.getAttribute("usuario");
 		Usuarios.save(user);
@@ -126,5 +129,5 @@ public class ControllerServicio1 {
 		
 		
 		return "index";
-	}
+	}*/
 }

@@ -28,8 +28,8 @@ public class ControllerPedido {
 			for(Producto pro : p.getProducto()) {
 				preciototal += pro.getPrecio();
 			}
-			model.addAttribute("precio", preciototal);
 		}
+		
 		return "mostrarPedidos";
 	}
 	@RequestMapping("/InfoPedido")
@@ -50,7 +50,7 @@ public class ControllerPedido {
 			model.addAttribute("precio",pro.getPrecio());
 			preciototal += pro.getPrecio();
 		}
-		model.addAttribute("precioTotal", preciototal);
+		
 	
 		return "InfoPedido";
 	}

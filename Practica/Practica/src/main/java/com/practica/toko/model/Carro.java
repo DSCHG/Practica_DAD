@@ -26,10 +26,6 @@ public class Carro {
 	@Column
 	private float coste;
 	
-	// relacion uno a uno con usuario bidireccional
-	@OneToOne(mappedBy = "carrito")
-	private Usuario usuario;
-	
 	@OneToMany
 	private List<Producto> listaProductos;
 	
@@ -48,14 +44,6 @@ public class Carro {
 	}
 	public void setCoste(float coste) {
 		this.coste = coste;
-	}
-
-	public Usuario getUsuario() {
-		return usuario;
-	}
-
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
 	}
 
 	public List<Producto> getListaProductos() {
