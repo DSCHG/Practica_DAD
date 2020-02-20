@@ -15,7 +15,7 @@ la compra si hay stock o debera esperar a que la empresa reciba el producto, per
 
 ## Esquema E/R.
 
-![Toko](umldad.PNG "uml") 
+![Toko](umldad2.PNG "uml") 
 
 ## Descripción del servicio interno.
 
