@@ -40,12 +40,9 @@ public class ControllerServicio1 {
 		if(user == null) {
 			user = new Usuario();
 			carrito = new Carro();
-			pedido = new Pedido();
-			
 			user.setCarrito(carrito);
-			user.getListaPedidos().add(pedido);
+			user=Usuarios.save(user);
 			
-			Usuarios.save(user);
 			
 			session.setAttribute("usuario", user);			
 			
@@ -122,19 +119,9 @@ public class ControllerServicio1 {
 	
 	@RequestMapping("/end")
 	public String guardar(HttpSession session) {
-		Usuario urss=new Usuario();
-		Carro c=user.getCarrito();
-		carritos.save(c);
-		urss.setCarrito(c);
-		Usuarios.save(urss);
-		while(!user.getListaPedidos().isEmpty()) {
-			Pedido aux=user.getListaPedidos().get(0);
-			user.getListaPedidos().remove(0);
-			aux.setUsuario(urss);
-			Pedidos.save(aux);
-			urss.getListaPedidos().add(aux);
-		}
-		Optional<Usuario> us=Usuarios.findById(urss.getId());
+		user = (Usuario) session.getAttribute("usuario");
+		Usuarios.save(user);
+		Optional<Usuario> us=Usuarios.findById(user.getId());
 		System.out.print(us.get().getListaPedidos().get(0));
 		
 		

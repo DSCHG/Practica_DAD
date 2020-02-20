@@ -1,5 +1,7 @@
 package com.practica.toko.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,18 +14,17 @@ import com.practica.toko.model.*;
 @Controller
 public class ControllerPedido {
 	
-	@Autowired
 	private Usuario user;
 	
 	@RequestMapping("/verMisPedidos")
-	public String mostrarPedidos(Model model) {
+	public String mostrarPedidos(Model model,HttpSession session) {
+		user = (Usuario) session.getAttribute("usuario");
 		double preciototal = 0.0;
 		int cont=0;
 		model.addAttribute("haydatos", user.getListaPedidos().size());
 		model.addAttribute("pedidos", user.getListaPedidos());
 		for(Pedido p : user.getListaPedidos()) {
-			model.addAttribute("id", cont);
-			cont++;
+			model.addAttribute("id", p.getId());
 			for(Producto pro : p.getProducto()) {
 				preciototal += pro.getPrecio();
 			}
@@ -32,9 +33,15 @@ public class ControllerPedido {
 		return "mostrarPedidos";
 	}
 	@RequestMapping("/InfoPedido")
-	public String mostrarPedido(Model model,@RequestParam (value= "id") int id) {
+	public String mostrarPedido(Model model,@RequestParam (value= "id") int id,HttpSession session) {
+		
 		double preciototal=0;
-		Pedido pedido=user.getListaPedidos().get(id);
+		Pedido pedido=new Pedido();
+		for(Pedido p:user.getListaPedidos()) {
+			if(p.getId()==id) {
+				pedido=p;
+			}
+		}
 		model.addAttribute("haydatos", pedido.getId_producto().size()-1);
 		model.addAttribute("productos", pedido.getProducto());
 		for(Producto pro : pedido.getProducto()) {

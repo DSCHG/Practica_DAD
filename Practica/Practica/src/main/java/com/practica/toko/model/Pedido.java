@@ -14,7 +14,7 @@ public class Pedido {
 	private int id;
 	
 	// realacion uno a muchos con productos unidirecional
-	@OneToMany(mappedBy = "pedido")
+	@OneToMany
 	private List<Producto> producto;
 	
 	// Constructores

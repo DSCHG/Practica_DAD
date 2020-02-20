@@ -18,9 +18,6 @@ public class Producto {
 		@ManyToOne
 		private Proveedor proveedor;
 		
-		@ManyToOne
-		private Pedido pedido;
-		
 		public Producto () {
 			
 		}

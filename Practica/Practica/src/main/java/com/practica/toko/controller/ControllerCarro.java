@@ -66,11 +66,15 @@ public class ControllerCarro {
 		
 		user = (Usuario) session.getAttribute("usuario");
 		if(user != null) {			
-			Pedido p = user.getListaPedidos().get(0);
+			Pedido p = new Pedido();
 			p.getProducto().addAll(user.getCarrito().getListaProductos());	
-			Usuarios.save(user);
 			user.getCarrito().getListaProductos().clear();
+			user.getListaPedidos().add(p);
+			System.out.println(user.getId());
+			Usuarios.delete(user);
+			user=Usuarios.save(user);
 			
+			session.setAttribute("usuario", user);	
 			
 			model.addAttribute("haydatos",user.getCarrito().getListaProductos().size());
 			model.addAttribute("productos", user.getCarrito().getListaProductos());
@@ -103,7 +107,7 @@ public class ControllerCarro {
 				
 			}
 		}
-		
+		session.setAttribute("usuario", user);	
 			
 		
 		return "Carrito";
