@@ -32,11 +32,14 @@ Nombre y Apellidos | e-mail | GitHub
 ### Trello
 https://trello.com/b/QmLREBu5/practica-dad
 
+## Diagrama vistas
+
+![Toko](diagramavistas.PNG "uml")
+
 
 ## Descripción de las vistas
 
 - Común a todas las vistas:
-
 En todas las vistas se ve una barra de navegación arriba la cual está compuesta por una serie de botones y un buscador con su botón asociado.
 Se ve el logotipo de la empresa (toko), el cual te lleva al index al pulsarlo desde cualquier página.
 En orden de izquierda a derecha se ven los botones, y la vista a la que te llevan: Inicio(index), Contacto(contacto), crear usuario(crud), crear proveedor(crudproveedor), crear producto(crudproducto), un icono de un carrito(carrito).  y el botón de búsqueda(crudbusqueda). 
@@ -47,7 +50,6 @@ Posee un botón para poder formalizar el pedido y que este sea almacenado en la 
 El carrito esta diseñado para poder introducir articulos de la base de datos en el mismo para luego poder comprarlo mas adelante.
 
 - InfoPedido:
-
 Te muestra la información relativa al pedido
 
 
@@ -75,15 +77,14 @@ Tiene un botón para terminar la navegación por la aplicación.
 Es la pagina principal donde se ven al iniciar la lista de los productos incluidos en la base de datos. 
 
 - mostrarPedidos:
-
 Te muestra los pedidos que han sido realizados
 
 
-- vistaProducto:
+- vistaProducto: 
 Muestra el producto que se haya seleccionado previamente y el precio del mismo.
 
 
-##Capturas.
+## Capturas.
 
 ![Toko](busqueda.PNG "uml")
 ![Toko](carrito.PNG "uml")
