@@ -126,7 +126,7 @@ public class ControllerServicio1 {
 			
 			session.setAttribute("usuario", user);	
 		
-		}
+		
 		return "index";
 	}
 }

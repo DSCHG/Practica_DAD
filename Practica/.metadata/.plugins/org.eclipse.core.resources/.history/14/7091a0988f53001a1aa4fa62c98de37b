@@ -50,14 +50,13 @@ public class Pedido {
 		this.producto = id_producto;
 	}
 
-	
-	public double getPrecioTotal() {
-		return precioTotal;
+	/*public Usuario getId_usuario() {
+		return usuario;
 	}
 
-	public void setPrecioTotal(double precioTotal) {
-		this.precioTotal = precioTotal;
-	}
+	public void setId_usuario(Usuario id_usuario) {
+		this.usuario = id_usuario;
+	}*/
 
 	public List<Producto> getProducto() {
 		return producto;
@@ -67,7 +66,13 @@ public class Pedido {
 		this.producto = producto;
 	}
 
-	
+	/*public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}*/
 
 	
 	

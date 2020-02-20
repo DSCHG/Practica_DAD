@@ -31,7 +31,6 @@ public class ControllerPedido {
 			p.setPrecioTotal(preciototal);
 			model.addAttribute("precio", p.getPrecioTotal());
 		}
-		session.setAttribute("usuario", user);	
 		return "mostrarPedidos";
 	}
 	@RequestMapping("/InfoPedido")

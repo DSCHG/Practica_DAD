@@ -120,13 +120,11 @@ public class ControllerServicio1 {
 	@RequestMapping("/end")
 	public String guardar(HttpSession session) {
 		user = (Usuario) session.getAttribute("usuario");
-		if(user != null) {			
-			Usuarios.delete(user);
-			user=Usuarios.save(user);
-			
-			session.setAttribute("usuario", user);	
+		Usuarios.save(user);
+		Optional<Usuario> us=Usuarios.findById(user.getId());
+		System.out.print(us.get().getListaPedidos().get(0));
 		
-		}
+		
 		return "index";
 	}
 }
