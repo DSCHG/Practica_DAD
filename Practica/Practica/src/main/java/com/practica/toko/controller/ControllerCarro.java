@@ -68,10 +68,11 @@ public class ControllerCarro {
 		if(user != null) {			
 			Pedido p = new Pedido();
 			p.getProducto().addAll(user.getCarrito().getListaProductos());	
-			user.getCarrito().getListaProductos().clear();
+			carrodao.deleteById(user.getCarrito().getId());
+			user.setCarrito(new Carro());
 			user.getListaPedidos().add(p);
 			System.out.println(user.getId());
-			Usuarios.delete(user);
+			//Usuarios.delete(user);
 			user=Usuarios.save(user);
 			
 			session.setAttribute("usuario", user);	
@@ -107,6 +108,7 @@ public class ControllerCarro {
 				
 			}
 		}
+		//Usuarios.save(user);
 		session.setAttribute("usuario", user);	
 			
 		

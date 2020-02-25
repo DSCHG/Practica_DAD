@@ -121,7 +121,7 @@ public class ControllerServicio1 {
 	public String guardar(HttpSession session) {
 		user = (Usuario) session.getAttribute("usuario");
 		if(user != null) {			
-			Usuarios.delete(user);
+			//Usuarios.delete(user);
 			user=Usuarios.save(user);
 			session.setAttribute("usuario", user);	
 		}
