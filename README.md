@@ -13,9 +13,9 @@ la compra si hay stock o debera esperar a que la empresa reciba el producto, per
 - Proveedor(público): Productos que se tienen o tendran de un distribuidor determinado.
 - Producto(público): Objetos disponibles para su compra y el stock de los mismos
 
-## Esquema E/R.
+## Esquema Clases.
 
-![Toko](umldad.PNG "uml") 
+![Toko](umldad2.png "uml") 
 
 ## Descripción del servicio interno.
 
@@ -83,13 +83,32 @@ Te muestra los pedidos que han sido realizados
 - vistaProducto: 
 Muestra el producto que se haya seleccionado previamente y el precio del mismo.
 
+## Modelo de controladores
+
+![Toko](controlleruml.png "uml")
+
+## Modelo E/R
+
+![Toko](e-r.png "uml")
 
 ## Capturas.
 
+- Busqueda de productos
 ![Toko](busqueda.PNG "uml")
+- Carro 
 ![Toko](carrito.PNG "uml")
-![Toko](contacto.PNG "uml")
+- Indice
 ![Toko](index.PNG "uml")
+- Proveedor
 ![Toko](proveedor.PNG "uml")
+- Producto
 ![Toko](producto1.PNG "uml")
 ![Toko](producto2.PNG "uml")
+- Ver producto
+![Toko](verproducto.PNG "uml")
+- Ver pedido
+![Toko](verpedido.PNG "uml")
+- Ver informacíon del pedido
+![Toko](verinfopedido.PNG "uml")
+-Contacto
+![Toko](contacto.PNG "uml")
