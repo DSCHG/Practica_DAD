@@ -19,13 +19,14 @@ public class ControllerUsuarios {
 	private UserRepository usuarios;
 	
 	@RequestMapping("/form")
-	public String recogerDatosForm(Model model,@RequestParam String name,@RequestParam String email,@RequestParam String pass,HttpSession session) {
+	public String recogerDatosForm(Model model,@RequestParam String name,@RequestParam String email,@RequestParam String pass,@RequestParam String tipo,HttpSession session) {
 							
 		Usuario usuario = (Usuario) session.getAttribute("usuario");
 		if(usuario != null) {
 			usuario.setNombre(name);
 			usuario.setEmail(email);
 			usuario.setPassword(pass);
+			//usuario.setRoles(tipo);
 			usuarios.save(usuario);
 			List<Usuario> listaUsers = usuarios.findAll();
 			for (Usuario u : listaUsers) {
@@ -35,9 +36,11 @@ public class ControllerUsuarios {
 					model.addAttribute("name", u.getNombre());
 					model.addAttribute("email", u.getEmail());
 					model.addAttribute("password", u.getPassword());
+					//model.addAttribute("rol",  u.getRoles());
 				}else {
 					model.addAttribute("users", listaUsers);
 					model.addAttribute("id", u.getId());
+					//model.addAttribute("rol", "Usuario");
 				}
 				/*System.out.println(u.getNombre());
 				model.addAttribute("users", listaUsers);

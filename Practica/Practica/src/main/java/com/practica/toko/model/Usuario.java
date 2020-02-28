@@ -1,12 +1,15 @@
 package com.practica.toko.model;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.persistence.*;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.SessionScope;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Component
@@ -33,6 +36,12 @@ public class Usuario {
 		@OneToOne(cascade = CascadeType.ALL)
 		private Carro carrito;
 		
+
+		@JsonIgnore
+		private String passwordHash;
+		
+		@ElementCollection (fetch =FetchType.EAGER)
+		private List<String> roles;
 		
 		//constructor
 		
@@ -40,17 +49,19 @@ public class Usuario {
 			listaPedidos = new ArrayList<>();
 		}
 		
-		public Usuario(int id,String nombre, String email,String password) {
+		public Usuario(int id,String nombre, String email,String password, String...roles) {
 			this.id = id;
 			this.nombre = nombre;
 			this.email = email;
-			this.password = password;
+			this.passwordHash = password;
+			this.roles = new ArrayList<> (Arrays.asList(roles));
 		}
 		
-		public Usuario(String nombre, String email,String password) {
+		public Usuario(String nombre, String email,String password, String...roles) {
 			this.nombre = nombre;
 			this.email = email;
-			this.password = password;
+			this.passwordHash = password;
+			this.roles = new ArrayList<> (Arrays.asList(roles));
 		}
 		
 		// Getter and Setter
@@ -67,10 +78,18 @@ public class Usuario {
 			return email;
 		}
 		public String getPassword() {
-			return password;
+			return passwordHash;
 		}
 		public void setPassword(String password) {
-			this.password = password;
+			this.passwordHash = password;
+		}
+
+		public List<String> getRoles() {
+			return roles;
+		}
+
+		public void setRoles(List<String> roles) {
+			this.roles = roles;
 		}
 
 		public List<Pedido> getListaPedidos() {
