@@ -27,6 +27,7 @@ public class ControllerPedido {
 			}
 			p.setPrecio(preciototal);
 			model.addAttribute("precio", p.getPrecio());
+			preciototal=0;
 		}
 		session.setAttribute("usuario", user);	
 		return "mostrarPedidos";
