@@ -1,0 +1,33 @@
+@charset "ISO-8859-1";
+
+#hola{
+	background-color: lightgrey;
+}
+
+#btn_sub{
+	width: 40px;
+	height: 40px;
+}
+
+#btn_add{
+	width: 40px;
+	height: 40px;
+}
+#btn_num{
+	width: 20px;
+	height: 40px;
+}
+
+#cabecera{
+	background-color: gray;
+}
+#content_table{
+	margin-top: 15rem;
+}
+
+#footer{
+	color: white;
+}
+#content_producto{
+	margin-top:10rem;
+}

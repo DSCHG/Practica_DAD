@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="/css/style.css" type="text/css">
+<link rel="stylesheet" href="webjars/bootstrap/4.4.1/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<title>Busqueda de productos </title>
+</head>
+<body>
+<div class="container-fluid bg-dark fixed-top">
+			<div id="logo">
+				<a href="/"><img src="/img/logo.jpg" class="img-fluid rounded-pill" alt="Responsive image"></a>
+			</div>
+			<form class="form-inline float-right"  action="/formbusqueda">
+    			<input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="search"
+    			 name="search" id="search">
+    			<button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="material-icons align-middle">search</i></button>
+  			
+    			</form>
+			<div class="row">
+				<ul class="nav navbar-dark bg-dark">
+					<li class="nav-item"><a class="nav-link active" href="/">Inicio</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="/contacto">Contactos</a></li>
+					<li class="nav-item"><a class="nav-link" href="/CRUD">Crear usuarios</a></li>
+					<li class="nav-item"><a class="nav-link" href="/formproveedor">Crear proveedor</a></li>
+					<li class="nav-item"><a class="nav-link" href="/formproducto">Crea producto</a></li>
+					<li class="nav-item"><a class="rounded float-right" href="/carro" role="button">
+						<i class="material-icons">shopping_cart</i>
+					</a></li>
+				</ul>
+			</div>
+</div>
+
+	
+	<div class="container" id="content_table">
+		<form action="/formbuscador">
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Nombre</th>
+					<th scope="col">Precio</th>
+				</tr>
+			</thead>
+			<tbody>
+			{{#producto}}
+				<tr>
+					<td>{{id}}</td>
+					<td>{{nombre}}</td>
+					<td>{{precio}}</td>
+						<td class="row">
+							<a class="btn" href="/addCarro?id={{id}}"> <i class="material-icons">shopping_cart</i></a>
+							<a class="btn" href="/verProducto?id=1"><i class="material-icons">visibility</i></a>
+						</td>
+				</tr>
+			{{/producto}}
+			</tbody>
+		</table>
+		</form>
+	</div>
+
+	<div class="container-fluid bg-dark">
+	<div class="row">
+		<p class="align-middle" id="footer">Creado por el equipo de desarrollo de la URJC  Formado por Darwin, Javi y Eva</p>
+	</div>
+	
+</div>
+	<script src="webjars/jquery/3.0.0/jquery.js"></script>
+	<script src="webjars/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
