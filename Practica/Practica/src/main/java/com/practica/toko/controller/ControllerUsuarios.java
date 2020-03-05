@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -25,19 +26,26 @@ public class ControllerUsuarios {
 		if(usuario != null) {
 			usuario.setNombre(name);
 			usuario.setEmail(email);
-			usuario.setPassword(pass);
+			usuario.setPassword(new BCryptPasswordEncoder().encode(pass));
+			usuario.getRolesUser().add("user");
 			usuarios.save(usuario);
 			List<Usuario> listaUsers = usuarios.findAll();
 			for (Usuario u : listaUsers) {
-				if(!u.getNombre().isEmpty() && !u.getEmail().isEmpty() && !u.getPassword().isEmpty()) {
+				if(!(u.getNombre()==null )&& !(u.getEmail()==null) && !(u.getPassword()==null)) {
 					model.addAttribute("users", listaUsers);
 					model.addAttribute("id", u.getId());
-					model.addAttribute("name", u.getNombre());
+					model.addAttribute("nombre", u.getNombre());
 					model.addAttribute("email", u.getEmail());
 					model.addAttribute("password", u.getPassword());
 				}else {
 					model.addAttribute("users", listaUsers);
 					model.addAttribute("id", u.getId());
+					u.setNombre("Anonimo");
+					u.setEmail("Anonimo@TokoStore.com");
+					u.setPassword("");
+					model.addAttribute("name", "Anonimo");
+					model.addAttribute("email", u.getEmail());
+					model.addAttribute("password", u.getPassword());
 				}
 				/*System.out.println(u.getNombre());
 				model.addAttribute("users", listaUsers);

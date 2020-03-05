@@ -1,5 +1,6 @@
 package com.practica.toko.security;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -12,11 +13,15 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import com.practica.toko.repositorios.*;
 
 @Configuration
 @EnableWebSecurity
 public class ConfiguracionDeSeguridad extends WebSecurityConfigurerAdapter{
-
+	
+	@Autowired
+	public UserRepositoryAuthentication Usuarios;
+	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		//super.configure(http);
@@ -30,6 +35,7 @@ public class ConfiguracionDeSeguridad extends WebSecurityConfigurerAdapter{
 		http.authorizeRequests().antMatchers("/css/**").permitAll();
 		http.authorizeRequests().antMatchers("/img/**").permitAll();
 		http.authorizeRequests().antMatchers("/webjars/**").permitAll();
+		http.authorizeRequests().antMatchers("/end").permitAll();
 		// paginas privadas
 		http.authorizeRequests().anyRequest().authenticated();
 		
@@ -61,7 +67,7 @@ public class ConfiguracionDeSeguridad extends WebSecurityConfigurerAdapter{
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		//super.configure(auth);
-		
+		auth.authenticationProvider(Usuarios);
 		PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
 		auth.inMemoryAuthentication().withUser("user").password(encoder.encode("pass")).roles("USER");
 		auth.inMemoryAuthentication().withUser("admin").password(encoder.encode("1234")).roles("ADMIN");
