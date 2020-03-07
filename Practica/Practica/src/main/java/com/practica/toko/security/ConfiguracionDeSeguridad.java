@@ -13,6 +13,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+
+import com.practica.toko.model.Usuario;
 import com.practica.toko.repositorios.*;
 
 @Configuration
@@ -21,6 +23,9 @@ public class ConfiguracionDeSeguridad extends WebSecurityConfigurerAdapter{
 	
 	@Autowired
 	public UserRepositoryAuthentication Usuarios;
+	
+	@Autowired
+	private UserRepository Usus;
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
@@ -36,7 +41,23 @@ public class ConfiguracionDeSeguridad extends WebSecurityConfigurerAdapter{
 		http.authorizeRequests().antMatchers("/img/**").permitAll();
 		http.authorizeRequests().antMatchers("/webjars/**").permitAll();
 		http.authorizeRequests().antMatchers("/end").permitAll();
+
+		http.authorizeRequests().antMatchers("/CRUD").permitAll();
+		http.authorizeRequests().antMatchers("/index").permitAll();
+		http.authorizeRequests().antMatchers("/carro").permitAll();
+		http.authorizeRequests().antMatchers("/addCarro").permitAll();
+		http.authorizeRequests().antMatchers("/borrarArticulo").permitAll();
+		http.authorizeRequests().antMatchers("/verProducto").permitAll();
+		http.authorizeRequests().antMatchers("/formbusqueda").permitAll();
+		http.authorizeRequests().antMatchers("/contacto").permitAll();
+		http.authorizeRequests().antMatchers("/cabecera").permitAll();
+		http.authorizeRequests().antMatchers("/pie").permitAll();
+		
 		// paginas privadas
+		//privadas
+		http.authorizeRequests().antMatchers("/mostrarPedidos").hasAnyRole("USER");
+		http.authorizeRequests().antMatchers("/crudproveedor").hasAnyRole("ADMIN");
+		http.authorizeRequests().antMatchers("/crudproducto").hasAnyRole("ADMIN");
 		http.authorizeRequests().anyRequest().authenticated();
 		
 		// configuracion del formulario de login
@@ -54,7 +75,9 @@ public class ConfiguracionDeSeguridad extends WebSecurityConfigurerAdapter{
 		http.logout().logoutSuccessUrl("/");
 		
 		// deshabilitar el CSRF de momento
-		http.csrf().disable();
+		//http.csrf().disable();
+		
+		
 	}
 	/*@Bean
 	@Override
@@ -71,6 +94,8 @@ public class ConfiguracionDeSeguridad extends WebSecurityConfigurerAdapter{
 		PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
 		auth.inMemoryAuthentication().withUser("user").password(encoder.encode("pass")).roles("USER");
 		auth.inMemoryAuthentication().withUser("admin").password(encoder.encode("1234")).roles("ADMIN");
+		Usus.save(new Usuario ("admin", "1234", "ADMIN"));
+		Usus.save(new Usuario ("user", "pass", "USER"));
 	}
 	
 	

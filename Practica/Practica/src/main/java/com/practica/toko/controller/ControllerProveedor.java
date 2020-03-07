@@ -2,7 +2,10 @@ package com.practica.toko.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.ui.Model;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,8 +24,10 @@ public class ControllerProveedor {
 	
 	
 	@RequestMapping("/datosform")
-	public String recogerDatosForm(Model model,@RequestParam String name,@RequestParam String producto, @RequestParam String Precio) {
-		
+	public String recogerDatosForm(Model model,@RequestParam String name,@RequestParam String producto, @RequestParam String Precio, HttpServletRequest request) {
+
+		CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
+		model.addAttribute("token", token.getToken());
 		Proveedor prob=new Proveedor(name);
 		proveedores.save(prob);
 		if(!(producto.isEmpty() && Precio.isEmpty())){

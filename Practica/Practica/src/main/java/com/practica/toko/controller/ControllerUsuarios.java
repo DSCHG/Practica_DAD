@@ -2,10 +2,12 @@ package com.practica.toko.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +22,7 @@ public class ControllerUsuarios {
 	private UserRepository usuarios;
 	
 	@RequestMapping("/form")
-	public String recogerDatosForm(Model model,@RequestParam String name,@RequestParam String email,@RequestParam String pass,HttpSession session) {
+	public String recogerDatosForm(Model model,@RequestParam String name,@RequestParam String email,@RequestParam String pass,HttpSession session, HttpServletRequest request) {
 							
 		Usuario usuario = (Usuario) session.getAttribute("usuario");
 		if(usuario != null) {
@@ -37,6 +39,8 @@ public class ControllerUsuarios {
 					model.addAttribute("nombre", u.getNombre());
 					model.addAttribute("email", u.getEmail());
 					model.addAttribute("password", u.getPassword());
+					CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
+					model.addAttribute("token", token.getToken());
 				}else {
 					model.addAttribute("users", listaUsers);
 					model.addAttribute("id", u.getId());
@@ -46,6 +50,9 @@ public class ControllerUsuarios {
 					model.addAttribute("name", "Anonimo");
 					model.addAttribute("email", u.getEmail());
 					model.addAttribute("password", u.getPassword());
+					model.addAttribute("usuario",true);
+					CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
+					model.addAttribute("token", token.getToken());
 				}
 				/*System.out.println(u.getNombre());
 				model.addAttribute("users", listaUsers);
