@@ -11,13 +11,6 @@
 <body>
 
 
-<h1>Seguridad Spring</h1>
-<p>Pagina privada </p>
-<form method="post" action="/logout">
-	<input type="submit" value="Sing Out"/>
-	<input type="hidden" name="_csrf" value="{{token}}"/>
-	
-</form>
 
 <div class="container-fluid bg-dark fixed-top">
 			<div id="logo">
@@ -41,6 +34,13 @@
 					<li class="nav-item"><a class="rounded float-right" href="/carro" role="button">
 						<i class="material-icons">shopping_cart</i>
 					</a></li>
+					<li>
+
+<form method="post" action="/logout">
+	<input type="submit" value="Sing Out"/>
+	<input type="hidden" name="_csrf" value="{{token}}"/>
+	
+</form></li>
 				</ul>
 			</div>
 </div>
