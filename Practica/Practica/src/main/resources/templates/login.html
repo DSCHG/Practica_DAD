@@ -11,13 +11,6 @@
 <body>
 
 
-<h1>Seguridad Spring</h1>
-<p>Pagina privada </p>
-<form method="post" action="/logout">
-	<input type="submit" value="Sing Out"/>
-	<input type="hidden" name="_csrf" value="{{token}}"/>
-	
-</form>
 
 
 <div class="container-fluid bg-dark fixed-top">
@@ -58,6 +51,14 @@
 					class="form-control" id="password" name="password">
 			</div>
 			<button type="submit" class="btn btn-primary">Login in</button>
+			
+<h1>Seguridad Spring</h1>
+<p>Pagina privada </p>
+<form method="post" action="/logout">
+	<input type="submit" value="Sing Out"/>
+	<input type="hidden" name="_csrf" value="{{token}}"/>
+	
+</form>
 		</form>
 	</div>
 
