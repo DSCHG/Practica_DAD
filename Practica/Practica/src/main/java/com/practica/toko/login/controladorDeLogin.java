@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
-
+/*
 @RestController
 public class controladorDeLogin {
 	private static final Logger log = LoggerFactory.getLogger(controladorDeLogin.class);
@@ -53,3 +53,4 @@ public class controladorDeLogin {
 	}
 	
 }
+*/
