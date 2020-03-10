@@ -1,12 +1,23 @@
 package com.practica.toko.controller;
 
 
+import java.util.Collections;
 import java.util.Optional;
+
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
+
 import com.practica.toko.model.*;
 import com.practica.toko.repositorios.*;
 
@@ -19,7 +30,7 @@ public class ControllerCarro {
 	@Autowired
 	private UserRepository Usuarios;
 	@Autowired
-	private ProductoRepository productos;
+	private PedidoRepository repoPedido;
 	
 	private Producto producto;
 	private Usuario user;
@@ -47,7 +58,7 @@ public class ControllerCarro {
 		return "Carrito";
 	}
 	
-	@RequestMapping("/formalizarPedido")
+	@GetMapping("/formalizarPedido")
 	public String formalizarPedido(Model model,HttpSession session) {
 		
 		user = (Usuario) session.getAttribute("usuario");
@@ -103,7 +114,7 @@ public class ControllerCarro {
 	public String verProducto(Model model,@RequestParam(name = "id") String id,HttpSession session) {
 		user = (Usuario) session.getAttribute("usuario");
 		if(user != null) {
-			Optional<Producto> p=productos.findById(Integer.parseInt(id));
+			Optional<Producto> p=productodao.findById(Integer.parseInt(id));
 			Producto pr;
 			if(p.isPresent()) {
 			pr=p.get();
@@ -142,15 +153,21 @@ public class ControllerCarro {
 		return "Carrito";
 	}
 	
-	/*public void cargarDatos(Model model,HttpSession session) {
+	@GetMapping("/serviciointerno/{id}")
+	public ResponseEntity<?> factura(@PathVariable int id,HttpServletRequest request){
+		Optional<Pedido> pedido = repoPedido.findById(id);
+		pedido.isPresent();
+		Pedido pe = repoPedido.getOne(id);
+		Usuario user = Usuarios.findByNombre(request.getUserPrincipal().getName());
+		if(user == null) {
+			return new ResponseEntity<>("Forbidden",HttpStatus.FORBIDDEN);
+		} 
+		RestTemplate factura= new RestTemplate();
+		HttpHeaders header = new HttpHeaders();
+		header.setAccept(Collections.singletonList(MediaType.APPLICATION_OCTET_STREAM));
+		HttpEntity<String> e = new HttpEntity<>(header);
 		
-		model.addAttribute("haydatos",user.getListaPedidos().size());
-		model.addAttribute("productos", user.getCarrito().getListaProductos());
-		for(Producto p : user.getCarrito().getListaProductos()) {
-			model.addAttribute("id", p.getId());
-			model.addAttribute("nombre", p.getNombre());
-			model.addAttribute("precio", p.getPrecio());	
-		}
-	}*/
+		return factura.exchange("http://localhost:8000/enviarFactura/id_pedido"+id+"/id_user/"+user.getId(), HttpMethod.GET,e,byte[].class);
+	}
 		
 }
