@@ -29,7 +29,7 @@ public class ControllerUsuarios {
 			usuario.setNombre(name);
 			usuario.setEmail(email);
 			usuario.setPassword(new BCryptPasswordEncoder().encode(pass));
-			usuario.getRolesUser().add("user");
+			usuario.getRolesUser().add("ROLE_USER");
 			usuarios.save(usuario);
 			List<Usuario> listaUsers = usuarios.findAll();
 			for (Usuario u : listaUsers) {

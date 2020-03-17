@@ -25,7 +25,7 @@ public class ControllerProducto {
 	@RequestMapping("/productform")
 	public String recogerDatosForm(Model model,@RequestParam String name,@RequestParam double precio,@RequestParam String id_Proveedor
 		, HttpServletRequest request) {
-			model.addAttribute("ADMIN", request.isUserInRole("ADMIN"));
+			model.addAttribute("admin", request.isUserInRole("ADMIN"));
 		
 		Proveedor aux;
 		Producto nuevo;
