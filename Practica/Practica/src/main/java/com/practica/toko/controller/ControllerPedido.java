@@ -1,5 +1,6 @@
 package com.practica.toko.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,7 +16,8 @@ public class ControllerPedido {
 	private Usuario user;
 	
 	@RequestMapping("/verMisPedidos")
-	public String mostrarPedidos(Model model,HttpSession session) {
+	public String mostrarPedidos(Model model,HttpSession session, HttpServletRequest request) {
+		model.addAttribute("user", request.isUserInRole("USER"));
 		user = (Usuario) session.getAttribute("usuario");
 		double preciototal = 0.0;
 		model.addAttribute("haydatos", user.getListaPedidos().size());
@@ -33,7 +35,8 @@ public class ControllerPedido {
 		return "mostrarPedidos";
 	}
 	@RequestMapping("/InfoPedido")
-	public String mostrarPedido(Model model,@RequestParam (value= "id") int id,HttpSession session) {
+	public String mostrarPedido(Model model,@RequestParam (value= "id") int id,HttpSession session, HttpServletRequest request) {
+		model.addAttribute("user", request.isUserInRole("USER"));
 		
 		double preciototal=0;
 		Pedido pedido=new Pedido();

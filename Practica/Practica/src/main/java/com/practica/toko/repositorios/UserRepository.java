@@ -10,5 +10,6 @@ import com.practica.toko.model.Usuario;
 
 public interface UserRepository extends JpaRepository<Usuario, Integer> {
 	Usuario findByNombre(String nombre);
+	//Usuario findByrolesUser (String nombre);
 	//Usuario findOneByNombre(String nombre);
 }

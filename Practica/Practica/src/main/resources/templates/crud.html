@@ -29,6 +29,23 @@
 					<li class="nav-item"><a class="rounded float-right" href="/carro" role="button">
 						<i class="material-icons">shopping_cart</i>
 					</a></li>
+					
+					<li>
+
+						<form action="/login" >
+							<input type="submit" value="entrar"class="btn btn-primary"/>
+							<input type="hidden" name="_csrf" value="{{token}}"/>
+							
+						</form></li>
+					<li>
+					
+					<li>
+
+						<form method="post" action="/logout" >
+							<input type="submit" value="salir"class="btn btn-primary"/>
+							<input type="hidden" name="_csrf" value="{{token}}"/>
+							
+						</form></li>
 				</ul>
 			</div>
 </div>

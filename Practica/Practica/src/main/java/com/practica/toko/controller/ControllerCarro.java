@@ -36,7 +36,8 @@ public class ControllerCarro {
 	private Usuario user;
 
 	@RequestMapping("/carro")
-	public String mostrarCarro(Model model,HttpSession session) {
+	public String mostrarCarro(Model model,HttpSession session, HttpServletRequest request) {
+		model.addAttribute("user", request.isUserInRole("USER"));
 		user = (Usuario) session.getAttribute("usuario");
 		if(user != null) {
 			int producto=0;
@@ -59,7 +60,8 @@ public class ControllerCarro {
 	}
 	
 	@GetMapping("/formalizarPedido")
-	public String formalizarPedido(Model model,HttpSession session) {
+	public String formalizarPedido(Model model,HttpSession session, HttpServletRequest request) {
+		model.addAttribute("user", request.isUserInRole("USER"));
 		
 		user = (Usuario) session.getAttribute("usuario");
 		if(user != null) {			
@@ -85,7 +87,8 @@ public class ControllerCarro {
 		return "Carrito";
 	}
 	@RequestMapping("/borrarArticulo")
-	public String borrarItem(Model model,@RequestParam(name = "id") String id,HttpSession session) {
+	public String borrarItem(Model model,@RequestParam(name = "id") String id,HttpSession session, HttpServletRequest request) {
+		model.addAttribute("user", request.isUserInRole("USER"));
 		user = (Usuario) session.getAttribute("usuario");
 		if(user != null) {
 			Producto borrar=new Producto();
@@ -111,7 +114,8 @@ public class ControllerCarro {
 	}
 	
 	@RequestMapping("/verProducto")
-	public String verProducto(Model model,@RequestParam(name = "id") String id,HttpSession session) {
+	public String verProducto(Model model,@RequestParam(name = "id") String id,HttpSession session, HttpServletRequest request) {
+		model.addAttribute("user", request.isUserInRole("USER"));
 		user = (Usuario) session.getAttribute("usuario");
 		if(user != null) {
 			Optional<Producto> p=productodao.findById(Integer.parseInt(id));
@@ -127,7 +131,8 @@ public class ControllerCarro {
 	}
 	
 	@RequestMapping("/addCarro")
-	public String addProducto(Model model,@RequestParam(name = "id") String id,HttpSession session) {	
+	public String addProducto(Model model,@RequestParam(name = "id") String id,HttpSession session, HttpServletRequest request) {
+		model.addAttribute("user", request.isUserInRole("USER"));
 		user = (Usuario) session.getAttribute("usuario");
 		if(user != null) {
 			producto = productodao.findById(Integer.parseInt(id)).get();

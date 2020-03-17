@@ -2,6 +2,8 @@ package com.practica.toko.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,7 +23,10 @@ public class ControllerProducto {
 	private ProveedorRepository proveedores;
 	
 	@RequestMapping("/productform")
-	public String recogerDatosForm(Model model,@RequestParam String name,@RequestParam double precio,@RequestParam String id_Proveedor) {
+	public String recogerDatosForm(Model model,@RequestParam String name,@RequestParam double precio,@RequestParam String id_Proveedor
+		, HttpServletRequest request) {
+			model.addAttribute("ADMIN", request.isUserInRole("ADMIN"));
+		
 		Proveedor aux;
 		Producto nuevo;
 		if(id_Proveedor.isEmpty()) {

@@ -25,7 +25,9 @@ public class ControllerProveedor {
 	
 	@RequestMapping("/datosform")
 	public String recogerDatosForm(Model model,@RequestParam String name,@RequestParam String producto, @RequestParam String Precio, HttpServletRequest request) {
-
+		
+		model.addAttribute("ADMIN", request.isUserInRole("ADMIN"));
+			
 		CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
 		model.addAttribute("token", token.getToken());
 		Proveedor prob=new Proveedor(name);

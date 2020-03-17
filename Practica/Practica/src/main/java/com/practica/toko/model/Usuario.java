@@ -1,6 +1,7 @@
 package com.practica.toko.model;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.persistence.*;
@@ -44,17 +45,19 @@ public class Usuario {
 			listaPedidos = new ArrayList<>();
 		}
 		
-		public Usuario(int id,String nombre, String email,String password) {
+		public Usuario(int id,String nombre, String email,String password, String...roles) {
 			this.id = id;
 			this.nombre = nombre;
 			this.email = email;
 			this.password = password;
+			this.rolesUser = new ArrayList<> (Arrays.asList(roles));
 		}
 		
-		public Usuario(String nombre, String email,String password) {
+		public Usuario(String nombre, String email,String password, String...roles) {
 			this.nombre = nombre;
 			this.email = email;
 			this.password = new BCryptPasswordEncoder().encode(password);
+			this.rolesUser = new ArrayList<> (Arrays.asList(roles));
 		}
 		
 		// Getter and Setter

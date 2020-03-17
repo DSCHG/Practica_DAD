@@ -40,6 +40,7 @@ public class UserRepositoryAuthentication implements AuthenticationProvider {
 			roles.add(new SimpleGrantedAuthority(Rol));
 		}
 		System.out.println("Roles bien");
+		System.out.println(roles);
 		return new UsernamePasswordAuthenticationToken(user.getNombre(), user.getPassword(), roles);
 	}
 

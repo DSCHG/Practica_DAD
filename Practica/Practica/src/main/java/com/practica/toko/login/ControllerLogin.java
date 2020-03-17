@@ -16,28 +16,32 @@ public class ControllerLogin {
 	public String mostrarLogin(Model model, HttpServletRequest request) {
 		CsrfToken token=(CsrfToken) request.getAttribute("_csrf");
 		model.addAttribute("token", token.getToken());
-		model.addAttribute("admin", request.isUserInRole("ADMIN"));
+		model.addAttribute("ADMIN", request.isUserInRole("ADMIN"));
 		return "login";
 	}
 	
 	@GetMapping("/loginerror")
-	public String mostrarError() {
+	public String mostrarError(Model model, HttpServletRequest request) {
+		model.addAttribute("ADMIN", request.isUserInRole("ADMIN"));
 		return "loginerror";
 	}
 	
 
 	@GetMapping("/InfoPedido")
-	public String usuario() {
+	public String usuario(Model model, HttpServletRequest request) {
+		model.addAttribute("ADMIN", request.isUserInRole("ADMIN"));
 		return "InfoPedido";
 	}
 
 	@GetMapping("/producto")
-	public String proveedor() {
+	public String proveedor(Model model, HttpServletRequest request) {
+		model.addAttribute("ADMIN", request.isUserInRole("ADMIN"));
 		return "crudproducto";
 	}
 	
 	@GetMapping("/proveedor")
-	public String administrador() {
+	public String administrador(Model model, HttpServletRequest request) {
+		model.addAttribute("ADMIN", request.isUserInRole("ADMIN"));
 		return "crudproveedor";
 	}
 

@@ -2,6 +2,8 @@ package com.practica.toko;
 
 
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -60,7 +62,8 @@ public class ControllerServicio1 {
 	}
 
 	@RequestMapping("/formproveedor")
-	public String mostrarFormularioproveedores(Model model) {
+	public String mostrarFormularioproveedores(Model model, HttpServletRequest request) {
+		model.addAttribute("admin", request.isUserInRole("ADMIN"));
 		return "crudproveedor";
 	}
 	@RequestMapping("/contacto")
@@ -69,7 +72,9 @@ public class ControllerServicio1 {
 	}
 	
 	@RequestMapping("/formproducto")
-	public String mostrarFormularioproductos(Model model) {
+	public String mostrarFormularioproductos(Model model, HttpServletRequest request) {
+		model.addAttribute("admin", request.isUserInRole("ADMIN"));
+		System.out.println( request.isUserInRole("ADMIN"));
 		List<Proveedor> aux=proveedores.findAll();
 		for(Proveedor x:aux) {
 			model.addAttribute("proveedor", aux);
