@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Informacion del Pedido</title>
+<meta charset="UTF-8">
 <link rel="stylesheet" href="/css/style.css" type="text/css">
 <link rel="stylesheet" href="webjars/bootstrap/4.4.1/css/bootstrap.min.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<title>Toko Store</title>
 </head>
 <body>
 <div class="container-fluid bg-dark fixed-top">
@@ -16,6 +16,7 @@
     			<input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="search"
     			 name="search" id="search">
     			<button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="material-icons align-middle">search</i></button>
+  			
   			</form>
 			<div class="row">
 				<ul class="nav navbar-dark bg-dark">
@@ -51,14 +52,12 @@
 		</div>
 	
 <div class="container" id="content_table">
-	{{#haydatos}}
 	<table class="table table-hover">
 			<thead>
 				<tr>
 					<th scope="col">#</th>
-					<th scope="col">Producto</th>
+					<th scope="col">Nombre</th>
 					<th scope="col">Precio</th>
-					<th scope="col">Accion</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -77,16 +76,6 @@
 				{{/productos}}
 			</tbody>
 		</table>
-		<div class="row">
-		<p class= "mx-auto"> {{precioTotal}} </p>
-		</div>
-		{{/haydatos}}
-		{{^haydatos}}
-			<div class="alert alert-info" role="alert">
-  				El carrito esta vacio
-			</div>
-		{{/haydatos}}
-		
 </div>
 
 
@@ -97,7 +86,6 @@
 	
 </div>
 
-	<script src="webjars/jquery/3.0.0/jquery.js"></script>
-	<script src="webjars/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
 </body>
 </html>

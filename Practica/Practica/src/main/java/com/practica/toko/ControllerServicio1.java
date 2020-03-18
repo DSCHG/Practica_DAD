@@ -31,6 +31,7 @@ public class ControllerServicio1 {
 	
 	@GetMapping("/")
 	public String getVista(Model model,HttpSession session) {
+		
 	
 		user = (Usuario) session.getAttribute("usuario");
 		if(user == null) {
@@ -120,7 +121,6 @@ public class ControllerServicio1 {
 	public String guardar(HttpSession session) {
 		user = (Usuario) session.getAttribute("usuario");
 		if(user != null) {			
-			Usuarios.delete(user);
 			user=Usuarios.save(user);
 			session.setAttribute("usuario", user);	
 		}

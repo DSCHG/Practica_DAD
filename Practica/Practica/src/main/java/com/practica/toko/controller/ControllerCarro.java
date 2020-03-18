@@ -70,7 +70,6 @@ public class ControllerCarro {
 			user.getCarrito().getListaProductos().clear();
 			user.getListaPedidos().add(p);
 			System.out.println(user.getId());
-			Usuarios.delete(user);
 			user=Usuarios.save(user);
 			
 			session.setAttribute("usuario", user);	
