@@ -53,6 +53,7 @@ public class ConfiguracionDeSeguridad extends WebSecurityConfigurerAdapter{
 		http.authorizeRequests().antMatchers("/InfoPedidos").permitAll();
 		http.authorizeRequests().antMatchers("/verProducto").permitAll();
 		http.authorizeRequests().antMatchers("/verProducto/**").permitAll();
+		http.authorizeRequests().antMatchers("/serviciointerno/{id}").permitAll();
 		
 		// paginas privadas
 		//privadas
