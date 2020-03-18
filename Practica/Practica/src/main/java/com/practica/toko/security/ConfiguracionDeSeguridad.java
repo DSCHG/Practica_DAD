@@ -47,12 +47,9 @@ public class ConfiguracionDeSeguridad extends WebSecurityConfigurerAdapter{
 		http.authorizeRequests().antMatchers("/carro").permitAll();
 		http.authorizeRequests().antMatchers("/addCarro").permitAll();
 		http.authorizeRequests().antMatchers("/borrarArticulo").permitAll();
-		http.authorizeRequests().antMatchers("/verProducto").permitAll();
 		http.authorizeRequests().antMatchers("/formbusqueda").permitAll();
 		http.authorizeRequests().antMatchers("/contacto").permitAll();
 		http.authorizeRequests().antMatchers("/cabecera").permitAll();
-		http.authorizeRequests().antMatchers("/InfoPedido").permitAll();
-		http.authorizeRequests().antMatchers("/verProducto").permitAll();
 		http.authorizeRequests().antMatchers("/InfoPedido").permitAll();
 		http.authorizeRequests().antMatchers("/verProducto").permitAll();
 		http.authorizeRequests().antMatchers("/verProducto/**").permitAll();
