@@ -101,7 +101,11 @@ public class ControllerCarro {
 	@RequestMapping("/borrarArticulo")
 	public String borrarItem(Model model,@RequestParam(name = "id") String id,HttpSession session, HttpServletRequest request) {
 		model.addAttribute("user", request.isUserInRole("USER"));
-		user = (Usuario) session.getAttribute("usuario");
+		if(request.getUserPrincipal()!=null) {
+			user=Usuarios.findByNombre(request.getUserPrincipal().getName());
+		}else {
+			user = (Usuario) session.getAttribute("usuario");
+		}
 		if(user != null) {
 			Producto borrar=new Producto();
 			for(Producto p : user.getCarrito().getListaProductos()) {
@@ -119,7 +123,12 @@ public class ControllerCarro {
 				
 			}
 		}
-		session.setAttribute("usuario", user);	
+		if(request.getUserPrincipal()!=null) {
+			Usuarios.save(user);
+		}else {
+			session.setAttribute("usuario", user);	
+		}
+		
 			
 		
 		return "Carrito";
@@ -145,7 +154,6 @@ public class ControllerCarro {
 	public String addProducto(Model model,@RequestParam(name = "id") String id,HttpSession session, HttpServletRequest request) {
 		model.addAttribute("user", request.isUserInRole("USER"));
 		if(request.getUserPrincipal()!=null) {
-			//Usuario aux = (Usuario) session.getAttribute("usuario");
 			user=Usuarios.findByNombre(request.getUserPrincipal().getName());
 		}else {
 			user = (Usuario) session.getAttribute("usuario");
@@ -159,8 +167,12 @@ public class ControllerCarro {
 			}else {
 				x=1;
 			}
+			if(request.getUserPrincipal()!=null) {
+				Usuarios.save(user);
+			}else {
+				session.setAttribute("usuario", user);
+			}
 			
-			Usuarios.save(user);
 			model.addAttribute("haydatos",x );
 			model.addAttribute("productos", user.getCarrito().getListaProductos());
 			for(Producto p : user.getCarrito().getListaProductos()) {

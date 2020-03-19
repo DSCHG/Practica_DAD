@@ -28,7 +28,6 @@ INDEX VERSION 1.131+/home/javier/Escritorio/Practica_DAD/Practica/.metadata/.plu
 2027516860.index
 814779077.index
 813341167.index
-1603540148.index
 4294461530.index
 2698224244.index
 1477268166.index

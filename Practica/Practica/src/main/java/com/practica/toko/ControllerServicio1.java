@@ -51,6 +51,27 @@ public class ControllerServicio1 {
 		
 		return "index";
 	}
+	@GetMapping("/Welcome")
+	public String Welcome(Model model,HttpSession session) {
+		user = (Usuario) session.getAttribute("usuario");
+		if(user == null) {
+			user = new Usuario();
+			carrito = new Carro();
+			user.setCarrito(carrito);
+			user=Usuarios.save(user);
+			session.setAttribute("usuario", user);			
+		}
+		List<Producto> prod=productos.findAll();
+		for(Producto p:prod) {
+			model.addAttribute("productos", prod);
+			model.addAttribute("id", p.getId());
+			model.addAttribute("nombre", p.getNombre());
+			model.addAttribute("precio",p.getPrecio());
+			model.addAttribute("opciones", "?");
+		}
+		
+		return "index";
+	}
 
 	@RequestMapping("/CRUD")
 	public String mostrarFormulario(Model model) {
@@ -113,11 +134,13 @@ public class ControllerServicio1 {
 	}
 	
 	@RequestMapping("/end")
-	public String guardar(HttpSession session) {
-		user = (Usuario) session.getAttribute("usuario");
-		if(user != null) {			
-			user=Usuarios.save(user);
-			session.setAttribute("usuario", user);	
+	public String guardar(HttpSession session,HttpServletRequest request) {
+		if(request.getUserPrincipal()!=null) {
+			user=Usuarios.findByNombre(request.getUserPrincipal().getName());
+			Usuarios.save(user);
+		}else {
+			user = (Usuario) session.getAttribute("usuario");
+			Usuarios.save(user);
 		}
 		
 		return "index";
