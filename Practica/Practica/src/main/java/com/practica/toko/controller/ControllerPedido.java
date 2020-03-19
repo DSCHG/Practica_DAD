@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.practica.toko.model.*;
 import com.practica.toko.repositorios.PedidoRepository;
+import com.practica.toko.repositorios.UserRepository;
 
 
 @Controller
@@ -22,10 +23,19 @@ public class ControllerPedido {
 	@Autowired
 	private PedidoRepository pedidos;
 	
+	@Autowired
+	private UserRepository Usuarios;
+	
 	@RequestMapping("/verMisPedidos")
 	public String mostrarPedidos(Model model,HttpSession session, HttpServletRequest request) {
 		model.addAttribute("user", request.isUserInRole("USER"));
-		user = (Usuario) session.getAttribute("usuario");
+		if(request.getUserPrincipal()!=null) {
+			//Usuario aux = (Usuario) session.getAttribute("usuario");
+			user=Usuarios.findByNombre(request.getUserPrincipal().getName());
+		}else {
+			user = (Usuario) session.getAttribute("usuario");
+		}
+		System.out.println(user.getNombre());
 		double preciototal = 0.0;
 		model.addAttribute("haydatos", user.getListaPedidos().size());
 		model.addAttribute("pedidos", user.getListaPedidos());

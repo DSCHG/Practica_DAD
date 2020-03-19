@@ -38,7 +38,12 @@ public class ControllerCarro {
 	@RequestMapping("/carro")
 	public String mostrarCarro(Model model,HttpSession session, HttpServletRequest request) {
 		model.addAttribute("user", request.isUserInRole("USER"));
-		user = (Usuario) session.getAttribute("usuario");
+		if(request.getUserPrincipal()!=null) {
+			user=Usuarios.findByNombre(request.getUserPrincipal().getName());
+		}else {
+			user = (Usuario) session.getAttribute("usuario");
+		}
+		System.out.println(user.getNombre());
 		if(user != null) {
 			int producto=0;
 			if(user.getCarrito().getListaProductos().isEmpty()){
@@ -62,8 +67,15 @@ public class ControllerCarro {
 	@GetMapping("/formalizarPedido")
 	public String formalizarPedido(Model model,HttpSession session, HttpServletRequest request) {
 		model.addAttribute("user", request.isUserInRole("USER"));
-		
-		user = (Usuario) session.getAttribute("usuario");
+		if(request.getUserPrincipal()!=null) {
+			Usuario aux = (Usuario) session.getAttribute("usuario");
+			user=Usuarios.findByNombre(request.getUserPrincipal().getName());
+			user.getCarrito().getListaProductos().addAll(aux.getCarrito().getListaProductos());
+			aux.getCarrito().getListaProductos().clear();
+			session.setAttribute("usuario", aux);
+		}else {
+			user = (Usuario) session.getAttribute("usuario");
+		}
 		if(user != null) {			
 			Pedido p = new Pedido();
 			p.getProducto().addAll(user.getCarrito().getListaProductos());	
@@ -71,8 +83,9 @@ public class ControllerCarro {
 			user.getListaPedidos().add(p);
 			System.out.println(user.getId());
 			user=Usuarios.save(user);
-			
-			session.setAttribute("usuario", user);	
+			if(request.getUserPrincipal()==null) {
+				session.setAttribute("usuario", user);
+			}
 			
 			model.addAttribute("haydatos",user.getCarrito().getListaProductos().size());
 			model.addAttribute("productos", user.getCarrito().getListaProductos());
@@ -115,7 +128,6 @@ public class ControllerCarro {
 	@RequestMapping("/verProducto")
 	public String verProducto(Model model,@RequestParam(name = "id") String id,HttpSession session, HttpServletRequest request) {
 		model.addAttribute("user", request.isUserInRole("USER"));
-		user = (Usuario) session.getAttribute("usuario");
 		if(user != null) {
 			Optional<Producto> p=productodao.findById(Integer.parseInt(id));
 			Producto pr;
@@ -132,7 +144,12 @@ public class ControllerCarro {
 	@RequestMapping("/addCarro")
 	public String addProducto(Model model,@RequestParam(name = "id") String id,HttpSession session, HttpServletRequest request) {
 		model.addAttribute("user", request.isUserInRole("USER"));
-		user = (Usuario) session.getAttribute("usuario");
+		if(request.getUserPrincipal()!=null) {
+			//Usuario aux = (Usuario) session.getAttribute("usuario");
+			user=Usuarios.findByNombre(request.getUserPrincipal().getName());
+		}else {
+			user = (Usuario) session.getAttribute("usuario");
+		}
 		if(user != null) {
 			producto = productodao.findById(Integer.parseInt(id)).get();
 			user.getCarrito().getListaProductos().add(producto);
@@ -143,7 +160,7 @@ public class ControllerCarro {
 				x=1;
 			}
 			
-			//Usuarios.save(user);
+			Usuarios.save(user);
 			model.addAttribute("haydatos",x );
 			model.addAttribute("productos", user.getCarrito().getListaProductos());
 			for(Producto p : user.getCarrito().getListaProductos()) {

@@ -3,6 +3,7 @@ package com.practica.toko;
 
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,20 +32,14 @@ public class ControllerServicio1 {
 	
 	@GetMapping("/")
 	public String getVista(Model model,HttpSession session) {
-		
-	
 		user = (Usuario) session.getAttribute("usuario");
 		if(user == null) {
 			user = new Usuario();
 			carrito = new Carro();
 			user.setCarrito(carrito);
 			user=Usuarios.save(user);
-			
-			
 			session.setAttribute("usuario", user);			
-			
 		}
-		
 		List<Producto> prod=productos.findAll();
 		for(Producto p:prod) {
 			model.addAttribute("productos", prod);

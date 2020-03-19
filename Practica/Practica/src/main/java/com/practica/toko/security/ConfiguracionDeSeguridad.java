@@ -98,9 +98,9 @@ public class ConfiguracionDeSeguridad extends WebSecurityConfigurerAdapter{
 		PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
 	//	auth.inMemoryAuthentication().withUser("user").password(encoder.encode("pass")).roles("USER");
 	//	auth.inMemoryAuthentication().withUser("admin").password(encoder.encode("1234")).roles("ADMIN");
-		Usus.deleteAll();
+/*		Usus.deleteAll();
 		Usus.save(new Usuario ("admin","admin@toko.es", "1234", "ROLE_ADMIN"));
-		Usus.save(new Usuario ("user","usuario@toko.es", "pass", "ROLE_USER"));
+		Usus.save(new Usuario ("user","usuario@toko.es", "pass", "ROLE_USER"));*/
 	}
 	
 	
