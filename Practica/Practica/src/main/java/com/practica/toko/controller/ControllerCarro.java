@@ -186,21 +186,21 @@ public class ControllerCarro {
 		return "Carrito";
 	}
 	
-	@GetMapping("/serviciointerno/{id}")
-	public ResponseEntity<?> factura(@PathVariable int id,HttpServletRequest request){
+	@GetMapping("/serviciointerno")
+	public String factura(@RequestParam (value="id") int id,HttpServletRequest request){
 		Optional<Pedido> pedido = repoPedido.findById(id);
 		pedido.isPresent();
 		Pedido pe = repoPedido.getOne(id);
 		Usuario user = Usuarios.findByNombre(request.getUserPrincipal().getName());
-		if(user == null) {
+		/*if(user == null) {
 			return new ResponseEntity<>("Forbidden",HttpStatus.FORBIDDEN);
-		} 
+		} */
 		RestTemplate factura= new RestTemplate();
 		HttpHeaders header = new HttpHeaders();
 		header.setAccept(Collections.singletonList(MediaType.APPLICATION_OCTET_STREAM));
 		HttpEntity<String> e = new HttpEntity<>(header);
-		
-		return factura.exchange("http://localhost:8000/enviarFactura/"+id+"/"+user.getId(), HttpMethod.GET,e,byte[].class);
+		factura.exchange("http://localhost:8000/enviarFactura/"+id+"/"+user.getId(), HttpMethod.GET,e,byte[].class);
+		return "correoenviado";
 	}
 		
 }

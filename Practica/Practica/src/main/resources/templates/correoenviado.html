@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="/css/style.css" type="text/css">
+<link rel="stylesheet"
+	href="webjars/bootstrap/4.4.1/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+<title>Toko Store</title>
+</head>
+<body>
+	<div class="container-fluid bg-dark fixed-top">
+		<div id="logo">
+			<a href="/"><img src="/img/logo.jpg"
+				class="img-fluid rounded-pill" alt="Responsive image"></a>
+		</div>
+		<form class="form-inline float-right" action="/formbusqueda">
+			<input class="form-control mr-sm-2" type="search"
+				placeholder="Buscar" aria-label="search" name="search" id="search">
+			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+				<i class="material-icons align-middle">search</i>
+			</button>
+
+		</form>
+		<div class="row">
+			<ul class="nav navbar-dark bg-dark">
+				<li class="nav-item"><a class="nav-link active" href="/">Inicio</a>
+				</li>
+				<li class="nav-item"><a class="nav-link" href="/contacto">Contactos</a></li>
+				<li class="nav-item"><a class="nav-link" href="/CRUD">Crear
+						usuarios</a></li>
+				<li class="nav-item"><a class="nav-link" href="/formproveedor">Crear
+						proveedor</a></li>
+				<li class="nav-item"><a class="nav-link" href="/formproducto">Crea
+						producto</a></li>
+				<li class="nav-item"><a class="nav-link" href="/verMisPedidos">Ver
+						Pedidos</a></li>
+				<li class="nav-item"><a class="rounded float-right"
+					href="/carro" role="button"> <i class="material-icons">shopping_cart</i>
+				</a></li>
+
+				<li>
+
+					<form action="/login">
+						<input type="submit" value="entrar" class="btn btn-primary" /> <input
+							type="hidden" name="_csrf" value="{{token}}" />
+
+					</form>
+				</li>
+				<li>
+				<li>
+
+					<form method="post" action="/logout">
+						<input type="submit" value="salir" class="btn btn-primary" /> <input
+							type="hidden" name="_csrf" value="{{token}}" />
+
+					</form>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="container" id="content_table">
+		<div class="alert alert-success" role="alert">Se ha enviado correctamente su correo</div>
+		<a href="/" class="btn btn-primary">volver a la tienda</a>
+	</div>
+
+
+	<div class="container-fluid bg-dark">
+		<div class="row">
+			<p class="align-middle" id="footer">Creado por el equipo de
+				desarrollo de la URJC Formado por Darwin, Javi y Eva</p>
+		</div>
+
+	</div>
+
+
+</body>
+</html>
