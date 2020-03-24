@@ -41,6 +41,8 @@ public class ConfiguracionDeSeguridad extends WebSecurityConfigurerAdapter{
 		http.authorizeRequests().antMatchers("/img/**").permitAll();
 		http.authorizeRequests().antMatchers("/webjars/**").permitAll();
 		http.authorizeRequests().antMatchers("/end").permitAll();
+		http.authorizeRequests().antMatchers("/formRegistro").permitAll();
+		http.authorizeRequests().antMatchers("/Resgistro").permitAll();
 
 		http.authorizeRequests().antMatchers("/CRUD").permitAll();
 		http.authorizeRequests().antMatchers("/index").permitAll();

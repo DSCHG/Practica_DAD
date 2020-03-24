@@ -58,7 +58,7 @@ public class ControllerServicio1 {
 			user = new Usuario();
 			carrito = new Carro();
 			user.setCarrito(carrito);
-			user=Usuarios.save(user);
+			//user=Usuarios.save(user);
 			session.setAttribute("usuario", user);			
 		}
 		List<Producto> prod=productos.findAll();
@@ -76,6 +76,10 @@ public class ControllerServicio1 {
 	@RequestMapping("/CRUD")
 	public String mostrarFormulario(Model model) {
 		return "crud";
+	}
+	@RequestMapping("/Resgistro")
+	public String Resgistro(Model model) {
+		return "registroForm";
 	}
 
 	@RequestMapping("/formproveedor")
