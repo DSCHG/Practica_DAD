@@ -200,7 +200,7 @@ public class ControllerCarro {
 		header.setAccept(Collections.singletonList(MediaType.APPLICATION_OCTET_STREAM));
 		HttpEntity<String> e = new HttpEntity<>(header);
 		
-		return factura.exchange("http://localhost:8000/enviarFactura/id_pedido"+id+"/id_user/"+user.getId(), HttpMethod.GET,e,byte[].class);
+		return factura.exchange("http://localhost:8000/enviarFactura/"+id+"/"+user.getId(), HttpMethod.GET,e,byte[].class);
 	}
 		
 }
