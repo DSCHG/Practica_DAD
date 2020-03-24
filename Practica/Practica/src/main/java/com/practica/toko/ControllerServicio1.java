@@ -37,7 +37,6 @@ public class ControllerServicio1 {
 			user = new Usuario();
 			carrito = new Carro();
 			user.setCarrito(carrito);
-			user=Usuarios.save(user);
 			session.setAttribute("usuario", user);			
 		}
 		List<Producto> prod=productos.findAll();

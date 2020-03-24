@@ -39,7 +39,13 @@ public class ControllerCarro {
 	public String mostrarCarro(Model model,HttpSession session, HttpServletRequest request) {
 		model.addAttribute("user", request.isUserInRole("USER"));
 		if(request.getUserPrincipal()!=null) {
+			Usuario aux = (Usuario) session.getAttribute("usuario");
 			user=Usuarios.findByNombre(request.getUserPrincipal().getName());
+			user.getCarrito().getListaProductos().addAll(aux.getCarrito().getListaProductos());
+			aux.getCarrito().getListaProductos().clear();
+			session.setAttribute("usuario", aux);
+			user=Usuarios.findByNombre(request.getUserPrincipal().getName());
+			user=Usuarios.save(user);
 		}else {
 			user = (Usuario) session.getAttribute("usuario");
 		}
@@ -82,9 +88,10 @@ public class ControllerCarro {
 			user.getCarrito().getListaProductos().clear();
 			user.getListaPedidos().add(p);
 			System.out.println(user.getId());
-			user=Usuarios.save(user);
 			if(request.getUserPrincipal()==null) {
 				session.setAttribute("usuario", user);
+			}else {
+				user=Usuarios.save(user);
 			}
 			
 			model.addAttribute("haydatos",user.getCarrito().getListaProductos().size());
@@ -192,9 +199,6 @@ public class ControllerCarro {
 		pedido.isPresent();
 		Pedido pe = repoPedido.getOne(id);
 		Usuario user = Usuarios.findByNombre(request.getUserPrincipal().getName());
-		/*if(user == null) {
-			return new ResponseEntity<>("Forbidden",HttpStatus.FORBIDDEN);
-		} */
 		RestTemplate factura= new RestTemplate();
 		HttpHeaders header = new HttpHeaders();
 		header.setAccept(Collections.singletonList(MediaType.APPLICATION_OCTET_STREAM));
