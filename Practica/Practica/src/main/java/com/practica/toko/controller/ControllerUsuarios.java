@@ -71,16 +71,8 @@ public class ControllerUsuarios {
 	@RequestMapping("/formRegistro")
 	public String registro(Model model,@RequestParam String name,@RequestParam String email,@RequestParam String pass,@RequestParam String roles,HttpSession session, HttpServletRequest request) {
 							
-		Usuario usuario = (Usuario) session.getAttribute("usuario");
-		if(usuario != null) {
-			usuario.setNombre(name);
-			usuario.setEmail(email);
-			usuario.setPassword(new BCryptPasswordEncoder().encode(pass));
-			usuario.getRolesUser().add(roles);
-			usuarios.save(usuario);
-		}else {
+	
 			usuarios.save(new Usuario(name,email,new BCryptPasswordEncoder().encode(pass),roles));
-		}
 		
 		
 		return "login";

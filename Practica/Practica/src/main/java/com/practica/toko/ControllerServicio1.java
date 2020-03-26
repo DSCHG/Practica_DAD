@@ -39,6 +39,7 @@ public class ControllerServicio1 {
 			user.setCarrito(carrito);
 			session.setAttribute("usuario", user);			
 		}
+		//Usuarios.deleteAll();
 		List<Producto> prod=productos.findAll();
 		for(Producto p:prod) {
 			model.addAttribute("productos", prod);

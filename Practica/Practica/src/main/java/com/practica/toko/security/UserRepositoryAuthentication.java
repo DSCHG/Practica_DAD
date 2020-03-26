@@ -30,6 +30,7 @@ public class UserRepositoryAuthentication implements AuthenticationProvider {
 		}
 		System.out.println(user.getNombre()+" "+user.getPassword());
 		String password=(String)authentication.getCredentials();
+		System.out.println(password);
 		if(!new BCryptPasswordEncoder().matches(password, user.getPassword())) {
 			throw new BadCredentialsException("Wrong Password");
 		}

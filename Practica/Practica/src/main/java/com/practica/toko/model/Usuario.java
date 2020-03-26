@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.SessionScope;
@@ -43,6 +44,7 @@ public class Usuario {
 		
 		public Usuario() {
 			listaPedidos = new ArrayList<>();
+			this.carrito=new Carro();
 		}
 		
 		public Usuario(int id,String nombre, String email,String password, String...roles) {
@@ -51,6 +53,8 @@ public class Usuario {
 			this.email = email;
 			this.password = password;
 			this.rolesUser = new ArrayList<> (Arrays.asList(roles));
+			this.carrito=new Carro();
+			this.listaPedidos=new ArrayList<>();
 		}
 		
 		public Usuario(String nombre, String email,String password, String...roles) {
@@ -58,6 +62,17 @@ public class Usuario {
 			this.email = email;
 			this.password = new BCryptPasswordEncoder().encode(password);
 			this.rolesUser = new ArrayList<> (Arrays.asList(roles));
+			this.carrito=new Carro();
+			this.listaPedidos=new ArrayList<>();
+		}
+		
+		public Usuario(String nombre, String email,String password,String rol) {
+			this.nombre = nombre;
+			this.email = email;
+			this.password = password;
+			this.rolesUser.add(rol);
+			this.carrito=new Carro();
+			this.listaPedidos=new ArrayList<>();
 		}
 		
 		// Getter and Setter
