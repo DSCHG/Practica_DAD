@@ -17,7 +17,7 @@ la compra si hay stock o debera esperar a que la empresa reciba el producto, per
 ## Descripción del servicio interno.
 
 proceso de pago, pedido.
-- Proceso de pago: En el momento de ultimar la compra y el usuario esté logueado, el servicio interno se encargará de actualizar los productos que estén disponibles tras la compra y enviar un correo al usuario, informandole del pedido.
+**- Proceso de pago: En el momento de ultimar la compra y el usuario esta logueado, el servicio interno envia un correo al usuario, informandole del pedido. Con una factura en pdf.**
 
 ## Equipo de desarrollo.
 Nombre y Apellidos | e-mail | GitHub
@@ -29,7 +29,7 @@ Nombre y Apellidos | e-mail | GitHub
 ### Trello
 https://trello.com/b/QmLREBu5/practica-dad
 
-## Diagrama vistas
+**## Diagrama vistas**
 
 ![Toko](diagramavistas.PNG "uml")
 
@@ -37,7 +37,7 @@ https://trello.com/b/QmLREBu5/practica-dad
 ## Descripción de las vistas
 
 - Común a todas las vistas:
-Las paginas tienen implementada seguridad CSRF de modo que si alguien intenta suplantarnos, no le llegue la informacion.
+**Las paginas tienen implementada seguridad CSRF de modo que si alguien intenta suplantarnos, no le llegue la informacion.**
 En todas las vistas se ve una barra de navegación arriba la cual está compuesta por una serie de botones y un buscador con su botón asociado.
 Se ve el logotipo de la empresa (toko), el cual te lleva al index al pulsarlo desde cualquier página.
 En orden de izquierda a derecha se ven los botones, y la vista a la que te llevan: Inicio(index), Contacto(contacto), crear usuario(crud), crear proveedor(crudproveedor), crear producto(crudproducto), un icono de un carrito(carrito).  y el botón de búsqueda(crudbusqueda). 
@@ -48,7 +48,7 @@ Posee un botón para poder formalizar el pedido y que este sea almacenado en la 
 El carrito esta diseñado para poder introducir articulos de la base de datos en el mismo para luego poder comprarlo mas adelante.
 
 - InfoPedido:
-Para entrar en esta vista previamente se ha debido pasar por el login.
+**Para entrar en esta vista previamente se ha debido pasar por el login.**
 Te muestra la información relativa al pedido
 
 - contacto:
@@ -63,12 +63,12 @@ Si al usar el buscador que está en la barra de navegación no se pasa ningún p
 Si precisas buscar un articulo es mas sencillo siempre usar un buscador que navegar entre multiples archivos para ver si la empresa lo tiene disponible.
 
 - crudproducto:
-Para entrar en esta vista previamente se ha debido pasar por el login y solo en caso de que sea administrador.
+**Para entrar en esta vista previamente se ha debido pasar por el login y solo en caso de que sea administrador.**
 Se puede introducir el nombre, el precio y el id_proveedor, y se almacena en la base de datos de productos, incluyendo la referencia al proveedor que lo vende
 Esta vista permite incluir en la base de datos productos.
 
 - crudproveedor:
-Para entrar en esta vista previamente se ha debido pasar por el login y solo en caso de que sea administrador.
+**Para entrar en esta vista previamente se ha debido pasar por el login y solo en caso de que sea administrador.**
 Se puede introducir el nombre, el producto y el precio, y se almacena en la base de datos de proveedores y de productos.
 Se permite incluir proveedores en la base de datos.
 
@@ -77,7 +77,7 @@ Tiene un botón para terminar la navegación por la aplicación.
 Es la pagina principal donde se ven al iniciar la lista de los productos incluidos en la base de datos. 
 
 - mostrarPedidos:
-Para entrar en esta vista previamente se ha debido pasar por el login.
+**Para entrar en esta vista previamente se ha debido pasar por el login.**
 Te muestra los pedidos que han sido realizados
 
 - vistaProducto: 
@@ -87,7 +87,7 @@ Muestra el producto que se haya seleccionado previamente y el precio del mismo.
 
 ![Toko](controlleruml.png "uml")
 
-## Modelo E/R
+**## Modelo E/R**
 
 ![Toko](e-r.png "uml")
 
@@ -95,8 +95,12 @@ Muestra el producto que se haya seleccionado previamente y el precio del mismo.
 
 ![Toko](umldad2.png "uml") 
 
-## Capturas.
+**## Capturas.**
 
+- Login
+![Toko](login.PNG "uml")
+- Login error
+![Toko](loginerror.PNG "uml")
 - Busqueda de productos
 ![Toko](busqueda.PNG "uml")
 - Carro 
@@ -114,5 +118,7 @@ Muestra el producto que se haya seleccionado previamente y el precio del mismo.
 ![Toko](verpedido.PNG "uml")
 - Ver informacíon del pedido
 ![Toko](verinfopedido.PNG "uml")
+-Usuarios
+![Toko](crud.PNG "uml")
 -Contacto
 ![Toko](contacto.PNG "uml")
