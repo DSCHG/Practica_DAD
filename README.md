@@ -14,7 +14,7 @@ la compra si hay stock o debera esperar a que la empresa reciba el producto, per
 - Producto(público): Objetos disponibles para su compra y el stock de los mismos
 
 
-## Descripción del servicio interno.
+## *Descripción del servicio interno.*
 
 proceso de pago, pedido.
 **- Proceso de pago: En el momento de ultimar la compra y el usuario esta logueado, el servicio interno envia un correo al usuario, informandole del pedido. Con una factura en pdf.**
@@ -38,6 +38,7 @@ https://trello.com/b/QmLREBu5/practica-dad
 
 - Común a todas las vistas:
 **Las paginas tienen implementada seguridad CSRF de modo que si alguien intenta suplantarnos, no le llegue la informacion.**
+**En todas las paginas ha sido incluido un boton para entrar a la identificacion de usuario, y para salir de la misma**
 En todas las vistas se ve una barra de navegación arriba la cual está compuesta por una serie de botones y un buscador con su botón asociado.
 Se ve el logotipo de la empresa (toko), el cual te lleva al index al pulsarlo desde cualquier página.
 En orden de izquierda a derecha se ven los botones, y la vista a la que te llevan: Inicio(index), Contacto(contacto), crear usuario(crud), crear proveedor(crudproveedor), crear producto(crudproducto), un icono de un carrito(carrito).  y el botón de búsqueda(crudbusqueda). 
