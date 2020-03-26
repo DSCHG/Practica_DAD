@@ -29,12 +29,12 @@ Nombre y Apellidos | e-mail | GitHub
 ### Trello
 https://trello.com/b/QmLREBu5/practica-dad
 
-## **Diagrama vistas**
+## *Diagrama vistas*
 
 ![Toko](diagramavistas.PNG "uml")
 
 
-## **Descripción de las vistas**
+## *Descripción de las vistas*
 
 - Común a todas las vistas:
 **Las paginas tienen implementada seguridad CSRF de modo que si alguien intenta suplantarnos, no le llegue la informacion.**
@@ -87,7 +87,7 @@ Muestra el producto que se haya seleccionado previamente y el precio del mismo.
 
 ![Toko](controlleruml.png "uml")
 
-## **Modelo E/R**
+## *Modelo E/R*
 
 ![Toko](e-r.png "uml")
 
@@ -95,7 +95,7 @@ Muestra el producto que se haya seleccionado previamente y el precio del mismo.
 
 ![Toko](umldad2.png "uml") 
 
-## **Capturas.**
+## *Capturas.*
 
 - Login
 ![Toko](login.PNG "uml")
