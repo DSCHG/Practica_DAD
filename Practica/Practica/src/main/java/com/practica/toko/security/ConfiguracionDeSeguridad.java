@@ -59,9 +59,9 @@ public class ConfiguracionDeSeguridad extends WebSecurityConfigurerAdapter{
 		
 		// paginas privadas
 		//privadas
-		http.authorizeRequests().antMatchers("/InfoPedidos").hasAnyRole("USER");
-		http.authorizeRequests().antMatchers("/verMisPedidos").hasAnyRole("USER");
-		http.authorizeRequests().antMatchers("/formalizarPedido").hasAnyRole("USER");
+		http.authorizeRequests().antMatchers("/InfoPedidos").hasAnyRole("USER","ADMIN");
+		http.authorizeRequests().antMatchers("/verMisPedidos").hasAnyRole("USER","ADMIN");
+		http.authorizeRequests().antMatchers("/formalizarPedido").hasAnyRole("USER","ADMIN");
 		http.authorizeRequests().antMatchers("/crudproveedor").hasAnyRole("ADMIN");
 		http.authorizeRequests().antMatchers("/crudproducto").hasAnyRole("ADMIN");
 		http.authorizeRequests().anyRequest().authenticated();

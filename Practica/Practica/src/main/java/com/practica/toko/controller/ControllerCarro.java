@@ -34,20 +34,23 @@ public class ControllerCarro {
 	
 	private Producto producto;
 	private Usuario user;
+	private Usuario NoReg=null;
 
 	@RequestMapping("/carro")
 	public String mostrarCarro(Model model,HttpSession session, HttpServletRequest request) {
-		model.addAttribute("user", request.isUserInRole("USER"));
 		if(request.getUserPrincipal()!=null) {
-			Usuario aux = (Usuario) session.getAttribute("usuario");
 			user=Usuarios.findByNombre(request.getUserPrincipal().getName());
-			user.getCarrito().getListaProductos().addAll(aux.getCarrito().getListaProductos());
-			aux.getCarrito().getListaProductos().clear();
-			session.setAttribute("usuario", aux);
-			user=Usuarios.findByNombre(request.getUserPrincipal().getName());
-			user=Usuarios.save(user);
+			if(NoReg!=null) {
+				Usuario aux = NoReg;
+				user=Usuarios.findByNombre(request.getUserPrincipal().getName());
+				user.getCarrito().getListaProductos().addAll(aux.getCarrito().getListaProductos());
+				aux.getCarrito().getListaProductos().clear();
+				NoReg=null;
+				Usuarios.save(user);
+			}
 		}else {
-			user = (Usuario) session.getAttribute("usuario");
+			NoReg = (Usuario) session.getAttribute("usuario");
+			user=NoReg;
 		}
 		System.out.println(user.getNombre());
 		if(user != null) {
@@ -72,13 +75,15 @@ public class ControllerCarro {
 	
 	@GetMapping("/formalizarPedido")
 	public String formalizarPedido(Model model,HttpSession session, HttpServletRequest request) {
-		model.addAttribute("user", request.isUserInRole("USER"));
 		if(request.getUserPrincipal()!=null) {
-			Usuario aux = (Usuario) session.getAttribute("usuario");
 			user=Usuarios.findByNombre(request.getUserPrincipal().getName());
-			user.getCarrito().getListaProductos().addAll(aux.getCarrito().getListaProductos());
-			aux.getCarrito().getListaProductos().clear();
-			session.setAttribute("usuario", aux);
+			if(NoReg!=null) {
+				Usuario aux = NoReg;
+				user=Usuarios.findByNombre(request.getUserPrincipal().getName());
+				user.getCarrito().getListaProductos().addAll(aux.getCarrito().getListaProductos());
+				aux.getCarrito().getListaProductos().clear();
+				NoReg=null;
+			}
 		}else {
 			user = (Usuario) session.getAttribute("usuario");
 		}
@@ -90,6 +95,7 @@ public class ControllerCarro {
 			System.out.println(user.getId());
 			if(request.getUserPrincipal()==null) {
 				session.setAttribute("usuario", user);
+				NoReg=user;
 			}else {
 				user=Usuarios.save(user);
 			}
@@ -107,7 +113,6 @@ public class ControllerCarro {
 	}
 	@RequestMapping("/borrarArticulo")
 	public String borrarItem(Model model,@RequestParam(name = "id") String id,HttpSession session, HttpServletRequest request) {
-		model.addAttribute("user", request.isUserInRole("USER"));
 		if(request.getUserPrincipal()!=null) {
 			user=Usuarios.findByNombre(request.getUserPrincipal().getName());
 		}else {
@@ -143,7 +148,6 @@ public class ControllerCarro {
 	
 	@RequestMapping("/verProducto")
 	public String verProducto(Model model,@RequestParam(name = "id") String id,HttpSession session, HttpServletRequest request) {
-		model.addAttribute("user", request.isUserInRole("USER"));
 		if(user != null) {
 			Optional<Producto> p=productodao.findById(Integer.parseInt(id));
 			Producto pr;
@@ -159,9 +163,15 @@ public class ControllerCarro {
 	
 	@RequestMapping("/addCarro")
 	public String addProducto(Model model,@RequestParam(name = "id") String id,HttpSession session, HttpServletRequest request) {
-		model.addAttribute("user", request.isUserInRole("USER"));
 		if(request.getUserPrincipal()!=null) {
 			user=Usuarios.findByNombre(request.getUserPrincipal().getName());
+			if(NoReg!=null) {
+				Usuario aux = NoReg;
+				user=Usuarios.findByNombre(request.getUserPrincipal().getName());
+				user.getCarrito().getListaProductos().addAll(aux.getCarrito().getListaProductos());
+				aux.getCarrito().getListaProductos().clear();
+				NoReg=null;
+			}
 		}else {
 			user = (Usuario) session.getAttribute("usuario");
 		}
@@ -178,6 +188,8 @@ public class ControllerCarro {
 				Usuarios.save(user);
 			}else {
 				session.setAttribute("usuario", user);
+				session.setAttribute("usuario", user);
+				NoReg=user;
 			}
 			
 			model.addAttribute("haydatos",x );

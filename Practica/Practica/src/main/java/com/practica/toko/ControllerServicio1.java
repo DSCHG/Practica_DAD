@@ -37,7 +37,8 @@ public class ControllerServicio1 {
 			user = new Usuario();
 			carrito = new Carro();
 			user.setCarrito(carrito);
-			session.setAttribute("usuario", user);			
+			session.setAttribute("usuario", user);		
+			session.setMaxInactiveInterval(-1);
 		}
 		//Usuarios.deleteAll();
 		List<Producto> prod=productos.findAll();
