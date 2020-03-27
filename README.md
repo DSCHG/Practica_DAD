@@ -141,7 +141,7 @@ Muestra el producto que se haya seleccionado previamente y el precio del mismo.
 ##### Para crear un usuario
     mysql> create user 'test'@'localhost' identified by 'password';
 ##### Para dar permisos al usuario
-    mysql> grant all privileges on *.* to 'test'"'localhost' with grant option;
+    mysql> grant all privileges on *.* to 'test'@'localhost' with grant option;
 ##### Para salir de la terminal de mysql
     mysql> exit;
 
