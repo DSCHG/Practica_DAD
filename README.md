@@ -126,6 +126,7 @@ Muestra el producto que se haya seleccionado previamente y el precio del mismo.
 ## Descripción del despliegue de la aplicación.
 1. Creación de una maquina virtual en virtual box y instalación del sistema operativo Ubuntu, para facilitar este paso a los usuarios pueden seguir este [link][enlace]
 2. Instalación de java 1.8 en el sistema operativo ubuntu utilizando el siguiente comando
+##### Para instalar jdk 1.8
     $ sudo apt install openjdk-8-jdk
 3. Instalacion de mysql, configuración y creación de un usuario **test** para la aplicación, para ello usaremos los siguientes comandos:
 ##### Para instalar mysql
