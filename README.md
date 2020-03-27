@@ -86,7 +86,7 @@ Muestra el producto que se haya seleccionado previamente y el precio del mismo.
 
 ## Modelo de controladores
 
-![Toko](controlleruml.png "uml")
+![Toko](controlleruml.jpeg "uml")
 
 ## *Modelo E/R*
 
