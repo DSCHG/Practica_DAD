@@ -145,10 +145,12 @@ Muestra el producto que se haya seleccionado previamente y el precio del mismo.
     mysql> exit;
 
 
-4. Descarga del entorno de desarrollo spring tools 4.
-5. Descarga del proyecto alojado en github y importado a el entorno de desarrollo.
+4. Descarga del entorno de desarrollo spring tools 4 en este [enlace][entorno].
+5. Descarga del proyecto alojado en [github][proyecto] y importado a el entorno de desarrollo.
 6. Inicialización de la primera aplicación que es la interfaz de usuario.
 7. Inicializacion de la segunda aplicación que representara nuestro servicio interno.
 8. Apertura de un browser para poder acceder a la aplicacion a traves de la ruta "https://localhost:8443". 
 
 [enlace]:https://www.geeknetic.es/Noticia/17411/Como-usar-VirtualBox-para-crear-una-maquina-virtual.html:
+[entorno]:https://spring.io/tools
+[proyecto]:https://github.com/DSCHG/Practica_DAD
