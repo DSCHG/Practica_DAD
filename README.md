@@ -124,10 +124,9 @@ Muestra el producto que se haya seleccionado previamente y el precio del mismo.
 -Contacto
 ![Toko](contacto.PNG "uml")
 ## Descripción del despliegue de la aplicación.
-1. Creación de una maquina virtual en virtual box.
-2. Instalación del sistema operativo ubuntu.
-3. Instalación de java 1.8 en el sistema operativo ubuntu.
-4. Instalacion de mysql, configuración y creación de un usuario "test" para la aplicación.
+1. Creación de una maquina virtual en virtual box y instalación del sistema operativo Ubuntu, para facilitar este paso a los usuarios pueden seguir este [enlace][https://www.geeknetic.es/Noticia/17411/Como-usar-VirtualBox-para-crear-una-maquina-virtual.html]
+3. Instalación de java 1.8 en el sistema operativo ubuntu utilizando el comando~~~$ sudo apt install openjdk-8-jdk~~~
+4. Instalacion de mysql, configuración y creación de un usuario **test** para la aplicación.
 5. Descarga del entorno de desarrollo spring tools 4.
 6. Descarga del proyecto alojado en github y importado a el entorno de desarrollo.
 7. Inicialización de la primera aplicación que es la interfaz de usuario.
