@@ -125,12 +125,30 @@ Muestra el producto que se haya seleccionado previamente y el precio del mismo.
 ![Toko](contacto.PNG "uml")
 ## Descripción del despliegue de la aplicación.
 1. Creación de una maquina virtual en virtual box y instalación del sistema operativo Ubuntu, para facilitar este paso a los usuarios pueden seguir este [link][enlace]
-3. Instalación de java 1.8 en el sistema operativo ubuntu utilizando el comando~~~$ sudo apt install openjdk-8-jdk~~~
-4. Instalacion de mysql, configuración y creación de un usuario **test** para la aplicación.
-5. Descarga del entorno de desarrollo spring tools 4.
-6. Descarga del proyecto alojado en github y importado a el entorno de desarrollo.
-7. Inicialización de la primera aplicación que es la interfaz de usuario.
-8. Inicializacion de la segunda aplicación que representara nuestro servicio interno.
-9. Apertura de un browser para poder acceder a la aplicacion a traves de la ruta "https://localhost:8443". 
+2. Instalación de java 1.8 en el sistema operativo ubuntu utilizando el comando '$ sudo apt install openjdk-8-jdk'
+3. Instalacion de mysql, configuración y creación de un usuario **test** para la aplicación, para ello usaremos los siguientes comandos:
+#### Para instalar mysql
+'$ sudo apt update' 
+'$ sudo apt install mysql-server'
+#### Para configurar mysql
+'$ sudo apt mysql_secure_installation'
+#### Para poner clave a root
+'$ sudo mysql'
+'mysql> alter user 'root'@'localhost' identified with mysql_native_password by 'password';'
+#### Para volver a recargar las tablas
+'mysql> flush privileges;'
+#### Para crear un usuario
+'mysql> create user 'test'@'localhost' identified by 'password';'
+#### Para dar permisos al usuario
+'mysql> grant all privileges on *.* to 'test'"'localhost' with grant option;'
+#### Para salir de la terminal de mysql
+'mysql> exit;'
+
+
+4. Descarga del entorno de desarrollo spring tools 4.
+5. Descarga del proyecto alojado en github y importado a el entorno de desarrollo.
+6. Inicialización de la primera aplicación que es la interfaz de usuario.
+7. Inicializacion de la segunda aplicación que representara nuestro servicio interno.
+8. Apertura de un browser para poder acceder a la aplicacion a traves de la ruta "https://localhost:8443". 
 
 [enlace]:https://www.geeknetic.es/Noticia/17411/Como-usar-VirtualBox-para-crear-una-maquina-virtual.html:
