@@ -128,21 +128,21 @@ Muestra el producto que se haya seleccionado previamente y el precio del mismo.
 2. Instalación de java 1.8 en el sistema operativo ubuntu utilizando el siguiente comando
     $ sudo apt install openjdk-8-jdk
 3. Instalacion de mysql, configuración y creación de un usuario **test** para la aplicación, para ello usaremos los siguientes comandos:
-#####Para instalar mysql
+##### Para instalar mysql
     $ sudo apt update
     $ sudo apt install mysql-server
-#####Para configurar mysql
+##### Para configurar mysql
     $ sudo apt mysql_secure_installation
-#####Para poner clave a root
+##### Para poner clave a root
     $ sudo mysql
     mysql> alter user 'root'@'localhost' identified with mysql_native_password by 'password';
-#####Para volver a recargar las tablas
+##### Para volver a recargar las tablas
     mysql> flush privileges;
-#####Para crear un usuario
+##### Para crear un usuario
     mysql> create user 'test'@'localhost' identified by 'password';
-#####Para dar permisos al usuario
+##### Para dar permisos al usuario
     mysql> grant all privileges on *.* to 'test'"'localhost' with grant option;
-#####Para salir de la terminal de mysql
+##### Para salir de la terminal de mysql
     mysql> exit;
 
 
