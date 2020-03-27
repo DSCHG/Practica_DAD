@@ -17,7 +17,7 @@ la compra si hay stock o debera esperar a que la empresa reciba el producto, per
 ## *Descripción del servicio interno.*
 
 proceso de pago, pedido.
-**- Proceso de pago: En el momento de ultimar la compra y el usuario esta logueado, el servicio interno envia un correo al usuario, informandole del pedido. Con una factura en pdf.**
+- **Proceso de pago: En el momento de ultimar la compra y el usuario esta logueado, el servicio interno envia un correo al usuario, informandole del pedido. Con una factura en pdf.**
 
 ## Equipo de desarrollo.
 Nombre y Apellidos | e-mail | GitHub
@@ -120,11 +120,11 @@ Muestra el producto que se haya seleccionado previamente y el precio del mismo.
 - Ver informacíon del pedido
 ![Toko](verinfopedido.PNG "uml")
 -Usuarios
-![Toko](crud.PNG "uml")
+![Toko](Crud.PNG "uml")
 -Contacto
 ![Toko](contacto.PNG "uml")
 ## Descripción del despliegue de la aplicación.
-1. Creación de una maquina virtual en virtual box y instalación del sistema operativo Ubuntu, para facilitar este paso a los usuarios pueden seguir este [link][enlace]
+1. Creación de una maquina virtual en virtual box e instalación del sistema operativo Ubuntu, para facilitar este paso a los usuarios pueden seguir este [link][enlace]
 2. Instalación de java 1.8 en el sistema operativo ubuntu utilizando el siguiente comando
 ##### Para instalar jdk 1.8
     $ sudo apt install openjdk-8-jdk
@@ -156,7 +156,7 @@ Muestra el producto que se haya seleccionado previamente y el precio del mismo.
 - buscamos donde hemos descargado el proyecto
 
 6. Inicialización de la primera aplicación que es la interfaz de usuario siguientdo los estos pasos:
-- para ello pulsaremos con el boton derechon 
+- para ello pulsaremos con el boton derecho 
 - luego nos posicionamos donde dice run As
 - en la ventana desplegada pulsamos en Spring boot App.
 7. Inicializacion de la segunda aplicación que representara nuestro servicio interno, se hace de la misma forma que en el paso anterior.
