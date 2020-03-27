@@ -146,10 +146,15 @@ Muestra el producto que se haya seleccionado previamente y el precio del mismo.
 
 
 4. Descarga del entorno de desarrollo spring tools 4 en este [enlace][entorno].
-5. Descarga del proyecto alojado en [github][proyecto] y importado a el entorno de desarrollo.
-6. Inicialización de la primera aplicación que es la interfaz de usuario.
-7. Inicializacion de la segunda aplicación que representara nuestro servicio interno.
-8. Apertura de un browser para poder acceder a la aplicacion a traves de la ruta "https://localhost:8443". 
+5. Descarga del proyecto alojado en [github][proyecto] y importarlo al entorno de desarrollo siguiendo los pasos siguientes:
+#### Para importar el proyecto
+File>Open Projects from File System...
+#### Busqueda del proyecto en local
+pulsamos sobre el boton directory y buscamos donde hemos descargado el proyecto
+
+6. Inicialización de la primera aplicación que es la interfaz de usuario, para ello pulsaremos con el boton derechon luego nos posicionamos donde dice run As y en la ventana desplegada pulsamos en Spring boot App.
+7. Inicializacion de la segunda aplicación que representara nuestro servicio interno, se hace de la misma forma que en el paso anterior.
+8. Apertura de un navegador para poder acceder a la aplicacion a traves de la ruta "https://localhost:8443".
 
 [enlace]:https://www.geeknetic.es/Noticia/17411/Como-usar-VirtualBox-para-crear-una-maquina-virtual.html:
 [entorno]:https://spring.io/tools
