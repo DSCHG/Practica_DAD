@@ -129,21 +129,21 @@ Muestra el producto que se haya seleccionado previamente y el precio del mismo.
     $ sudo apt install openjdk-8-jdk
 3. Instalacion de mysql, configuración y creación de un usuario **test** para la aplicación, para ello usaremos los siguientes comandos:
 - Para instalar mysql
-    $ sudo apt update
-    $ sudo apt install mysql-server
+        $ sudo apt update
+        $ sudo apt install mysql-server
 - Para configurar mysql
-    $ sudo apt mysql_secure_installation
+        $ sudo apt mysql_secure_installation
 - Para poner clave a root
-    $ sudo mysql
-    mysql> alter user 'root'@'localhost' identified with mysql_native_password by 'password';
+        $ sudo mysql
+        mysql> alter user 'root'@'localhost' identified with mysql_native_password by 'password';
 - Para volver a recargar las tablas
-    mysql> flush privileges;
+        mysql> flush privileges;
 - Para crear un usuario
-    mysql> create user 'test'@'localhost' identified by 'password';
+        mysql> create user 'test'@'localhost' identified by 'password';
 - Para dar permisos al usuario
-    mysql> grant all privileges on *.* to 'test'"'localhost' with grant option;
+        mysql> grant all privileges on *.* to 'test'"'localhost' with grant option;
 - Para salir de la terminal de mysql
-    mysql> exit;
+        mysql> exit;
 
 
 4. Descarga del entorno de desarrollo spring tools 4 en este [enlace][entorno].
