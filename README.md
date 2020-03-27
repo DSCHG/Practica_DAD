@@ -92,7 +92,7 @@ Muestra el producto que se haya seleccionado previamente y el precio del mismo.
 
 ![Toko](e-r.png "uml")
 
-## Esquema Clases.
+## *Esquema Clases.*
 
 ![Toko](umldad2.png "uml") 
 
