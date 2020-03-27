@@ -125,7 +125,8 @@ Muestra el producto que se haya seleccionado previamente y el precio del mismo.
 ![Toko](contacto.PNG "uml")
 ## Descripción del despliegue de la aplicación.
 1. Creación de una maquina virtual en virtual box y instalación del sistema operativo Ubuntu, para facilitar este paso a los usuarios pueden seguir este [link][enlace]
-2. Instalación de java 1.8 en el sistema operativo ubuntu utilizando el comando '$ sudo apt install openjdk-8-jdk'
+2. Instalación de java 1.8 en el sistema operativo ubuntu utilizando el siguiente comando
+    $ sudo apt install openjdk-8-jdk
 3. Instalacion de mysql, configuración y creación de un usuario **test** para la aplicación, para ello usaremos los siguientes comandos:
 - Para instalar mysql
     $ sudo apt update
@@ -148,9 +149,10 @@ Muestra el producto que se haya seleccionado previamente y el precio del mismo.
 4. Descarga del entorno de desarrollo spring tools 4 en este [enlace][entorno].
 5. Descarga del proyecto alojado en [github][proyecto] y importarlo al entorno de desarrollo siguiendo los pasos siguientes:
 - Para importar el proyecto
-File>Open Projects from File System...
+  - File>Open Projects from File System...
 - Busqueda del proyecto en local
-pulsamos sobre el boton directory y buscamos donde hemos descargado el proyecto
+- pulsamos sobre el boton directory
+- buscamos donde hemos descargado el proyecto
 
 6. Inicialización de la primera aplicación que es la interfaz de usuario siguientdo los estos pasos:
 - para ello pulsaremos con el boton derechon 
