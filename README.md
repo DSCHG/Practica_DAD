@@ -133,7 +133,7 @@ Muestra el producto que se haya seleccionado previamente y el precio del mismo.
     $ sudo apt update
     $ sudo apt install mysql-server
 ##### Para configurar mysql
-    $ sudo apt mysql_secure_installation
+    $ sudo mysql_secure_installation
 ##### Para poner clave a root
     $ sudo mysql
     mysql> alter user 'root'@'localhost' identified with mysql_native_password by 'password';
