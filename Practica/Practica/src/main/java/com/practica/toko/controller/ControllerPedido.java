@@ -64,33 +64,9 @@ public class ControllerPedido {
 			model.addAttribute("precio",pro.getPrecio());
 			preciototal += pro.getPrecio();
 		}
-		//model.addAttribute("precioTotal", preciototal);
+		model.addAttribute("precioTotal", preciototal);
 		
 		return "InfoPedido";
 	}
-	/*@RequestMapping("/InfoPedido")
-	public String mostrarPedido(Model model,@RequestParam (value= "id") int id,HttpSession session, HttpServletRequest request) {
-		model.addAttribute("user", request.isUserInRole("USER"));
-		user = (Usuario) session.getAttribute("usuario");
-		double preciototal=0;
-		System.out.println("HOILAAAAAAA");
-		Pedido pedido=pedidos.findById(id).get();
-		for(Pedido p:user.getListaPedidos()) {
-			if(p.getId()==id) {
-				pedido=p;
-			}
-		}
-		model.addAttribute("haydatos", pedido.getId_producto().size()-1);
-		model.addAttribute("productos", pedido.getProducto());
-		for(Producto pro : pedido.getProducto()) {
-			model.addAttribute("id", pro.getId());
-			model.addAttribute("nombre", pro.getNombre());
-			model.addAttribute("precio",pro.getPrecio());
-			preciototal += pro.getPrecio();
-		}
-		//model.addAttribute("precioTotal", preciototal);
-	
-		return "InfoPedido";
-	}*/
 
 }

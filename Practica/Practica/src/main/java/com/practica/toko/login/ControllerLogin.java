@@ -25,13 +25,6 @@ public class ControllerLogin {
 		model.addAttribute("ADMIN", request.isUserInRole("ADMIN"));
 		return "loginerror";
 	}
-	
-
-	@GetMapping("/InfoPedido")
-	public String usuario(Model model, HttpServletRequest request) {
-		model.addAttribute("ADMIN", request.isUserInRole("ADMIN"));
-		return "InfoPedido";
-	}
 
 	@GetMapping("/producto")
 	public String proveedor(Model model, HttpServletRequest request) {
