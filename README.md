@@ -101,7 +101,7 @@ Muestra el producto que se haya seleccionado previamente y el precio del mismo.
 - Login
 ![Toko](login.PNG "uml")
 - Login error
-![Toko](loginerror.PNG "uml")
+![Toko](loginerror.png "uml")
 - Busqueda de productos
 ![Toko](busqueda.PNG "uml")
 - Carro 
