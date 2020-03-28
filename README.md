@@ -136,13 +136,15 @@ Muestra el producto que se haya seleccionado previamente y el precio del mismo.
     $ sudo mysql_secure_installation
 ##### Para poner clave a root
     $ sudo mysql
-    mysql> alter user 'root'@'localhost' identified with mysql_native_password by 'password';
+    mysql> alter user 'root'@'localhost' identified with mysql_native_password by '123456';
 ##### Para volver a recargar las tablas
     mysql> flush privileges;
 ##### Para crear un usuario
-    mysql> create user 'test'@'localhost' identified by 'password';
+    mysql> create user 'test'@'localhost' identified by '123456';
 ##### Para dar permisos al usuario
     mysql> grant all privileges on *.* to 'test'@'localhost' with grant option;
+##### Para Crear un esquema
+    mysql> create schema toko
 ##### Para salir de la terminal de mysql
     mysql> exit;
 
