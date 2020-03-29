@@ -104,6 +104,8 @@ Muestra el producto que se haya seleccionado previamente y el precio del mismo.
 ![Toko](loginerror.png "uml")
 - Busqueda de productos
 ![Toko](busqueda.PNG "uml")
+- Servicio Interno 
+![Toko](serviciointerno.PNG "uml")
 - Carro 
 ![Toko](carrito.PNG "uml")
 - Indice
