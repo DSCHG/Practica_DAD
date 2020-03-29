@@ -84,7 +84,7 @@ Te muestra los pedidos que han sido realizados
 - vistaProducto: 
 Muestra el producto que se haya seleccionado previamente y el precio del mismo.
 
-## Modelo de controladores
+## *Modelo de controladores*
 
 ![Toko](controlleruml.jpeg "uml")
 
@@ -123,7 +123,7 @@ Muestra el producto que se haya seleccionado previamente y el precio del mismo.
 ![Toko](Crud.PNG "uml")
 -Contacto
 ![Toko](contacto.PNG "uml")
-## Descripción del despliegue de la aplicación.
+## *Descripción del despliegue de la aplicación.*
 1. Creación de una maquina virtual en virtual box e instalación del sistema operativo Ubuntu, para facilitar este paso a los usuarios pueden seguir este [link][enlace]
 2. Instalación de java 1.8 en el sistema operativo ubuntu utilizando el siguiente comando
 ##### Para instalar jdk 1.8
