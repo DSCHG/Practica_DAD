@@ -150,7 +150,7 @@ Muestra el producto que se haya seleccionado previamente y el precio del mismo.
 
 
 4. Descarga del entorno de desarrollo spring tools 4 en este [enlace][entorno].
-5. Descarga del proyecto alojado en [github][proyecto] y importarlo al entorno de desarrollo siguiendo los pasos siguientes:
+5. Descarga del proyecto alojado en [github][proyecto] e importarlo al entorno de desarrollo siguiendo los pasos siguientes:
 - Para importar el proyecto
   - File>Open Projects from File System...
 - Busqueda del proyecto en local
