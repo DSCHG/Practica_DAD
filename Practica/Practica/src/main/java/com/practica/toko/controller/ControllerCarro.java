@@ -18,6 +18,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.practica.toko.model.*;
 import com.practica.toko.repositorios.*;
 
@@ -209,13 +210,10 @@ public class ControllerCarro {
 	public String factura(@RequestParam (value="id") int id,HttpServletRequest request){
 		Optional<Pedido> pedido = repoPedido.findById(id);
 		pedido.isPresent();
-		Pedido pe = repoPedido.getOne(id);
 		Usuario user = Usuarios.findByNombre(request.getUserPrincipal().getName());
-		RestTemplate factura= new RestTemplate();
-		HttpHeaders header = new HttpHeaders();
-		header.setAccept(Collections.singletonList(MediaType.APPLICATION_OCTET_STREAM));
-		HttpEntity<String> e = new HttpEntity<>(header);
-		factura.exchange("http://localhost:8000/enviarFactura/"+id+"/"+user.getId(), HttpMethod.GET,e,byte[].class);
+		String url="http://localhost:8000/enviarFactura/"+id+"/"+user.getId();
+		RestTemplate conexion=new RestTemplate();
+		ObjectNode aux=conexion.getForObject(url,ObjectNode.class);
 		return "correoenviado";
 	}
 		
