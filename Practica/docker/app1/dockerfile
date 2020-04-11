@@ -1,0 +1,5 @@
+FROM openjdk:8-jre
+COPY practica-1.jar /usr/app/
+WORKDIR /usr/app
+CMD ["java","-jar","practica-1.jar"]
+

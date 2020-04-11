@@ -1,0 +1,5 @@
+FROM openjdk:8-jre
+COPY Servicio.jar /usr/servicio/
+WORKDIR /usr/servicio
+CMD ["java","-jar","Servicio.jar"]
+

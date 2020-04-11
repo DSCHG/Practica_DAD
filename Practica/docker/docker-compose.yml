@@ -1,0 +1,32 @@
+web:
+ build: app1/.
+ ports:
+  - "8443:8443"
+
+ links:
+  - db
+  - servicio
+ environment:
+ - SPRING_DATASOURCE_URL=jdbc:mysql://db/toko
+
+db:
+ image: mysql:latest
+ ports: 
+  - "3306:3306"
+ volumes:
+  - mysql-db-data:/var/lib/mysql
+ environment:
+  - MYSQL_ROOT_PASSWORD=darwin
+  - MYSQL_DATABASE=toko
+  - MYSQL_USER=test
+  - MYSQL_PASSWORD=123456
+
+servicio:
+ build: app2/.
+ ports:
+  - "8000:8000"
+
+ links:
+  - db
+ environment:
+  - SPRING_DATASOURCE_URL=jdbc:mysql://db/toko
