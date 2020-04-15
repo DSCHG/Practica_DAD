@@ -22,6 +22,17 @@ services:
     environment:
      - SPRING_DATASOURCE_URL=jdbc:mysql://db/toko
 
+  web2:
+    build: app1/.
+    expose:
+      - "8443"
+    networks:
+      - red_interna
+    links:
+     - db
+     - servicio_interno
+    environment:
+     - SPRING_DATASOURCE_URL=jdbc:mysql://db/toko
   db:
     image: mysql:latest
     expose:
