@@ -1,5 +1,6 @@
 package com.practica.toko.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -14,7 +15,7 @@ import org.springframework.web.context.annotation.SessionScope;
 @Entity
 @Component
 @SessionScope
-public class Usuario {
+public class Usuario implements Serializable{
 	// Atributos
 
 		@Id

@@ -1,12 +1,13 @@
 package com.practica.toko.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
 
 @Entity
-public class Proveedor {
+public class Proveedor implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)

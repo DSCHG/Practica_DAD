@@ -4313,3 +4313,20 @@ java.io.FileNotFoundException: /home/javier/Escritorio/Practica_DAD/Practica/.me
 2020-04-16 13:01:46,953 [Worker-33: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/javier/Escritorio/Practica_DAD/Practica/Practica/src/test/resources
 2020-04-16 13:01:56,441 [Worker-25: Launching Practica] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/javier/Escritorio/Practica_DAD/Practica/Practica
 2020-04-16 13:01:56,442 [Worker-25: Launching Practica] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B clean package -Dstyle.color=always
+2020-04-16 16:33:00,384 [Worker-59: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-16 16:33:00,385 [Worker-59: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-04-16 16:33:00,386 [Worker-59: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 18 resources
+2020-04-16 16:33:00,389 [Worker-59: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-16 16:33:00,389 [Worker-59: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/javier/Escritorio/Practica_DAD/Practica/Practica/src/test/resources
+2020-04-16 16:33:00,533 [Worker-58: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-16 16:33:00,537 [Worker-58: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-04-16 16:33:00,539 [Worker-58: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 18 resources
+2020-04-16 16:33:00,562 [Worker-58: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-16 16:33:00,562 [Worker-58: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/javier/Escritorio/Practica_DAD/Practica/Practica/src/test/resources
+2020-04-16 16:44:03,712 [Worker-54: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-16 16:44:03,712 [Worker-54: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-04-16 16:44:03,713 [Worker-54: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 18 resources
+2020-04-16 16:44:03,716 [Worker-54: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-16 16:44:03,716 [Worker-54: Launching Practica - PracticaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/javier/Escritorio/Practica_DAD/Practica/Practica/src/test/resources
+2020-04-16 16:44:48,857 [Worker-59: Launching Practica] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/javier/Escritorio/Practica_DAD/Practica/Practica
+2020-04-16 16:44:48,857 [Worker-59: Launching Practica] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B clean package -Dstyle.color=always

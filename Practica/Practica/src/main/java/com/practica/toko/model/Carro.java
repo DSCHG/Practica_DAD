@@ -1,5 +1,6 @@
 package com.practica.toko.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +13,7 @@ import javax.persistence.Id;
 
 
 @Entity
-public class Carro {
+public class Carro implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

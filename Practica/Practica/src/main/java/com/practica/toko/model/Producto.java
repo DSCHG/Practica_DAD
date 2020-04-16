@@ -1,10 +1,12 @@
 package com.practica.toko.model;
 
 
+import java.io.Serializable;
+
 import javax.persistence.*;
 
 @Entity
-public class Producto {
+public class Producto implements Serializable{
 	// Atributos
 	
 		@Id
