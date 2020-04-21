@@ -14,10 +14,10 @@ la compra si hay stock o debera esperar a que la empresa reciba el producto, per
 - Producto(público): Objetos disponibles para su compra y el stock de los mismos
 
 
-## *Descripción del servicio interno.*
+## Descripción del servicio interno.
 
 proceso de pago, pedido.
-- **Proceso de pago: En el momento de ultimar la compra y el usuario esta logueado, el servicio interno envia un correo al usuario, informandole del pedido. Con una factura en pdf.**
+- Proceso de pago: En el momento de ultimar la compra y el usuario esta logueado, el servicio interno envia un correo al usuario, informandole del pedido. Con una factura en pdf.**
 
 ## Equipo de desarrollo.
 Nombre y Apellidos | e-mail | GitHub
@@ -29,16 +29,16 @@ Nombre y Apellidos | e-mail | GitHub
 ### Trello
 https://trello.com/b/QmLREBu5/practica-dad
 
-## *Diagrama vistas*
+## Diagrama vistas
 
 ![Toko](diagramavistas.PNG "uml")
 
 
-## *Descripción de las vistas*
+## Descripción de las vistas
 
 - Común a todas las vistas:
-**Las paginas tienen implementada seguridad CSRF de modo que si alguien intenta suplantarnos, no le llegue la informacion.**
-**En todas las paginas ha sido incluido un boton para entrar a la identificacion de usuario, y para salir de la misma**
+Las paginas tienen implementada seguridad CSRF de modo que si alguien intenta suplantarnos, no le llegue la informacion.
+En todas las paginas ha sido incluido un boton para entrar a la identificacion de usuario, y para salir de la misma
 En todas las vistas se ve una barra de navegación arriba la cual está compuesta por una serie de botones y un buscador con su botón asociado.
 Se ve el logotipo de la empresa (toko), el cual te lleva al index al pulsarlo desde cualquier página.
 En orden de izquierda a derecha se ven los botones, y la vista a la que te llevan: Inicio(index), Contacto(contacto), crear usuario(crud), crear proveedor(crudproveedor), crear producto(crudproducto), un icono de un carrito(carrito).  y el botón de búsqueda(crudbusqueda). 
@@ -49,7 +49,7 @@ Posee un botón para poder formalizar el pedido y que este sea almacenado en la 
 El carrito esta diseñado para poder introducir articulos de la base de datos en el mismo para luego poder comprarlo mas adelante.
 
 - InfoPedido:
-**Para entrar en esta vista previamente se ha debido pasar por el login.**
+Para entrar en esta vista previamente se ha debido pasar por el login.
 Te muestra la información relativa al pedido
 
 - contacto:
@@ -64,12 +64,12 @@ Si al usar el buscador que está en la barra de navegación no se pasa ningún p
 Si precisas buscar un articulo es mas sencillo siempre usar un buscador que navegar entre multiples archivos para ver si la empresa lo tiene disponible.
 
 - crudproducto:
-**Para entrar en esta vista previamente se ha debido pasar por el login y solo en caso de que sea administrador.**
+Para entrar en esta vista previamente se ha debido pasar por el login y solo en caso de que sea administrador.
 Se puede introducir el nombre, el precio y el id_proveedor, y se almacena en la base de datos de productos, incluyendo la referencia al proveedor que lo vende
 Esta vista permite incluir en la base de datos productos.
 
 - crudproveedor:
-**Para entrar en esta vista previamente se ha debido pasar por el login y solo en caso de que sea administrador.**
+Para entrar en esta vista previamente se ha debido pasar por el login y solo en caso de que sea administrador.
 Se puede introducir el nombre, el producto y el precio, y se almacena en la base de datos de proveedores y de productos.
 Se permite incluir proveedores en la base de datos.
 
@@ -78,21 +78,21 @@ Tiene un botón para terminar la navegación por la aplicación.
 Es la pagina principal donde se ven al iniciar la lista de los productos incluidos en la base de datos. 
 
 - mostrarPedidos:
-**Para entrar en esta vista previamente se ha debido pasar por el login.**
+Para entrar en esta vista previamente se ha debido pasar por el login.
 Te muestra los pedidos que han sido realizados
 
 - vistaProducto: 
 Muestra el producto que se haya seleccionado previamente y el precio del mismo.
 
-## *Modelo de controladores*
+## Modelo de controladores
 
 ![Toko](controlleruml.jpeg "uml")
 
-## *Modelo E/R*
+## Modelo E/R
 
 ![Toko](e-r.png "uml")
 
-## *Esquema Clases.*
+## Esquema Clases.
 
 ![Toko](umldad2.png "uml") 
 
@@ -125,7 +125,8 @@ Muestra el producto que se haya seleccionado previamente y el precio del mismo.
 ![Toko](Crud.PNG "uml")
 -Contacto
 ![Toko](contacto.PNG "uml")
-## *Descripción del despliegue de la aplicación.*
+
+## Descripción del despliegue de la aplicación.
 1. Creación de una maquina virtual en virtual box e instalación del sistema operativo Ubuntu, para facilitar este paso a los usuarios pueden seguir este [link][enlace]
 2. Instalación de java 1.8 en el sistema operativo ubuntu utilizando el siguiente comando
 ##### Para instalar jdk 1.8
@@ -169,3 +170,50 @@ Muestra el producto que se haya seleccionado previamente y el precio del mismo.
 [enlace]:https://www.geeknetic.es/Noticia/17411/Como-usar-VirtualBox-para-crear-una-maquina-virtual.html:
 [entorno]:https://spring.io/tools
 [proyecto]:https://github.com/DSCHG/Practica_DAD
+
+
+
+## *Despliegue de la aplicacion, balanceada y dockerizada.*
+1. Crear los ficheros jars de maven
+- Run as -> Maven build..
+- Se escribe package en el campo goal
+- run
+- se comprueba que se ha realizado de manera correcta y se mira la ruta del jar donde se ha guardado
+
+2. Se instala docker en la maquina virtual ubuntu/ en caso de hacerlo en windows, se hace por el instalador
+- sudo apt update
+- sudo apt install apt-transport-https ca-certificates curl software-properties-common
+- curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+- sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+- sudo apt update
+- apt-cache policy docker-ce
+- sudo apt install docker-ce
+- sudo systemctl status docker
+- sudo usermod -aG docker ${USER}
+- su - ${USER}
+- id -nG
+- sudo usermod -aG docker username
+- docker info
+- docker run hello-world
+3. Se instala el docker-compose
+- sudo apt-get update
+- sudo apt-get upgrade
+- sudo apt install curl
+- sudo curl -L "https://github.com/docker/compose/releases/download/1.25.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+- sudo chmod +x /usr/local/bin/docker-compose
+- docker-compose --version
+4. Se crea un fichero dockerfile para dockerizar cada aplicacion.
+- se meten dentro de una carpeta a la que se hara referencia al llamarla desde el docker-compose
+- se indican el jdk usado, el nombre del jar, el directorio de trabajo y la ejecucion.
+5. Se crea el fichero docker-compose.yml 
+- Se indica la version
+- Se indican los serviciosm entre ellos el balanceador, las aplicaciones y las veces que se vayan a ejecutar, la bbdd 
+- La red
+- El volumen
+6. Se crea el haproxy (balanceador)
+- El punto de entrada balanceado es el 443
+- Se indican las variables globales
+- Se activan las stats para poder ver las estadisticas del balanceador.
+- Se indica un frontend y un backend con el puerto por el que accedera el tipo de conexion (tcp), el tipo de balanceo que se desea (round robin), y las ips que se tienen en las paginas web de las aplicaciones.
+
+
