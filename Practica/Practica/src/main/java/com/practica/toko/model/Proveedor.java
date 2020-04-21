@@ -55,4 +55,14 @@ public class Proveedor implements Serializable{
 	public void setListaProductos(List<Producto> listaProductos) {
 		this.listaProductos = listaProductos;
 	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	@Override
+	public String toString() {
+		return "Proveedor [id=" + id + ", nombre=" + nombre + ", listaProductos=" + listaProductos + "]";
+	}
+	
 }

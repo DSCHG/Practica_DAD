@@ -2,6 +2,7 @@ package com.practica.toko.model;
 
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 import javax.persistence.*;
 
@@ -59,6 +60,18 @@ public class Producto implements Serializable{
 		public void setId(int id) {
 			this.id = id;
 		}
+
+		@Override
+		public String toString() {
+			if(proveedor==null) {
+				proveedor=new Proveedor(-1,"TOKO",this.getNombre(),new ArrayList<Producto>());
+			}
+			return "Producto [id=" + id + ", nombre=" + nombre + ", precio=" + precio + ", proveedor=" + proveedor.getNombre()
+					+ "]";
+		}
+		
+		
+		
 		
 		
 }

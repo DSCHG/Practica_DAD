@@ -149,7 +149,6 @@ public class ControllerCarro {
 	
 	@RequestMapping("/verProducto")
 	public String verProducto(Model model,@RequestParam(name = "id") String id,HttpSession session, HttpServletRequest request) {
-		if(user != null) {
 			Optional<Producto> p=productodao.findById(Integer.parseInt(id));
 			Producto pr;
 			if(p.isPresent()) {
@@ -158,7 +157,6 @@ public class ControllerCarro {
 			model.addAttribute("nombre", pr.getNombre());
 			model.addAttribute("precio", pr.getPrecio());
 			}
-		}		
 		return "vistaProducto";
 	}
 	
