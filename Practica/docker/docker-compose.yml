@@ -6,7 +6,7 @@ services:
     networks:
       - red_interna
     ports:
-      - "9000:443"
+      - "443:443"
       - "8404:8404"
     volumes:
       - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
