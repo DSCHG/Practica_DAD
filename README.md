@@ -228,3 +228,12 @@ Muestra el producto que se haya seleccionado previamente y el precio del mismo.
 - Se indica un frontend y un backend con el puerto por el que accedera el tipo de conexion (tcp), el tipo de balanceo que se desea (round robin), y las ips que se tienen en las paginas web de las aplicaciones.
 
 
+## *Capturas de la aplicacion balanceada.*
+
+- Estadisticas 
+![Toko](stats.PNG "stats")
+![Toko](stats2.PNG "stats")
+- Estadisticas nodo KO
+![Toko](statsko.png "stats")
+- Acceder a la app
+![Toko](app.png "app")
