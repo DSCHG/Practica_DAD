@@ -234,6 +234,7 @@ Muestra el producto que se haya seleccionado previamente y el precio del mismo.
 
 ![Toko](stats.PNG "uml")
 ![Toko](stats2.PNG "uml")
+![Toko](stats3.PNG "uml")
 - Estadisticas nodo KO
 
 ![Toko](statsko.PNG "uml")
