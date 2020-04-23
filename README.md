@@ -202,6 +202,17 @@ Muestra el producto que se haya seleccionado previamente y el precio del mismo.
 - sudo curl -L "https://github.com/docker/compose/releases/download/1.25.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 - sudo chmod +x /usr/local/bin/docker-compose
 - docker-compose --version
+4. Se descarga la aplicacion desde aqui.
+5. Se ejecuta desde la carpeta: docker-compose update
+- Si es la primera ejecucion convendria que se ejecutara: docker-compose up --build
+6. Para abrir la aplicacion en un navegador web se pone: https://localhost o https://localhost:443
+7. Para ver las stats de uso del balanceador y como se balancean las peticiones, se abre en un navegador localhost:8404/admin?stats
+
+
+## *Creacion a partir de una aplicacion ya creada en sts eclipse.*
+1.
+2.
+3. Estos puntos se comparten con los explicados en el punto anterior
 4. Se crea un fichero dockerfile para dockerizar cada aplicacion.
 - se meten dentro de una carpeta a la que se hara referencia al llamarla desde el docker-compose
 - se indican el jdk usado, el nombre del jar, el directorio de trabajo y la ejecucion.
