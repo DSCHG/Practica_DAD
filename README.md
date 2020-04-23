@@ -231,9 +231,12 @@ Muestra el producto que se haya seleccionado previamente y el precio del mismo.
 ## *Capturas de la aplicacion balanceada.*
 
 - Estadisticas 
-![Toko](stats.PNG "stats")
-![Toko](stats2.PNG "stats")
+
+![Toko](stats.PNG "uml")
+![Toko](stats2.PNG "uml")
 - Estadisticas nodo KO
-![Toko](statsko.PNG "stats")
+
+![Toko](statsko.PNG "uml")
 - Acceder a la app
-![Toko](app.PNG "app")
+
+![Toko](app.PNG "uml")
