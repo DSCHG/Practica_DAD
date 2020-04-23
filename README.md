@@ -234,6 +234,6 @@ Muestra el producto que se haya seleccionado previamente y el precio del mismo.
 ![Toko](stats.PNG "stats")
 ![Toko](stats2.PNG "stats")
 - Estadisticas nodo KO
-![Toko](statsko.png "stats")
+![Toko](statsko.PNG "stats")
 - Acceder a la app
-![Toko](app.png "app")
+![Toko](app.PNG "app")
