@@ -209,7 +209,7 @@ public class ControllerCarro {
 		Optional<Pedido> pedido = repoPedido.findById(id);
 		pedido.isPresent();
 		Usuario user = Usuarios.findByNombre(request.getUserPrincipal().getName());
-		String url="http://172.18.0.4:8000/enviarFactura/"+id+"/"+user.getId();
+		String url="http://172.18.0.2:8000/enviarFactura/"+id+"/"+user.getId();
 		RestTemplate conexion=new RestTemplate();
 		ObjectNode aux=conexion.getForObject(url,ObjectNode.class);
 		return "correoenviado";
