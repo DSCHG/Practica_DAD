@@ -1,12 +1,24 @@
 version: "3.7"
 
 services:
+  balanceador:
+    image: haproxy:latest
+    networks:
+      red_interna:
+        ipv4_address: 172.18.0.2
+    ports:
+      - "9000:443"
+      - "8404:8404"
+    volumes:
+      - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
+
   web1:
     build: app1/.
     expose:
       - "8443"
     networks:
-      - red_interna
+      red_interna:
+        ipv4_address: 172.18.0.6
     links:
      - db
      - servicio_interno
@@ -18,7 +30,8 @@ services:
     expose:
       - "8443"
     networks:
-      - red_interna
+      red_interna:
+        ipv4_address: 172.18.0.7
     links:
      - db
      - servicio_interno
@@ -29,7 +42,8 @@ services:
     expose:
       - "3306"
     networks:
-      - red_interna
+      red_interna:
+        ipv4_address: 172.18.0.3
     volumes:
       - mysql-db-data:/var/lib/mysql
     environment:
@@ -43,33 +57,30 @@ services:
     expose:
       - "8000"
     networks:
-      - red_interna
+      red_interna:
+        ipv4_address: 172.18.0.4
     links:
       - db
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mysql://db/toko
+
   servicio_interno2:
     build: app2/.
     expose:
       - "8000"
     networks:
-      - red_interna
+      red_interna:
+        ipv4_address: 172.18.0.5
     links:
       - db
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mysql://db/toko
-  balanceador:
-    image: haproxy:latest
-    networks:
-      - red_interna
-    ports:
-      - "443:443"
-      - "8404:8404"
-    volumes:
-      - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
-
 networks:
   red_interna:
     driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.18.0.2/16
 volumes:
   mysql-db-data:
