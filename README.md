@@ -1,5 +1,10 @@
 # Nombre de la aplicacion web.
 TOKO
+
+##Video
+
+![Toko](/videodadv4.mp4)
+
 ## Descripción de la temática.
 
 La aplicación que se pretende hacer consiste en una tienda online donde nuestros productos podrán ser vistos por usuarios no registrados pudiendo incluso ser añadidos al carrito de compra, además de saber antes de formalizar
@@ -212,7 +217,7 @@ Muestra el producto que se haya seleccionado previamente y el precio del mismo.
 ## *Creacion a partir de una aplicacion ya creada en sts eclipse.*
 1.
 2.
-3. Estos puntos se comparten con los explicados en el punto anterior
+3. Estos puntos se comparten con los explicados en la descripción anterior
 4. Se crea un fichero dockerfile para dockerizar cada aplicacion.
 - se meten dentro de una carpeta a la que se hara referencia al llamarla desde el docker-compose
 - se indican el jdk usado, el nombre del jar, el directorio de trabajo y la ejecucion.
