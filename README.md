@@ -208,7 +208,7 @@ Muestra el producto que se haya seleccionado previamente y el precio del mismo.
 - sudo chmod +x /usr/local/bin/docker-compose
 - docker-compose --version
 4. Se descarga la aplicacion desde aqui.
-5. Se ejecuta desde la carpeta en la consola: docker-compose update
+5. Se ejecuta desde la carpeta en la consola: docker-compose up
 - Si es la primera ejecucion convendria que se ejecutara: docker-compose up --build
 6. Para abrir la aplicacion en un navegador web se pone: https://localhost o https://localhost:443
 7. Para ver las stats de uso del balanceador y como se balancean las peticiones, se abre en un navegador localhost:8404/admin?stats
