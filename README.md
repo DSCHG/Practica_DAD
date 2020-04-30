@@ -3,9 +3,11 @@ TOKO
 
 ## *Video*
 
-<video width="320" height="240" controls>
-  <source src="videodadv4.mp4" type="video/mp4">
-</video>
+<figure class="video_container">
+  <video controls="true" allowfullscreen="true">
+    <source src="videodadv4.mp4" type="video/mp4">
+  </video>
+ </figure>
 
 %[caption](videodadv4.mp4)
 
