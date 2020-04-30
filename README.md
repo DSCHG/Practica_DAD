@@ -3,12 +3,6 @@ TOKO
 
 ## *Video*
 
-<figure class="video_container">
-  <video controls="true" allowfullscreen="true">
-    <source src="videodadv4.mp4" type="video/mp4">
-  </video>
-</figure>
-
 
 ## Descripción de la temática.
 
