@@ -7,9 +7,8 @@ TOKO
   <video controls="true" allowfullscreen="true">
     <source src="videodadv4.mp4" type="video/mp4">
   </video>
- </figure>
+</figure>
 
-%[caption](videodadv4.mp4)
 
 ## Descripción de la temática.
 
