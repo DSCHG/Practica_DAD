@@ -215,9 +215,9 @@ Muestra el producto que se haya seleccionado previamente y el precio del mismo.
 
 
 ## *Creacion a partir de una aplicacion ya creada en sts eclipse.*
-1.
-2.
-3. Estos puntos se comparten con los explicados en la descripción anterior
+1. Crear los ficheros .jar (explicado en el apartado anterior)
+2. Instalar Docker (explicado en el apartado anterior)
+3. Instalar Docker-compose (explicado en el apartado anterior)
 4. Se crea un fichero dockerfile para dockerizar cada aplicacion.
 - se meten dentro de una carpeta a la que se hara referencia al llamarla desde el docker-compose
 - se indican el jdk usado, el nombre del jar, el directorio de trabajo y la ejecucion.
