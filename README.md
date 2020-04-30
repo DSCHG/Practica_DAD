@@ -3,7 +3,7 @@ TOKO
 
 ## *Video*
 
-![Toko](/videodadv4.mp4)
+%[caption](/videodadv4.mp4)
 
 ## Descripción de la temática.
 
